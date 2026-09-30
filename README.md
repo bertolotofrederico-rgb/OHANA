@@ -1,325 +1,316 @@
 # OHANA
 
-**Experimental cognitive architecture for persistent local intelligence, governed learning and supervised self-engineering.**
+**Arquitetura cognitiva experimental para inteligência local persistente, aprendizado governado e autoengenharia supervisionada.**
 
-OHANA is a modular AI architecture built around persistent memory, local/symbolic reasoning, planning, controlled execution, governed learning and software-engineering workflows.
+OHANA é uma arquitetura modular de IA construída em torno de memória persistente, raciocínio local/simbólico, planejamento, execução controlada, aprendizado governado e fluxos de Engenharia de Software.
 
-The project intentionally does **not** treat a large language model as the whole intelligence. Neural language models are auxiliary components for natural-language understanding and generation. Memory, reasoning, planning, governance, execution and software engineering belong to the OHANA architecture itself.
+O projeto propositalmente **não trata um grande modelo de linguagem como toda a inteligência**. Modelos neurais são componentes auxiliares para compreensão e geração de linguagem. Memória, raciocínio, planejamento, governança, execução e engenharia pertencem à própria arquitetura OHANA.
 
-> **Status:** active experimental development. OHANA is not presented as a completed AGI.
+> **Status:** desenvolvimento experimental ativo. A OHANA não é apresentada aqui como uma AGI concluída.
 
 ---
 
-## Why OHANA exists
+## Por que a OHANA existe
 
-Most modern AI systems place a large language model at the center and add tools around it. OHANA explores a different design:
+A maioria dos sistemas modernos de IA coloca um grande modelo de linguagem no centro e adiciona ferramentas ao redor dele. A OHANA explora outra direção:
 
 ```text
-Human
+Humano
   ↓
 OHANA
-  ├─ interpretation / routing
-  ├─ persistent memory
-  ├─ contextual continuity
-  ├─ local reasoning
-  ├─ project design
-  ├─ planning
-  ├─ governed execution
-  ├─ validation
+  ├─ interpretação / roteamento
+  ├─ memória persistente
+  ├─ continuidade contextual
+  ├─ raciocínio local
+  ├─ projetista
+  ├─ planejamento
+  ├─ execução governada
+  ├─ validação
   ├─ autotuning
-  └─ software engineering
+  └─ engenharia de software
         ↓
-  neural language model (auxiliary)
+  modelo neural de linguagem (auxiliar)
 ```
 
-The neural model helps with language. OHANA is intended to remain responsible for state, memory, reasoning, governance and action control.
+O modelo neural ajuda com linguagem. A OHANA permanece responsável por estado, memória, raciocínio, governança e controle de ações.
 
 ---
 
-## Current validated capabilities
+## Capacidades atualmente validadas
 
-The following capabilities have been implemented, exercised or integrated in the current architecture:
+As seguintes capacidades já foram implementadas, exercitadas ou integradas na arquitetura atual:
 
-- persistent memory across sessions;
-- governed learning and revision of stored knowledge;
-- contextual reasoning and reference resolution;
-- local reasoning without mandatory external AI calls;
-- selective retrieval of project context;
-- **Projetista** for technical project design;
-- **Planejador** for planning;
-- **Executor** for controlled execution;
-- **Autotune** for observation, diagnosis and engineering orchestration;
-- human authorization gates;
-- contracts and operational safeguards;
-- SHA-256 integrity checks;
-- isolated candidates before production changes;
-- parser validation in Windows PowerShell 5.1;
-- rollback-capable changes;
-- selective source inspection using code, AST and hashes;
-- routing between normal conversation and software engineering;
-- local neural language support through Ollama/Qwen;
-- production HTTP runtime with technical self-inspection;
-- technical requests able to expose real code/AST/hash evidence instead of only generative answers.
+- memória persistente entre sessões;
+- aprendizado governado e revisão de conhecimento armazenado;
+- raciocínio contextual e resolução de referências;
+- raciocínio local sem dependência obrigatória de IA externa;
+- recuperação seletiva de contexto do projeto;
+- **Projetista** para desenho técnico;
+- **Planejador** para planejamento;
+- **Executor** para execução controlada;
+- **Autotune** para observação, diagnóstico e orquestração de engenharia;
+- autorização humana;
+- contratos e salvaguardas operacionais;
+- verificação de integridade por SHA-256;
+- candidatos isolados antes de alterações em produção;
+- validação de parser em Windows PowerShell 5.1;
+- alterações com rollback;
+- inspeção seletiva de código usando código, AST e hashes;
+- roteamento entre conversa comum e Engenharia de Software;
+- suporte neural local via Ollama/Qwen;
+- runtime HTTP de produção com autoconsulta técnica;
+- pedidos técnicos capazes de retornar evidência real de código/AST/hash, e não apenas texto gerado.
 
 ---
 
-## Observed performance
+## Desempenho observado
 
-A measured local baseline from the current architecture showed approximately:
+Um baseline local medido na arquitetura atual mostrou aproximadamente:
 
-| Stage | Observed time |
+| Etapa | Tempo observado |
 |---|---:|
-| Total request | **866.76 ms** |
-| Context assembly | **752.55 ms** |
-| Local reasoning | **42.56 ms** |
-| Interpretation | **16.78 ms** |
-| External/neural AI stage in that run | **0 ms** |
-| External AI calls | **0** |
+| Requisição total | **866,76 ms** |
+| Montagem/recuperação de contexto | **752,55 ms** |
+| Raciocínio local | **42,56 ms** |
+| Interpretação | **16,78 ms** |
+| Etapa de IA externa/neural nesse teste | **0 ms** |
+| Chamadas externas de IA | **0** |
 
-This baseline is important because it shows that the dominant cost was not the local reasoning engine itself — it was **context construction and retrieval**.
+Esse baseline é importante porque mostrou que o maior custo não estava no motor de raciocínio local, mas na **montagem e recuperação de contexto**.
 
-That finding directly shaped the current optimization strategy:
+Isso definiu a prioridade atual de otimização:
 
 ```text
-MEMORY LARGE
+MEMÓRIA GRANDE
    ↓
-SELECTIVE RETRIEVAL
+RECUPERAÇÃO SELETIVA
    ↓
-SMALL ACTIVE CONTEXT
+CONTEXTO ATIVO PEQUENO
    ↓
-FAST LOCAL REASONING
+RACIOCÍNIO LOCAL RÁPIDO
 ```
 
-The engineering goal is therefore not simply “use a faster model”, but reduce unnecessary context, repeated file reads, duplicated history and reconstruction work.
+A meta não é apenas “usar um modelo mais rápido”, mas reduzir contexto desnecessário, leituras repetidas de arquivos, histórico duplicado e reconstruções que não agregam valor.
 
-> These values are an observed project baseline, not a universal benchmark. They depend on the tested request, machine state and current architecture.
+> Esses números são um baseline observado do projeto, não um benchmark universal. Variam conforme pedido, estado da máquina e versão da arquitetura.
 
 ---
 
-## Validated engineering milestones
+## Marcos de engenharia já validados
 
-Recent controlled validation has demonstrated:
+Validações controladas recentes demonstraram:
 
-- **10/10 technical routing tests** reaching the existing software-engineering path;
-- **18/18 HTTP validation checks** in a controlled promotion cycle;
-- local Qwen/Ollama operation with **Groq calls = 0** in those tests;
-- preservation of memory, retification and operational safeguards during routing upgrades;
-- deliberate regressions being detected and blocked from promotion;
-- technical requests reaching `ENGENHARIA_SOFTWARE` instead of falling directly into the neural conversation fallback;
-- human authorization remaining required for production promotion.
+- **10/10 testes de roteamento técnico** chegando à Engenharia existente;
+- **18/18 verificações HTTP** em um ciclo de promoção controlada;
+- operação local Qwen/Ollama com **Groq = 0** nesses testes;
+- preservação de memória, retificação e proteção operacional durante upgrades de roteamento;
+- regressões deliberadas sendo detectadas e bloqueando promoção;
+- pedidos técnicos chegando à rota `ENGENHARIA_SOFTWARE` em vez de cair diretamente no fallback neural;
+- autorização humana permanecendo obrigatória para promoção em produção.
 
-Example of the validated technical route:
+Exemplo da rota técnica validada:
 
 ```text
 ultima_rota = ENGENHARIA_SOFTWARE
 ultima_intencao = ANALISAR_SOFTWARE
-source = code / AST / SHA-256 hashes
-autonomous production promotion = false
-human authorization = preserved
+fonte = código / AST / hashes SHA-256
+promoção autônoma em produção = false
+autorização humana = preservada
 ```
 
 ---
 
-## Governed self-engineering
+## Autoengenharia governada
 
-OHANA is being evolved so that it can inspect its own architecture and conduct controlled engineering workflows.
+A OHANA está sendo evoluída para inspecionar a própria arquitetura e conduzir fluxos controlados de engenharia.
 
-The target flow is:
-
-```text
-problem
-→ technical self-inspection
-→ evidence
-→ cause
-→ project design
-→ plan
-→ isolated candidate
-→ tests
-→ regression analysis
-→ judgment
-→ ready-for-promotion
-→ human authorization
-```
-
-A critical design rule is that this is **not allowed**:
+O fluxo desejado é:
 
 ```text
-GENERATE IDEA
-→ MODIFY PRODUCTION
+problema
+→ autoconsulta técnica
+→ evidência
+→ causa
+→ projeto técnico
+→ plano
+→ candidato isolado
+→ testes
+→ análise de regressão
+→ julgamento
+→ pronto para promoção
+→ autorização humana
 ```
 
-The intended rule is:
+Uma regra crítica é que isto **não é permitido**:
 
 ```text
-OBSERVE
-→ UNDERSTAND
-→ PROVE
-→ DESIGN
-→ TEST
-→ VALIDATE
-→ LEARN
+GERAR IDEIA
+→ ALTERAR PRODUÇÃO
 ```
 
-Production promotion remains governed and requires explicit human authorization in the current phase.
+A regra desejada é:
+
+```text
+OBSERVAR
+→ COMPREENDER
+→ PROVAR
+→ PROJETAR
+→ TESTAR
+→ VALIDAR
+→ APRENDER
+```
+
+A promoção para produção continua governada e exige autorização humana explícita na fase atual.
 
 ---
 
-## Hardware target: proving intelligence under constraint
+## Hardware-alvo: provar capacidade sob restrição
 
-OHANA is intentionally developed on modest local hardware.
+A OHANA é desenvolvida propositalmente em hardware local modesto.
 
-Current development environment includes:
+Ambiente atual conhecido:
 
 ```text
 GPU: NVIDIA GeForce GTX 750
 VRAM: 2 GB
-CUDA environment: available
-OS/runtime: Windows + PowerShell 5.1
-Local model runtime: Ollama
-Current auxiliary model: Qwen 2.5 1.5B
+CUDA: disponível
+Sistema: Windows
+Runtime/Shell: Windows PowerShell 5.1
+Runtime de modelo local: Ollama
+Modelo neural auxiliar atual: Qwen 2.5 1.5B
 ```
 
-The GTX 750 is **not** used as an argument that large neural training is practical on this machine. Instead, it is part of the project philosophy: architectural intelligence should not depend entirely on expensive GPU scale.
+A GTX 750 **não é apresentada como hardware adequado para treino pesado de grandes redes neurais**. Ela faz parte da filosofia do projeto: inteligência arquitetural não deve depender exclusivamente de escala de GPU.
 
-The project focuses on obtaining useful behavior through:
+A OHANA busca capacidade por meio de:
 
-- symbolic/local reasoning;
-- persistent memory;
-- selective context;
-- incremental reasoning;
-- structured planning;
-- reusable knowledge;
-- local execution;
-- small neural helpers;
-- evidence-driven engineering.
+- raciocínio simbólico/local;
+- memória persistente;
+- contexto seletivo;
+- raciocínio incremental;
+- planejamento estruturado;
+- conhecimento reutilizável;
+- execução local;
+- pequenos modelos neurais auxiliares;
+- engenharia baseada em evidência.
 
-This makes OHANA an experiment in how far a cognitive architecture can go when compute is constrained and intelligence is distributed across specialized mechanisms instead of concentrated only inside a very large neural model.
+Isso transforma a OHANA em um experimento sobre até onde uma arquitetura cognitiva pode chegar quando o poder computacional é limitado e a inteligência é distribuída entre mecanismos especializados.
 
 ---
 
-## Neural model role
+## Papel do modelo neural
 
-Current local language support uses:
+O suporte de linguagem local atualmente usa:
 
-- **Ollama** as the local model runtime;
-- **Qwen 2.5 1.5B** as an auxiliary language model;
-- local loopback inference when available.
+- **Ollama** como runtime local;
+- **Qwen 2.5 1.5B** como modelo neural auxiliar;
+- inferência local por loopback quando disponível.
 
-The intended responsibility split is:
+A divisão de responsabilidades desejada é:
 
 ```text
-Qwen / future neural model
-→ language understanding
-→ language generation
-→ semantic assistance
+Qwen / futuro modelo neural
+→ compreensão de linguagem
+→ geração de linguagem
+→ assistência semântica
 
 OHANA
-→ memory
-→ state
-→ reasoning
-→ learning
-→ planning
-→ tools
-→ engineering
-→ governance
-→ authorization
+→ memória
+→ estado
+→ raciocínio
+→ aprendizado
+→ planejamento
+→ ferramentas
+→ engenharia
+→ governança
+→ autorização
 ```
 
-Future work may evaluate a smaller OHANA-specific Portuguese neural model specialized for routing, intent recognition, contextual references and natural-language response generation.
+Uma direção futura é avaliar um modelo neural próprio da OHANA, especializado em português e focado em roteamento, intenção, referências contextuais e geração natural.
 
 ---
 
-## What makes the project interesting
+## O que torna o projeto interessante
 
-OHANA is not trying to compete with frontier LLMs on raw parameter count.
+A OHANA não tenta competir com modelos de fronteira por número bruto de parâmetros.
 
-Its research question is different:
+A pergunta de pesquisa é outra:
 
-> **How much useful, persistent and governable intelligence can emerge from a modular cognitive architecture when neural models are treated as components rather than the entire mind?**
+> **Quanta inteligência útil, persistente e governável pode surgir de uma arquitetura cognitiva modular quando modelos neurais são componentes, e não a mente inteira?**
 
-The architecture combines ideas commonly explored separately:
+A arquitetura reúne ideias normalmente exploradas separadamente:
 
-- cognitive architectures;
-- symbolic reasoning;
-- persistent memory;
-- local assistants;
-- agent planning;
-- software-engineering agents;
-- self-inspection;
-- supervised self-modification;
-- lightweight local inference.
-
----
-
-## Engineering principles
-
-OHANA development follows permanent principles:
-
-1. **Do not regress validated capabilities.**
-2. **Reuse and connect existing components before creating new ones.**
-3. **Do not create duplicate cores, memories, executors or governance layers without demonstrated necessity.**
-4. **Diagnose read-only before modifying.**
-5. **Use backup, hashes, candidates, tests and rollback for structural changes.**
-6. **Keep production changes governed by human authorization.**
-7. **Prefer valid local knowledge before external calls.**
-8. **Persist useful external knowledge with provenance/evidence when appropriate.**
-9. **Keep the architecture practical on constrained local hardware.**
-10. **Do not confuse generated text with verified technical evidence.**
+- arquiteturas cognitivas;
+- raciocínio simbólico;
+- memória persistente;
+- assistentes locais;
+- planejamento por agentes;
+- agentes de Engenharia de Software;
+- autoconsulta;
+- automodificação supervisionada;
+- inferência neural local leve.
 
 ---
 
-## Current research frontier
+## Princípios de engenharia
 
-The current frontier is not basic chatbot capability. The project is focusing on:
-
-- multi-turn software-engineering continuity;
-- stronger evidence-based self-diagnosis;
-- consistency between technical evidence and promotion judgments;
-- better selective context retrieval;
-- governed learning of procedural rules;
-- further reduction of unnecessary neural/external calls;
-- making Autotune capable of coordinating more of the existing engineering pipeline.
-
----
-
-## Current limitations
-
-Known limitations remain part of the research process:
-
-- some multi-turn engineering continuations are still being hardened;
-- some teaching/learning formulations are not yet routed correctly;
-- the current Qwen elaboration path has known response-length limits in some cases;
-- not every module has a complete automated regression suite;
-- self-engineering is supervised, not unrestricted autonomous self-modification;
-- current performance measurements are project baselines, not standardized benchmark results.
+1. **Não regredir capacidades já validadas.**
+2. **Reutilizar e conectar componentes existentes antes de criar novos.**
+3. **Não duplicar núcleos, memórias, executores ou governança sem necessidade comprovada.**
+4. **Diagnosticar em modo somente leitura antes de modificar.**
+5. **Usar backup, hashes, candidatos, testes e rollback em mudanças estruturais.**
+6. **Manter mudanças de produção sob autorização humana.**
+7. **Consultar conhecimento local válido antes de chamadas externas.**
+8. **Persistir conhecimento externo útil com origem/evidência quando apropriado.**
+9. **Manter a arquitetura prática em hardware restrito.**
+10. **Não confundir texto gerado com evidência técnica validada.**
 
 ---
 
-## Documentation
+## Fronteira atual de pesquisa
 
-- [Architecture](ARCHITECTURE.md)
-- [Benchmarks and measurements](BENCHMARKS.md)
-- [Hardware and local execution](HARDWARE.md)
+O foco atual não é chatbot básico. O projeto trabalha em:
+
+- continuidade de Engenharia de Software em múltiplos turnos;
+- autodiagnóstico mais fortemente baseado em evidência;
+- coerência entre evidência técnica e julgamento de promoção;
+- recuperação seletiva de contexto;
+- aprendizado governado de regras procedurais;
+- redução de chamadas neurais/externas desnecessárias;
+- evolução do Autotune como coordenador da Engenharia já existente.
+
+---
+
+## Limitações atuais
+
+- algumas continuações técnicas ainda estão sendo endurecidas;
+- algumas formulações de ensino/aprendizado ainda não são roteadas corretamente;
+- o caminho atual de elaboração Qwen possui limite conhecido de resposta em alguns casos;
+- nem todos os módulos possuem suíte completa de regressão automática;
+- a autoengenharia é supervisionada, não automodificação autônoma irrestrita;
+- as medições atuais são baselines do projeto, não benchmarks padronizados da indústria.
+
+---
+
+## Documentação
+
+- [Arquitetura](ARCHITECTURE.md)
+- [Benchmarks e medições](BENCHMARKS.md)
+- [Hardware e execução local](HARDWARE.md)
 - [Roadmap](ROADMAP.md)
-- [Security and governance](SECURITY.md)
-- [Project overview](docs/overview.md)
+- [Segurança e governança](SECURITY.md)
+- [Visão geral](docs/overview.md)
 
 ---
 
-## Repository purpose
+## Para leitores internacionais
 
-This repository is currently the public technical presentation and documentation home for OHANA.
-
-Source-code publication will be decided separately as the architecture, security boundaries and documentation mature.
+**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Neural language models are auxiliary components rather than the sole cognitive core. Full documentation is primarily maintained in Brazilian Portuguese.
 
 ---
 
-## Português
+## Objetivo deste repositório
 
-**OHANA é uma arquitetura cognitiva experimental voltada a inteligência local persistente, aprendizado governado e autoengenharia supervisionada.**
+Este repositório é a apresentação pública e documentação técnica da OHANA.
 
-A proposta central é não tratar o modelo neural como toda a inteligência. O modelo de linguagem auxilia na compreensão e geração de linguagem, enquanto memória, raciocínio, planejamento, execução, governança, aprendizado e engenharia permanecem sob responsabilidade da arquitetura OHANA.
-
-Um dos objetivos do projeto é demonstrar que uma arquitetura bem organizada pode produzir capacidades úteis mesmo sob hardware modesto, incluindo uma GTX 750 de 2 GB, priorizando eficiência arquitetural em vez de depender exclusivamente de escala neural.
-
-O projeto está em desenvolvimento experimental ativo e não é apresentado neste repositório como uma AGI concluída.
+A publicação do código-fonte será decidida separadamente conforme a arquitetura, os limites de segurança e a documentação amadureçam.
