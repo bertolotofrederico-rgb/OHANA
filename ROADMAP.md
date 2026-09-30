@@ -1,96 +1,96 @@
-# OHANA Roadmap
+# OHANA — Roadmap
 
-This roadmap reflects the current experimental direction of the project. It is intentionally conservative: validated capabilities are preserved and new capabilities should be connected to existing components whenever possible.
+Este roadmap reflete a direção experimental atual do projeto. Ele é propositalmente conservador: capacidades validadas são preservadas e novas capacidades devem ser conectadas aos componentes existentes sempre que possível.
 
-## Current stage
+## Estágio atual
 
-OHANA currently has an integrated path for:
-
-```text
-technical request
-→ engineering routing
-→ source-code / AST / hash inspection
-→ Autotune analysis
-→ project design / planning
-→ governed execution and validation
-```
-
-Human authorization remains required for promotion of production changes.
-
-## Near-term priorities
-
-### 1. Multi-turn engineering continuity
-
-Keep an active engineering investigation in the engineering route across follow-up messages such as:
-
-- continue the investigation;
-- run the next test;
-- re-evaluate the evidence;
-- prepare the candidate;
-- test regressions;
-- determine readiness for promotion.
-
-The same mechanism must still allow normal conversation, teaching and operational requests to leave the engineering route when appropriate.
-
-### 2. Evidence-backed engineering judgment
-
-Prevent contradictory conclusions such as:
+A OHANA possui atualmente um caminho integrado para:
 
 ```text
-CAUSE_PROVEN=False
-READY_FOR_PROMOTION=True
+pedido técnico
+→ roteamento de engenharia
+→ inspeção de código / AST / hashes
+→ análise pelo Autotune
+→ projeto técnico / planejamento
+→ execução e validação governadas
 ```
 
-Readiness must depend on evidence, candidate existence, parser checks, required tests and regression status.
+A autorização humana continua obrigatória para promoção de mudanças em produção.
 
-### 3. Learning-route robustness
+## Prioridades de curto prazo
 
-Improve explicit teaching and procedural-rule learning without weakening operational safeguards. Teaching content that contains operational verbs should be treated as data when the outer message frame is clearly instructional.
+### 1. Continuidade de engenharia em múltiplos turnos
 
-### 4. Incremental and selective context
+Manter uma investigação técnica ativa dentro da rota de Engenharia ao longo de mensagens de continuidade como:
 
-Move toward:
+- continue a investigação;
+- execute o próximo teste;
+- reavalie a evidência;
+- prepare o candidato;
+- teste regressões;
+- determine se está pronto para promoção.
+
+O mesmo mecanismo deve permitir que conversa comum, ensino e pedidos operacionais saiam da rota de Engenharia quando apropriado.
+
+### 2. Julgamento técnico baseado em evidência
+
+Impedir conclusões contraditórias como:
 
 ```text
-LARGE MEMORY → SMALL RELEVANT RETRIEVAL
+CAUSA_COMPROVADA=False
+PRONTO_PARA_PROMOCAO=True
 ```
 
-Goals include lower context latency, fewer loaded files, less repeated history and better continuity.
+A prontidão deve depender de evidência, existência de candidato, parser, testes obrigatórios e regressões.
 
-### 5. Local-first language integration
+### 3. Robustez da rota de aprendizado
 
-Continue using local neural inference as an auxiliary layer. Evaluate whether a smaller Portuguese-specialized model could eventually replace the current generic language model for OHANA-specific interpretation and generation.
+Melhorar ensino explícito e aprendizado de regras procedurais sem enfraquecer as proteções operacionais. Conteúdo ensinado que contém verbos operacionais deve ser tratado como dado quando a moldura externa da mensagem for claramente de ensino.
 
-## Medium-term direction
+### 4. Contexto incremental e seletivo
 
-- stronger reusable software-engineering contracts;
-- broader isolated regression suites;
-- better project/code structural indexing;
-- improved self-audit and architectural dependency mapping;
-- governed generation of candidate patches;
-- automatic rejection of candidates that introduce regressions;
-- measurable performance baselines before and after changes.
+Evoluir para:
 
-## Long-term research direction
+```text
+MEMÓRIA GRANDE → RECUPERAÇÃO PEQUENA E RELEVANTE
+```
 
-OHANA explores whether a modular cognitive architecture can improve over time while keeping neural language models as auxiliary components rather than the entire cognitive system.
+Objetivos: menor latência de contexto, menos arquivos carregados, menos histórico repetido e melhor continuidade.
 
-Long-term research areas include:
+### 5. Integração neural local-first
 
-- persistent governed knowledge;
-- incremental reasoning;
-- architectural self-inspection;
-- supervised self-engineering;
-- lightweight local operation;
-- domain-specific neural language support;
-- stronger continuity across long-running projects and sessions.
+Continuar usando inferência neural local como camada auxiliar. Avaliar futuramente se um modelo menor e especializado em português pode substituir o modelo genérico atual nas tarefas específicas da OHANA.
 
-## Non-goals for the current phase
+## Direção de médio prazo
 
-OHANA is not currently targeting:
+- contratos de Engenharia mais reutilizáveis;
+- suítes de regressão isoladas mais amplas;
+- melhor indexação estrutural de projeto/código;
+- autoconsulta e mapeamento de dependências mais fortes;
+- geração governada de candidatos de patch;
+- rejeição automática de candidatos que introduzam regressões;
+- baselines de desempenho mensuráveis antes/depois de mudanças.
 
-- unrestricted autonomous self-modification;
-- bypassing human authorization;
-- replacing governance with model-generated decisions;
-- heavy local models that exceed available hardware;
-- creating duplicate cognitive cores when existing components can be evolved.
+## Direção de pesquisa de longo prazo
+
+A OHANA investiga se uma arquitetura cognitiva modular pode melhorar ao longo do tempo mantendo modelos neurais de linguagem como componentes auxiliares, em vez de tratá-los como todo o sistema cognitivo.
+
+Áreas de pesquisa incluem:
+
+- conhecimento persistente e governado;
+- raciocínio incremental;
+- autoconsulta arquitetural;
+- autoengenharia supervisionada;
+- operação local leve;
+- suporte neural especializado por domínio;
+- continuidade mais forte em projetos e sessões longas.
+
+## O que não é objetivo da fase atual
+
+A OHANA não busca atualmente:
+
+- automodificação autônoma irrestrita;
+- contornar autorização humana;
+- substituir governança por decisões geradas pelo modelo;
+- modelos locais pesados incompatíveis com o hardware disponível;
+- criar núcleos cognitivos duplicados quando componentes existentes podem ser evoluídos.
