@@ -1,125 +1,125 @@
-# OHANA Hardware and Local Execution
+# OHANA — Hardware e Execução Local
 
-OHANA is deliberately developed under constrained local hardware.
+A OHANA é desenvolvida deliberadamente sob hardware local restrito.
 
-The purpose is not to prove that every neural workload can run efficiently on old hardware. The purpose is to explore how much capability can come from architecture, memory, routing, structured reasoning and selective neural assistance.
+O objetivo não é provar que toda carga neural roda bem em hardware antigo. O objetivo é explorar quanta capacidade pode vir de arquitetura, memória, roteamento, raciocínio estruturado e assistência neural seletiva.
 
-## Current development environment
+## Ambiente atual de desenvolvimento
 
-Known development hardware includes:
+Hardware e runtime conhecidos:
 
 ```text
 GPU: NVIDIA GeForce GTX 750
 VRAM: 2 GB
-CUDA environment: 12.x available in the system
-Operating system: Windows
+CUDA: disponível no sistema
+Sistema operacional: Windows
 Shell/runtime: Windows PowerShell 5.1
-Local model runtime: Ollama
-Auxiliary model: Qwen 2.5 1.5B
+Runtime de modelo local: Ollama
+Modelo auxiliar: Qwen 2.5 1.5B
 ```
 
-## What the GTX 750 means for the project
+## O que a GTX 750 representa no projeto
 
-A GTX 750 with 2 GB of VRAM is highly constrained by modern neural-network standards.
+Uma GTX 750 com 2 GB de VRAM é altamente limitada pelos padrões atuais de redes neurais.
 
-OHANA therefore does not assume that intelligence must come from putting a large model fully into GPU memory.
+Por isso, a OHANA não assume que inteligência precisa vir de colocar um grande modelo inteiro na GPU.
 
-The architecture attempts to move useful work into components such as:
+A arquitetura tenta deslocar trabalho útil para componentes como:
 
-- persistent symbolic/structured memory;
-- deterministic routing;
-- selective retrieval;
-- local reasoning;
-- project planning;
-- governed execution;
-- AST/code inspection;
-- cached state;
-- incremental context;
-- lightweight neural assistance.
+- memória persistente simbólica/estruturada;
+- roteamento determinístico;
+- recuperação seletiva;
+- raciocínio local;
+- planejamento de projeto;
+- execução governada;
+- inspeção de AST/código;
+- estado reutilizável;
+- contexto incremental;
+- assistência neural leve.
 
-## Local neural layer
+## Camada neural local
 
-The current neural-language path uses Ollama with Qwen 2.5 1.5B.
+O caminho neural atual usa Ollama com Qwen 2.5 1.5B.
 
-Conceptually:
+Conceitualmente:
 
 ```text
 OHANA
-  ↓ local request
+  ↓ pedido local
 Ollama
-  ↓ model runtime
+  ↓ runtime do modelo
 Qwen 2.5 1.5B
-  ↓ generated interpretation / language
+  ↓ interpretação / linguagem gerada
 OHANA
-  ↓ validation / routing / state / governance
+  ↓ validação / roteamento / estado / governança
 ```
 
-The model is not intended to own:
+O modelo neural não deve ser responsável por:
 
-- persistent memory;
-- system state;
-- governance;
-- authorization;
-- software-engineering truth;
-- production promotion.
+- memória persistente;
+- estado do sistema;
+- governança;
+- autorização;
+- verdade técnica da Engenharia de Software;
+- promoção para produção.
 
-## Why not simply use a larger model?
+## Por que não simplesmente usar um modelo maior?
 
-Because that would answer a different research question.
+Porque isso responderia a outra pergunta de pesquisa.
 
-OHANA asks whether system-level intelligence can be improved through **organization** rather than only parameter count.
+A OHANA investiga se inteligência em nível de sistema pode crescer por **organização arquitetural**, e não apenas por número de parâmetros.
 
-A constrained machine forces the architecture to care about:
+Uma máquina restrita obriga a arquitetura a responder perguntas importantes:
 
-- what context is actually necessary;
-- when a neural call is justified;
-- what can be answered from local knowledge;
-- what can be handled symbolically;
-- what can be cached or reused;
-- how much state must be active at once.
+- qual contexto é realmente necessário?;
+- quando uma chamada neural é justificável?;
+- o que pode ser respondido por conhecimento local?;
+- o que pode ser tratado simbolicamente?;
+- o que pode ser reutilizado em vez de recalculado?;
+- quanto estado realmente precisa estar ativo ao mesmo tempo?
 
-## Practical implications
+## Implicações práticas
 
-On this class of hardware, future work should prefer:
+Neste hardware, o desenvolvimento tende a priorizar:
 
-1. CPU-first execution when GPU compatibility or VRAM is limiting.
-2. Quantized small models when appropriate.
-3. Small context windows unless additional context is demonstrably needed.
-4. Selective memory retrieval rather than dumping full history into prompts.
-5. On-demand source-code inspection instead of indexing everything repeatedly.
-6. Incremental reasoning and state reuse.
-7. No mandatory dependency on external AI services for basic operation.
+1. execução CPU-first quando VRAM/compatibilidade limitam a GPU;
+2. modelos pequenos e quantizados quando apropriado;
+3. janelas de contexto menores quando contexto extra não traz ganho comprovado;
+4. recuperação seletiva de memória em vez de injetar todo o histórico;
+5. inspeção de código sob demanda em vez de reindexar tudo a cada pergunta;
+6. raciocínio incremental e reutilização de estado;
+7. ausência de dependência obrigatória de IA externa para operação básica.
 
-## Possible future OHANA-specific neural model
+## Possível modelo neural próprio da OHANA
 
-One research direction is an OHANA-specific Portuguese model focused only on the language tasks the architecture actually needs, such as:
+Uma direção futura é um modelo em português focado apenas nas tarefas linguísticas que a arquitetura realmente precisa, como:
 
-- intent classification;
-- reference resolution;
-- engineering follow-up detection;
-- teaching detection;
-- structured extraction;
-- natural response generation.
+- classificação de intenção;
+- resolução de referência;
+- detecção de continuidade técnica;
+- detecção de ensino;
+- extração estruturada;
+- geração natural de resposta.
 
-Instead of training a general-purpose model to contain all intelligence, this model would serve as a compact **language cortex** for the larger OHANA architecture.
+Em vez de concentrar toda a inteligência nos pesos, esse modelo funcionaria como um **córtex de linguagem** para a arquitetura maior.
 
-A future model in the hundreds-of-millions to low-billions parameter range could be evaluated, preferably with quantization and CPU-first execution on the current machine.
+Modelos na faixa de centenas de milhões até poucos bilhões de parâmetros podem ser avaliados futuramente, preferencialmente com quantização e execução CPU-first neste mesmo ambiente.
 
-This is a research direction, not a currently validated replacement for Qwen.
+Essa é uma direção de pesquisa, não uma substituição atualmente validada para o Qwen.
 
-## Hardware success criterion
+## Critério de sucesso de hardware
 
-The goal is not:
+A meta não é:
 
 ```text
-Run the largest possible model.
+Rodar o maior modelo possível.
 ```
 
-The goal is:
+A meta é:
 
 ```text
-Use the smallest amount of compute necessary
-for the architecture to produce the required capability.
+Usar o menor volume de computação necessário
+para a arquitetura entregar a capacidade desejada.
 ```
 
-That distinction is central to the OHANA project.
+Essa distinção é central ao projeto OHANA.
