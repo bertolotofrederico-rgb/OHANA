@@ -1,106 +1,106 @@
-# OHANA Architecture
+# OHANA — Arquitetura
 
-OHANA is organized as a modular cognitive system. The architecture is intentionally designed so that a neural language model is not the sole owner of intelligence, memory or action.
+A OHANA é organizada como um sistema cognitivo modular. A arquitetura foi desenhada para que um modelo neural de linguagem não seja o único responsável por inteligência, memória ou ação.
 
-## High-level flow
+## Fluxo de alto nível
 
 ```text
-User
-→ Interpretation / routing
-→ Context
-→ Reasoning
-→ Proposal
+Usuário
+→ Interpretação / roteamento
+→ Contexto
+→ Raciocínio
+→ Proposta
 → Projetista
 → Planejador
-→ Human authorization
-→ Contract
+→ Autorização humana
+→ Contrato
 → Executor
-→ Validation
-→ Memory / continuity
+→ Validação
+→ Memória / continuidade
 ```
 
-This flow is evolved incrementally rather than replaced wholesale.
+Esse fluxo é evoluído de forma incremental, e não substituído por completo a cada fase.
 
-## Major components
+## Componentes principais
 
-### Memory
+### Memória
 
-Persistent state stores facts, learning records, operational state and continuity information. The architectural direction is to retrieve only the information needed for the current task instead of rebuilding the entire memory into every prompt.
+O estado persistente armazena fatos, aprendizados, estado operacional e informações de continuidade. A direção arquitetural é recuperar apenas o que a tarefa atual precisa, em vez de reconstruir toda a memória em cada prompt.
 
-### Reasoning
+### Raciocínio
 
-Local structured reasoning is intended to operate independently of the neural model when possible. Neural inference can assist language, but reasoning and evidence handling remain architectural responsibilities.
+O raciocínio estruturado local deve operar de forma independente do modelo neural sempre que possível. Inferência neural pode ajudar na linguagem, mas raciocínio e tratamento de evidência continuam sendo responsabilidades da arquitetura.
 
 ### Projetista
 
-The Projetista transforms a proven or sufficiently evidenced problem into a technical proposal: affected files/functions, scope, risks, constraints, tests and expected results.
+O Projetista transforma um problema comprovado ou suficientemente evidenciado em proposta técnica: arquivos/funções afetados, escopo, riscos, restrições, testes e resultado esperado.
 
 ### Planejador
 
-The Planejador turns a proposal into an executable and governed plan, including backup, integrity checks, test stages, constraints and rollback requirements.
+O Planejador transforma a proposta em plano executável e governado, incluindo backup, integridade, etapas de teste, restrições e requisitos de rollback.
 
 ### Executor
 
-The Executor performs only actions allowed by the current contract and authorization model. Candidate-first execution and isolated testing are preferred over direct production modification.
+O Executor realiza apenas ações permitidas pelo contrato e pelo modelo de autorização vigente. Candidato isolado e teste antes de produção são preferidos a alterações diretas.
 
 ### Autotune
 
-Autotune observes system behavior, analyzes evidence and coordinates engineering capabilities. Its intended evolution is from:
+O Autotune observa o comportamento do sistema, analisa evidências e coordena capacidades de engenharia. Sua evolução desejada parte de:
 
 ```text
-OBSERVE → ANALYZE → PROPOSE
+OBSERVAR → ANALISAR → PROPOR
 ```
 
-into a governed orchestration flow:
+para um fluxo governado:
 
 ```text
-OBSERVE
-→ EVIDENCE
-→ CAUSE
-→ DESIGN
-→ PLAN
-→ CANDIDATE
-→ TEST
-→ VALIDATE
-→ JUDGMENT
-→ HUMAN PROMOTION
+OBSERVAR
+→ EVIDÊNCIA
+→ CAUSA
+→ PROJETO
+→ PLANO
+→ CANDIDATO
+→ TESTE
+→ VALIDAÇÃO
+→ JULGAMENTO
+→ PROMOÇÃO HUMANA
 ```
 
-### Governance
+### Governança
 
-Governance includes human authorization, contracts, integrity checks, isolation, regression testing and rollback.
+A governança inclui autorização humana, contratos, verificações de integridade, isolamento, testes de regressão e rollback.
 
-## Technical self-inspection
+## Autoconsulta técnica
 
-OHANA can route explicit engineering requests to a software-engineering path that inspects real source code, AST structure and SHA-256 hashes.
+A OHANA pode rotear pedidos técnicos explícitos para um caminho de Engenharia de Software que inspeciona código real, estrutura AST e hashes SHA-256.
 
-The engineering route is intended to prefer evidence over generated speculation.
+A rota de engenharia deve priorizar evidência sobre especulação gerada.
 
-## Language-model integration
+## Integração com modelo de linguagem
 
-Current language support uses Ollama and a local Qwen model. The desired responsibility split is:
+O suporte atual usa Ollama e um Qwen local. A divisão desejada é:
 
 ```text
-Language model:
-- understand language
-- generate language
-- assist classification
+Modelo de linguagem:
+- compreender linguagem
+- gerar linguagem
+- auxiliar classificação
 
 OHANA:
-- memory
-- system state
-- reasoning
-- engineering
-- planning
-- execution
-- governance
-- authorization
+- memória
+- estado do sistema
+- raciocínio
+- engenharia
+- planejamento
+- execução
+- governança
+- autorização
 ```
 
-## Continuity
+## Continuidade
 
-A current engineering goal is to keep technical investigations active across multiple conversational turns, so follow-up instructions can continue the same engineering state without falling back to unrelated conversational generation.
+Um objetivo atual é manter investigações técnicas ativas por vários turnos da conversa, para que instruções subsequentes possam continuar o mesmo estado de engenharia sem cair em geração conversacional sem relação.
 
-## Evolution rule
+## Regra de evolução
 
-Before creating a new module, OHANA development should first prove that an existing component cannot be connected or evolved to satisfy the requirement.
+Antes de criar um novo módulo, o desenvolvimento da OHANA deve primeiro provar que nenhum componente existente pode ser conectado ou evoluído para atender à necessidade.
