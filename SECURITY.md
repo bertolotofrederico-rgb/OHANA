@@ -1,84 +1,84 @@
-# OHANA Security and Governance
+# OHANA — Segurança e Governança
 
-OHANA is designed around supervised evolution rather than unrestricted autonomous self-modification.
+A OHANA é desenhada em torno de evolução supervisionada, e não de automodificação autônoma irrestrita.
 
-## Core rule
+## Regra central
 
-A generated idea is not authorization to modify production.
+Uma ideia gerada não é autorização para modificar produção.
 
-The expected engineering chain is:
+A cadeia esperada de Engenharia é:
 
 ```text
-problem demonstrated
-→ cause evidenced
-→ minimal proposal
+problema demonstrado
+→ causa evidenciada
+→ proposta mínima
 → backup
-→ candidate
-→ parser / integrity checks
-→ functional tests
-→ regression tests
-→ validation
-→ readiness judgment
-→ human authorization
-→ production promotion
+→ candidato
+→ parser / integridade
+→ testes funcionais
+→ testes de regressão
+→ validação
+→ julgamento de prontidão
+→ autorização humana
+→ promoção para produção
 ```
 
-## Human authorization
+## Autorização humana
 
-Production promotion remains explicitly human-governed in the current architecture.
+A promoção para produção permanece explicitamente governada por autorização humana na arquitetura atual.
 
-A result such as:
+Um resultado como:
 
 ```text
-READY_FOR_PROMOTION=True
+PRONTO_PARA_PROMOCAO=True
 ```
 
-means only that a candidate has passed the currently defined checks. It does not grant execution or promotion authority.
+significa apenas que o candidato passou pelos controles definidos. Isso não concede autoridade de execução ou promoção.
 
-## Candidate-first development
+## Desenvolvimento orientado a candidato
 
-Whenever possible, structural changes should be prepared and tested in an isolated candidate or laboratory environment before production is touched.
+Sempre que possível, mudanças estruturais devem ser preparadas e testadas em candidato isolado ou ambiente de laboratório antes de tocar produção.
 
-## Integrity
+## Integridade
 
-SHA-256 hashes are used to verify:
+Hashes SHA-256 são utilizados para verificar:
 
-- original source identity;
-- backup integrity;
-- candidate identity;
-- preservation of files outside the intended scope;
-- post-change validation.
+- identidade da fonte original;
+- integridade do backup;
+- identidade do candidato;
+- preservação de arquivos fora do escopo;
+- validação pós-mudança.
 
 ## Rollback
 
-Structural changes should have a defined rollback path before promotion.
+Mudanças estruturais devem possuir caminho de rollback definido antes da promoção.
 
-Rollback should restore only the intended files and should not terminate unrelated operating-system processes or services.
+O rollback deve restaurar apenas os arquivos pretendidos e não deve encerrar processos ou serviços do sistema operacional sem relação com a OHANA.
 
-## Operational boundaries
+## Limites operacionais
 
-Engineering analysis must not be treated as operational authorization.
+Análise de Engenharia não deve ser confundida com autorização operacional.
 
-The presence of words such as "execute", "transfer" or similar action verbs inside teaching or technical analysis must not itself grant permission to perform an operation.
+A presença de palavras como “execute”, “transfira” ou outros verbos de ação dentro de ensino ou análise técnica não concede, por si só, permissão para executar uma operação.
 
-## Neural model boundaries
+## Limites do modelo neural
 
-Outputs from a neural language model are not considered technical evidence by themselves.
+Saídas de modelos neurais não são consideradas evidência técnica suficiente por si só.
 
-Technical claims should, where applicable, be grounded in sources such as:
+Afirmações técnicas devem, quando aplicável, ser sustentadas por fontes como:
 
-- current code;
-- AST analysis;
-- runtime state;
+- código atual;
+- análise AST;
+- estado de runtime;
 - hashes;
-- tests;
-- memory records;
-- governed knowledge with provenance.
+- testes;
+- registros de memória;
+- conhecimento governado com origem/evidência.
 
-## Known limitations
+## Limitações conhecidas
 
-Not every OHANA module currently has a complete automated regression suite. Modules without sufficient test coverage should remain blocked from automatic production promotion.
+Nem todos os módulos da OHANA possuem hoje uma suíte automática completa de regressão. Módulos sem cobertura adequada devem permanecer bloqueados para promoção automática.
 
-## Responsible disclosure
+## Divulgação responsável
 
-The public repository currently focuses on project documentation. Sensitive operational details, credentials, secrets, private data and unsafe production controls should not be published.
+O repositório público atualmente foca documentação do projeto. Credenciais, segredos, dados privados, controles operacionais sensíveis e informações que enfraqueçam a segurança não devem ser publicados.
