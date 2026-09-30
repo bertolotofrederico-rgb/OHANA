@@ -21,22 +21,6 @@ Uma execução local medida produziu aproximadamente:
 
 O maior custo naquele teste foi a **construção de contexto**, não o motor de raciocínio estruturado.
 
-Isso levou a uma prioridade concreta de otimização:
-
-```text
-Não otimizar primeiro o raciocínio.
-Medir e reduzir:
-- arquivos carregados
-- bytes de contexto
-- histórico repetido
-- evidência duplicada
-- schemas reconstruídos
-- recuperação de memória desnecessária
-- chamadas externas
-```
-
-A meta arquitetural é:
-
 ```text
 memória persistente grande
 → contexto ativo pequeno e seletivo
@@ -45,38 +29,88 @@ memória persistente grande
 
 ## Validação de engenharia
 
-Ciclos controlados de engenharia produziram resultados como:
+Resultados acumulados de ciclos controlados:
 
 | Validação | Resultado observado |
 |---|---:|
 | Suíte de roteamento técnico | **10/10 aprovados** |
-| Suíte HTTP em promoção controlada | **18/18 aprovados** |
+| Suíte HTTP em promoção controlada anterior | **18/18 aprovados** |
+| Continuidade técnica real em produção | **6/6 turnos** |
+| Validação total do ciclo pós-promoção mais recente | **15 turnos** |
 | Compatibilidade PowerShell 5.1 | **aprovada** |
-| Chamadas Groq em validação local selecionada | **0** |
-| HTTP de produção após promoção validada | **200** |
-| Detecção de regressão deliberada | **promoção bloqueada** |
+| HTTP de produção | **200** |
+| Groq indevido nos retornos com runtime | **0** |
+| Regressões atribuíveis ao candidato de continuidade | **0** |
+| Promoção autônoma | **False** |
+| Autorização humana | **preservada** |
+| Rollback | **disponível** |
 
-Esses testes não são todos benchmarks independentes. São resultados funcionais de ciclos reais de engenharia.
+## Continuidade de Engenharia em múltiplos turnos — validada em produção
 
-## Validação de autoengenharia
+A promoção de 30/09/2026 validou a continuidade de uma investigação técnica ao longo de seis mensagens consecutivas relacionadas.
 
-Uma rota validada em produção demonstrou que pedidos técnicos explícitos podem entrar na Engenharia de Software existente e retornar evidência baseada em código real.
-
-Metadados observados incluíram:
+Fluxo exercitado:
 
 ```text
-ultima_rota=ENGENHARIA_SOFTWARE
-ultima_intencao=ANALISAR_SOFTWARE
-fonte=CODIGO_AST_HASHES
-origem=AUTOTUNE_EXISTENTE
-autorizacao_operacional=False
+1. iniciar investigação técnica
+2. continuar investigação anterior
+3. executar o menor próximo teste identificado
+4. reavaliar conclusão inconsistente usando evidência
+5. preparar candidato isolado
+6. testar regressões e julgar prontidão
 ```
 
-Isso demonstra que o sistema pode distinguir investigação técnica de conversa neural comum e usar evidência de fonte em vez de depender apenas de texto gerado.
+Resultado:
+
+```text
+CONTINUIDADE_ENGENHARIA=OK
+TURNOS_TECNICOS=6/6
+REAVALIACAO_TECNICA=OK
+COERENCIA_JULGAMENTO=OK
+SAIDA_CONVERSA_NORMAL=OK
+ENSINO=PRESERVADO
+OPERACIONAL=PROTEGIDO
+MEMORIA=OK
+PROMOCAO_AUTONOMA=False
+REGRESSOES=0
+```
+
+No turno final, a ausência de causa comprovada, candidato preparado e testes completos resultou corretamente em:
+
+```text
+CAUSA_COMPROVADA=False
+CANDIDATO_PREPARADO=False
+TESTES_OBRIGATORIOS_INCOMPLETOS=True
+PRONTO_PARA_PROMOCAO=False
+```
+
+Isso valida uma regra importante: **prontidão não pode contradizer a evidência disponível**.
+
+## Saída correta da rota técnica
+
+Após os seis turnos técnicos, uma pergunta comum — “Qual é a capital do Brasil?” — saiu da Engenharia e retornou ao caminho conversacional normal com Qwen local.
+
+Um pedido operacional posterior permaneceu protegido e não herdou autorização da investigação técnica anterior.
+
+## Integridade da promoção
+
+Hash antes da promoção:
+
+```text
+33225CAE4E1295F3841FED340CA77945A2E1911A2125768FC04587E0C7928A10
+```
+
+Hash promovido:
+
+```text
+30CABA1496C6314B5EA7B754EE5E789F347F5D4AF4181C582166AE5999D70659
+```
+
+Backup reconferido com o hash anterior. O escopo foi limitado a duas funções já existentes no servidor. Módulos monitorados fora do escopo permaneceram idênticos.
 
 ## Integridade e segurança medidas
 
-Validações de engenharia normalmente incluem:
+Validações de engenharia incluem:
 
 - SHA-256 antes/depois;
 - validação de parser;
@@ -99,7 +133,7 @@ Validações de engenharia normalmente incluem:
 - bytes de contexto por pedido;
 - consumo exato de tokens em chamadas locais;
 - throughput concorrente;
-- latência de cold start vs warm start;
+- cold start vs warm start;
 - precisão do raciocínio em suíte fixa;
 - retenção de aprendizado ao longo do tempo;
 - taxa de sucesso de engenharia em diferentes classes de falha.
@@ -108,11 +142,11 @@ Validações de engenharia normalmente incluem:
 
 A OHANA não está sendo otimizada para vencer benchmarks de linguagem por força bruta.
 
-O projeto está mais interessado em perguntas de sistema, como:
+O projeto está mais interessado em perguntas de sistema:
 
 - É possível raciocinar de forma útil sem chamar um grande modelo neural?
 - A memória pode crescer sem obrigar o contexto ativo a crescer junto?
-- Engenharia de Software pode ser baseada em evidência e governança?
+- Engenharia pode ser baseada em evidência e governança?
 - O sistema consegue rejeitar as próprias mudanças quando faltam testes?
 - Inteligência útil pode continuar prática em hardware modesto?
 
