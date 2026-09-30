@@ -1,129 +1,127 @@
-# OHANA Benchmarks and Measurements
+# OHANA — Benchmarks e Medições
 
-This document separates **observed measurements** from architectural goals and future targets.
+Este documento separa **medições observadas** de objetivos arquiteturais e metas futuras.
 
-OHANA is under active development. The numbers below are project measurements from real development runs and should not be interpreted as standardized industry benchmarks.
+A OHANA está em desenvolvimento ativo. Os números abaixo são medições reais do projeto e não devem ser interpretados como benchmarks padronizados da indústria.
 
-## Local execution baseline
+## Baseline de execução local
 
-A measured local run produced approximately:
+Uma execução local medida produziu aproximadamente:
 
-| Stage | Time |
+| Etapa | Tempo |
 |---|---:|
-| Total | **866.76 ms** |
-| Context assembly / retrieval | **752.55 ms** |
-| Local reasoning | **42.56 ms** |
-| Interpretation | **16.78 ms** |
-| AI stage in that run | **0 ms** |
-| External AI calls | **0** |
+| Total | **866,76 ms** |
+| Montagem / recuperação de contexto | **752,55 ms** |
+| Raciocínio local | **42,56 ms** |
+| Interpretação | **16,78 ms** |
+| Etapa de IA nesse teste | **0 ms** |
+| Chamadas externas de IA | **0** |
 
-### Interpretation
+### Interpretação
 
-The dominant cost in that run was **context construction**, not the structured reasoning engine.
+O maior custo naquele teste foi a **construção de contexto**, não o motor de raciocínio estruturado.
 
-This led to a concrete optimization priority:
+Isso levou a uma prioridade concreta de otimização:
 
 ```text
-Do not optimize reasoning first.
-Measure and reduce:
-- loaded files
-- context bytes
-- repeated history
-- duplicated evidence
-- rebuilt schemas
-- unnecessary memory retrieval
-- external calls
+Não otimizar primeiro o raciocínio.
+Medir e reduzir:
+- arquivos carregados
+- bytes de contexto
+- histórico repetido
+- evidência duplicada
+- schemas reconstruídos
+- recuperação de memória desnecessária
+- chamadas externas
 ```
 
-The architectural target is:
+A meta arquitetural é:
 
 ```text
-large persistent memory
-→ small selective active context
-→ fast local reasoning
+memória persistente grande
+→ contexto ativo pequeno e seletivo
+→ raciocínio local rápido
 ```
 
-## Engineering validation
+## Validação de engenharia
 
-Controlled engineering cycles have produced results including:
+Ciclos controlados de engenharia produziram resultados como:
 
-| Validation | Observed result |
+| Validação | Resultado observado |
 |---|---:|
-| Technical routing suite | **10/10 passed** |
-| HTTP validation suite in controlled promotion | **18/18 passed** |
-| PowerShell 5.1 compatibility | **passed** |
-| Groq calls during selected local validation | **0** |
-| Production HTTP after validated promotion | **200** |
-| Deliberate regression detection | **blocked promotion** |
+| Suíte de roteamento técnico | **10/10 aprovados** |
+| Suíte HTTP em promoção controlada | **18/18 aprovados** |
+| Compatibilidade PowerShell 5.1 | **aprovada** |
+| Chamadas Groq em validação local selecionada | **0** |
+| HTTP de produção após promoção validada | **200** |
+| Detecção de regressão deliberada | **promoção bloqueada** |
 
-These tests are not all independent benchmarks. They are functional validation results from engineering cycles.
+Esses testes não são todos benchmarks independentes. São resultados funcionais de ciclos reais de engenharia.
 
-## Self-engineering validation
+## Validação de autoengenharia
 
-A validated production route demonstrated that explicit technical requests can enter the existing software-engineering architecture and return evidence from real source code.
+Uma rota validada em produção demonstrou que pedidos técnicos explícitos podem entrar na Engenharia de Software existente e retornar evidência baseada em código real.
 
-Observed route metadata included:
+Metadados observados incluíram:
 
 ```text
 ultima_rota=ENGENHARIA_SOFTWARE
 ultima_intencao=ANALISAR_SOFTWARE
-source=CODIGO_AST_HASHES
-origin=AUTOTUNE_EXISTENTE
+fonte=CODIGO_AST_HASHES
+origem=AUTOTUNE_EXISTENTE
 autorizacao_operacional=False
 ```
 
-This means the system can distinguish an engineering investigation from a normal neural conversation path and use source evidence instead of relying only on generated text.
+Isso demonstra que o sistema pode distinguir investigação técnica de conversa neural comum e usar evidência de fonte em vez de depender apenas de texto gerado.
 
-## Integrity and safety measurements
+## Integridade e segurança medidas
 
-Engineering validation commonly includes:
+Validações de engenharia normalmente incluem:
 
-- SHA-256 before/after checks;
-- parser validation;
-- candidate isolation;
-- HTTP checks;
-- memory checks;
-- retification checks;
-- operational protection checks;
-- regression tests;
-- rollback availability;
-- human promotion authorization.
+- SHA-256 antes/depois;
+- validação de parser;
+- isolamento de candidato;
+- testes HTTP;
+- testes de memória;
+- testes de retificação;
+- proteção operacional;
+- testes de regressão;
+- rollback disponível;
+- autorização humana para promoção.
 
-## What is not yet benchmarked
+## O que ainda precisa ser medido de forma padronizada
 
-The following still need standardized measurement:
+- distribuição de latência em sessões longas;
+- p50 / p95 / p99;
+- uso de RAM por rota;
+- uso de CPU por rota;
+- I/O de disco por rota;
+- bytes de contexto por pedido;
+- consumo exato de tokens em chamadas locais;
+- throughput concorrente;
+- latência de cold start vs warm start;
+- precisão do raciocínio em suíte fixa;
+- retenção de aprendizado ao longo do tempo;
+- taxa de sucesso de engenharia em diferentes classes de falha.
 
-- long-session latency distribution;
-- p50 / p95 / p99 response time;
-- RAM usage by route;
-- CPU utilization by route;
-- disk I/O by route;
-- context bytes per request;
-- exact token consumption across local model calls;
-- throughput under concurrent requests;
-- cold-start vs warm-start model latency;
-- reasoning accuracy on a fixed benchmark suite;
-- learning retention over long periods;
-- engineering success rate across multiple bug classes.
+## Filosofia de benchmark
 
-## Benchmark philosophy
+A OHANA não está sendo otimizada para vencer benchmarks de linguagem por força bruta.
 
-OHANA is not currently optimized to win raw language-model benchmarks.
+O projeto está mais interessado em perguntas de sistema, como:
 
-The project is more interested in system-level questions such as:
+- É possível raciocinar de forma útil sem chamar um grande modelo neural?
+- A memória pode crescer sem obrigar o contexto ativo a crescer junto?
+- Engenharia de Software pode ser baseada em evidência e governança?
+- O sistema consegue rejeitar as próprias mudanças quando faltam testes?
+- Inteligência útil pode continuar prática em hardware modesto?
 
-- Can useful reasoning occur without calling a large neural model?
-- Can persistent memory stay large while active context stays small?
-- Can software-engineering tasks be evidence-driven and governed?
-- Can the system reject its own unsafe or insufficiently tested changes?
-- Can useful intelligence remain practical on modest consumer hardware?
+Atualizações futuras devem continuar distinguindo claramente:
 
-Future benchmark updates should continue to distinguish clearly between:
+**MEDIDO** — observado diretamente em execução reproduzível.
 
-**MEASURED** — directly observed in a reproducible run.
+**VALIDADO** — comportamento confirmado em teste funcional controlado.
 
-**VALIDATED** — behavior confirmed by a controlled functional test.
+**META** — comportamento desejado para o futuro.
 
-**TARGET** — desired future behavior.
-
-**HYPOTHESIS** — architectural possibility not yet demonstrated.
+**HIPÓTESE** — possibilidade arquitetural ainda não demonstrada.
