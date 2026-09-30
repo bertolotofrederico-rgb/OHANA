@@ -1,79 +1,79 @@
-# OHANA Project Overview
+# OHANA — Visão Geral do Projeto
 
-## Purpose
+## Propósito
 
-OHANA is an experimental local cognitive architecture intended to combine persistent memory, structured reasoning, governed learning, planning, controlled execution and supervised software engineering.
+A OHANA é uma arquitetura cognitiva local experimental que busca combinar memória persistente, raciocínio estruturado, aprendizado governado, planejamento, execução controlada e Engenharia de Software supervisionada.
 
-The project explores a hybrid design in which neural language models are useful but not sovereign. A language model may help interpret or generate language, while the broader system remains responsible for memory, state, reasoning, governance and action.
+O projeto explora um desenho híbrido em que modelos neurais de linguagem são úteis, mas não soberanos. Um modelo pode auxiliar na interpretação ou geração de linguagem, enquanto o sistema maior permanece responsável por memória, estado, raciocínio, governança e ação.
 
-## Why this architecture
+## Por que essa arquitetura
 
-Large language models are powerful general-purpose components, but a persistent local system also needs mechanisms for:
+Grandes modelos de linguagem são componentes gerais poderosos, mas um sistema local persistente também precisa de mecanismos para:
 
-- memory that survives sessions;
-- explicit state;
-- provenance and validity of knowledge;
-- controlled execution;
-- technical self-inspection;
-- validation and rollback;
-- continuity across long-running projects;
-- separation between suggestion and authority.
+- memória que sobreviva entre sessões;
+- estado explícito;
+- origem e validade do conhecimento;
+- execução controlada;
+- autoconsulta técnica;
+- validação e rollback;
+- continuidade em projetos longos;
+- separação entre sugestão e autoridade.
 
-OHANA treats these as architectural responsibilities.
+A OHANA trata esses pontos como responsabilidades arquiteturais.
 
-## Current validated direction
+## Direção atualmente validada
 
-The project has demonstrated or integrated:
+O projeto já demonstrou ou integrou:
 
-- persistent memory and governed learning records;
-- local conversation and reasoning paths;
-- explicit technical routing for software-engineering requests;
-- source inspection using code, AST and hashes;
-- Projetista, Planejador and Executor components;
-- Autotune coordination;
-- isolated candidate testing;
-- human authorization for production promotion;
-- rollback and hash-preservation workflows;
-- local Qwen inference through Ollama;
-- preservation of normal conversation and operational safeguards while technical routing evolves.
+- memória persistente e registros governados de aprendizado;
+- conversa local e caminhos de raciocínio;
+- roteamento técnico explícito para pedidos de Engenharia de Software;
+- inspeção de fonte usando código, AST e hashes;
+- Projetista, Planejador e Executor;
+- coordenação pelo Autotune;
+- teste de candidatos isolados;
+- autorização humana para promoção em produção;
+- rollback e preservação por hashes;
+- inferência local Qwen via Ollama;
+- preservação de conversa comum e salvaguardas operacionais enquanto o roteamento técnico evolui.
 
-## Self-engineering philosophy
+## Filosofia de autoengenharia
 
-Self-engineering in OHANA does not mean unrestricted self-modification.
+Autoengenharia na OHANA não significa automodificação irrestrita.
 
-It means that the system should increasingly be able to:
+Significa que o sistema deve ser cada vez mais capaz de:
 
-1. inspect its own implementation;
-2. identify an evidenced problem;
-3. locate relevant code and dependencies;
-4. form and test a hypothesis;
-5. design a minimal candidate change;
-6. test that candidate in isolation;
-7. measure regressions;
-8. decide whether the candidate is technically ready;
-9. request human authorization before production promotion.
+1. inspecionar a própria implementação;
+2. identificar um problema sustentado por evidência;
+3. localizar código e dependências relevantes;
+4. formar e testar uma hipótese;
+5. desenhar a menor mudança candidata possível;
+6. testar esse candidato em isolamento;
+7. medir regressões;
+8. determinar se o candidato está tecnicamente pronto;
+9. solicitar autorização humana antes de promover em produção.
 
-## Current research frontier
+## Fronteira atual de pesquisa
 
-A recent milestone connected conversational technical requests to the existing Engineering Software route. The next challenge is reliable multi-turn continuation: preserving the technical investigation across follow-up instructions without accidentally capturing unrelated conversation or operational actions.
+Um marco recente conectou pedidos técnicos conversacionais à rota existente de Engenharia de Software. O desafio seguinte é a continuidade confiável entre turnos: preservar uma investigação técnica ao longo de mensagens subsequentes sem capturar por engano conversas sem relação ou ações operacionais.
 
-## Positioning
+## Posicionamento
 
-OHANA is best described today as an **experimental modular cognitive architecture and governed local AI system**.
+Hoje, a OHANA é melhor descrita como uma **arquitetura cognitiva modular experimental e sistema local de IA governada**.
 
-It should not be represented as a completed AGI. The project is exploring architectural ideas relevant to persistent intelligence, cognitive modularity, software-engineering agents and supervised self-improvement.
+Ela não deve ser apresentada como uma AGI concluída. O projeto explora ideias relevantes para inteligência persistente, modularidade cognitiva, agentes de Engenharia de Software e autoaperfeiçoamento supervisionado.
 
-## Development principle
+## Princípio de desenvolvimento
 
-The preferred evolution pattern is:
+O padrão preferido de evolução é:
 
 ```text
-map what already exists
-→ connect existing capabilities
-→ prove the gap
-→ make the smallest safe change
-→ validate
-→ preserve rollback
+mapear o que já existe
+→ conectar capacidades existentes
+→ comprovar a lacuna
+→ fazer a menor mudança segura
+→ validar
+→ preservar rollback
 ```
 
-New cores or duplicate subsystems should only be created when existing components are demonstrably insufficient.
+Novos núcleos ou subsistemas duplicados só devem ser criados quando os componentes existentes forem comprovadamente insuficientes.
