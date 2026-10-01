@@ -155,8 +155,7 @@ Continuam separadas desta evolução:
 
 - TESTE F / aprendizado de regra;
 - limite de 400 tokens no caminho atual do Qwen em determinados casos;
-- retificação com histórico completo;
-- consulta de arquitetura de restaurante.
+- retificação com histórico completo.
 
 Essas pendências não foram consideradas regressões desta etapa.
 
