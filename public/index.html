@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="OHANA — arquitetura cognitiva experimental para inteligência local persistente, aprendizado governado e autoengenharia supervisionada." />
+  <title>OHANA — Arquitetura Cognitiva Experimental</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="OHANA">OHANA</a>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#demo">Demonstração</a>
+        <a href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero wrap">
+      <div class="eyebrow">INTELIGÊNCIA LOCAL · MEMÓRIA · RACIOCÍNIO · GOVERNANÇA</div>
+      <h1>OHANA</h1>
+      <p class="lead">Uma arquitetura cognitiva experimental construída para investigar inteligência persistente, raciocínio local, aprendizado governado e autoengenharia supervisionada em hardware modesto.</p>
+      <div class="actions">
+        <a class="button primary" href="#demo">Experimentar a interface</a>
+        <a class="button" href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">Ver documentação</a>
+        <a class="button" href="https://github.com/sponsors/bertolotofrederico-rgb" target="_blank" rel="noreferrer">Apoiar o projeto</a>
+      </div>
+      <div class="status-card">
+        <span class="dot"></span>
+        <div>
+          <strong>Status público</strong>
+          <span>Infraestrutura web em preparação para conexão segura com a OHANA local.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section wrap">
+      <div class="section-heading">
+        <span>ARQUITETURA</span>
+        <h2>O modelo neural é auxiliar. A arquitetura mantém o estado.</h2>
+      </div>
+      <div class="grid three">
+        <article class="card"><h3>Memória persistente</h3><p>Contexto, fatos e aprendizados podem sobreviver entre sessões e ser reutilizados pela arquitetura.</p></article>
+        <article class="card"><h3>Raciocínio local</h3><p>Parte das consultas é resolvida localmente, reduzindo dependência de modelos externos e chamadas desnecessárias.</p></article>
+        <article class="card"><h3>Engenharia governada</h3><p>Mudanças seguem evidência, candidato isolado, testes, regressão, autorização humana e rollback.</p></article>
+      </div>
+    </section>
+
+    <section id="capacidades" class="section wrap">
+      <div class="section-heading">
+        <span>ESTADO ATUAL</span>
+        <h2>Capacidades já integradas e exercitadas</h2>
+      </div>
+      <div class="capabilities">
+        <span>Memória persistente</span>
+        <span>Continuidade contextual</span>
+        <span>Raciocínio local</span>
+        <span>Projetista</span>
+        <span>Planejador</span>
+        <span>Executor controlado</span>
+        <span>Autotune</span>
+        <span>Engenharia de Software</span>
+        <span>Rollback</span>
+        <span>Autorização humana</span>
+        <span>Qwen/Ollama auxiliar</span>
+      </div>
+      <p class="note">A OHANA é um projeto experimental em desenvolvimento ativo e não é apresentada como uma AGI concluída.</p>
+    </section>
+
+    <section id="demo" class="section wrap">
+      <div class="section-heading">
+        <span>DEMONSTRAÇÃO PÚBLICA</span>
+        <h2>Interface preparada para a futura ponte segura</h2>
+      </div>
+      <div class="demo-shell">
+        <div id="chat" class="chat" aria-live="polite">
+          <div class="message system">A interface pública está online. A conexão com a OHANA local ainda será ativada por uma ponte segura; nenhum comando administrativo é exposto.</div>
+        </div>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message">Mensagem</label>
+          <input id="message" maxlength="4000" autocomplete="off" placeholder="Converse com a OHANA..." />
+          <button type="submit">Enviar</button>
+        </form>
+        <p class="demo-note">Nesta fase, o campo demonstra a experiência visual. A API pública ainda não está ligada ao computador local.</p>
+      </div>
+    </section>
+
+    <section class="section wrap architecture-flow">
+      <div class="section-heading">
+        <span>VISÃO DA PUBLICAÇÃO</span>
+        <h2>Cloudflare na borda, OHANA no computador local</h2>
+      </div>
+      <pre>Usuário na internet
+        ↓
+Cloudflare Worker / Static Assets
+        ↓
+API pública controlada
+        ↓
+Ponte segura / túnel reverso
+        ↓
+OHANA local
+        ↓
+Resposta</pre>
+      <p class="note">A porta local da OHANA não será exposta diretamente à internet. O código-fonte completo, memória privada, Executor e Governança permanecem fora da interface pública.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>OHANA · arquitetura cognitiva experimental</span>
+      <a href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
