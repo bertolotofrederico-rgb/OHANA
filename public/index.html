@@ -14,7 +14,7 @@
       <nav>
         <a href="#sobre">Sobre</a>
         <a href="#capacidades">Capacidades</a>
-        <a href="#demo">Demonstração</a>
+        <a href="#demo">Conversar</a>
         <a href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
@@ -24,9 +24,10 @@
     <section class="hero wrap">
       <div class="eyebrow">INTELIGÊNCIA LOCAL · MEMÓRIA · RACIOCÍNIO · GOVERNANÇA</div>
       <h1>OHANA</h1>
-      <p class="lead">Uma arquitetura cognitiva experimental construída para investigar inteligência persistente, raciocínio local, aprendizado governado e autoengenharia supervisionada em hardware modesto.</p>
+      <p class="lead">Converse, consulte dados e solicite ações no mesmo lugar.</p>
+      <p class="lead secondary">Uma arquitetura cognitiva experimental construída para investigar inteligência persistente, raciocínio local, aprendizado governado e autoengenharia supervisionada em hardware modesto.</p>
       <div class="actions">
-        <a class="button primary" href="#demo">Experimentar a interface</a>
+        <a class="button primary" href="#demo">Conversar com a OHANA</a>
         <a class="button" href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">Ver documentação</a>
         <a class="button" href="https://github.com/sponsors/bertolotofrederico-rgb" target="_blank" rel="noreferrer">Apoiar o projeto</a>
       </div>
@@ -34,7 +35,7 @@
         <span class="dot"></span>
         <div>
           <strong>Status público</strong>
-          <span>Infraestrutura web em preparação para conexão segura com a OHANA local.</span>
+          <span id="status-text">Consultando disponibilidade da OHANA local...</span>
         </div>
       </div>
     </section>
@@ -74,25 +75,25 @@
 
     <section id="demo" class="section wrap">
       <div class="section-heading">
-        <span>DEMONSTRAÇÃO PÚBLICA</span>
-        <h2>Interface preparada para a futura ponte segura</h2>
+        <span>OHANA</span>
+        <h2>Converse com a interface pública</h2>
       </div>
       <div class="demo-shell">
         <div id="chat" class="chat" aria-live="polite">
-          <div class="message system">A interface pública está online. A conexão com a OHANA local ainda será ativada por uma ponte segura; nenhum comando administrativo é exposto.</div>
+          <div class="message system">OHANA\nOlá. Estou operacional quando a ponte segura com o computador local estiver conectada.</div>
         </div>
         <form id="chat-form" class="composer">
           <label class="sr-only" for="message">Mensagem</label>
-          <input id="message" maxlength="4000" autocomplete="off" placeholder="Converse com a OHANA..." />
+          <input id="message" maxlength="2000" autocomplete="off" placeholder="Digite sua mensagem..." />
           <button type="submit">Enviar</button>
         </form>
-        <p class="demo-note">Nesta fase, o campo demonstra a experiência visual. A API pública ainda não está ligada ao computador local.</p>
+        <p id="demo-note" class="demo-note">Consultando a conexão com a OHANA local...</p>
       </div>
     </section>
 
     <section class="section wrap architecture-flow">
       <div class="section-heading">
-        <span>VISÃO DA PUBLICAÇÃO</span>
+        <span>PUBLICAÇÃO SEGURA</span>
         <h2>Cloudflare na borda, OHANA no computador local</h2>
       </div>
       <pre>Usuário na internet
@@ -103,10 +104,12 @@ API pública controlada
         ↓
 Ponte segura / túnel reverso
         ↓
+Gateway público local limitado
+        ↓
 OHANA local
         ↓
 Resposta</pre>
-      <p class="note">A porta local da OHANA não será exposta diretamente à internet. O código-fonte completo, memória privada, Executor e Governança permanecem fora da interface pública.</p>
+      <p class="note">A porta local principal da OHANA não é exposta diretamente. A interface pública não recebe acesso ao Executor, Governança, arquivos privados, carteira ou promoção de candidatos.</p>
     </section>
   </main>
 
