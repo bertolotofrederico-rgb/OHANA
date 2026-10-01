@@ -10,7 +10,7 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ---
 
-## Estado técnico atual — 30/09/2026
+## Estado técnico atual;
 
 A continuidade da Engenharia de Software em múltiplos turnos foi **promovida e validada em produção**.
 
