@@ -1,6 +1,6 @@
 param(
     [int]$Port = 8093,
-    [string]$OhanaBase = 'http://127.0.0.1:8092'
+    [string]$OhanaBase = 'http://localhost:8092'
 )
 
 $ErrorActionPreference = 'Stop'
