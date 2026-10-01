@@ -12,7 +12,7 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-Em 01/10/2026, a OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
+A OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
 
 ```text
 ESTADO = PROMOVIDO_VALIDADO
@@ -307,14 +307,14 @@ Essas pendências são mantidas separadas das promoções já validadas e não s
 
 ## Documentação
 
-- [Status técnico atual — 01/10/2026](docs/STATUS_ATUAL_2026-10-01.md)
+- [Status técnico atual](docs/STATUS_ATUAL_2026-10-01.md)
 - [Arquitetura](ARCHITECTURE.md)
 - [Benchmarks e medições](BENCHMARKS.md)
 - [Hardware e execução local](HARDWARE.md)
 - [Roadmap](ROADMAP.md)
 - [Segurança e governança](SECURITY.md)
 - [Visão geral](docs/overview.md)
-- [Marco: continuidade da Engenharia — 30/09/2026](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md)
+- [Marco: continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md)
 
 ---
 
