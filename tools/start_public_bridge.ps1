@@ -1,6 +1,6 @@
 $ErrorActionPreference='Stop'
-$Root='C:\BRLC\Carteira\OHANA'
-$Gateway=Join-Path $Root 'tools\ohana_public_gateway.ps1'
+$ToolsDir=Split-Path -Parent $MyInvocation.MyCommand.Path
+$Gateway=Join-Path $ToolsDir 'ohana_public_gateway.ps1'
 
 Write-Host '============================================================'
 Write-Host ' OHANA - INICIAR PONTE PUBLICA CLOUDFLARE'
