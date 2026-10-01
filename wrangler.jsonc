@@ -3,7 +3,7 @@
   "main": "src/index.js",
   "compatibility_date": "2026-10-01",
   "vars": {
-    "OHANA_ORIGIN": "https://versions-resistant-evaluated-truck.trycloudflare.com"
+    "OHANA_ORIGIN": "https://trials-catalogs-tribune-trace.trycloudflare.com"
   },
   "assets": {
     "directory": "./public",
