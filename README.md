@@ -10,38 +10,70 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ---
 
-## Estado técnico atual;
+## Estado técnico atual
 
-A continuidade da Engenharia de Software em múltiplos turnos foi **promovida e validada em produção**.
-
-O teste real confirmou que uma investigação técnica consegue permanecer na rota `ENGENHARIA_SOFTWARE` por seis turnos relacionados, incluindo continuidade, próximo teste, reavaliação por evidência, preparação de candidato e julgamento de prontidão.
+Em 01/10/2026, a OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
 
 ```text
-CONTINUIDADE_ENGENHARIA = OK
-TURNOS_TECNICOS = 6/6
-REAVALIACAO_TECNICA = OK
-COERENCIA_JULGAMENTO = OK
-SAIDA_CONVERSA_NORMAL = OK
-ENSINO = PRESERVADO
-OPERACIONAL = PROTEGIDO
+ESTADO = PROMOVIDO_VALIDADO
 MEMORIA = OK
+RACIOCINIO_LOCAL = OK
+ENGENHARIA = OK
+AUTOTUNE = OK
+ENSINO = OK
+OPERACIONAL_PROTEGIDO = OK
+QWEN_QUANDO_NECESSARIO = OK
+REGRESSOES = 0 nos testes executados
 AUTORIZACAO_HUMANA = PRESERVADA
 PROMOCAO_AUTONOMA = FALSE
-GROQ_INDEVIDO = 0
-REGRESSOES = 0
 ROLLBACK = DISPONIVEL
-ESTADO = PROMOVIDO_VALIDADO
 ```
 
-A mudança foi limitada a duas funções já existentes em `Servidor/servidor.ps1`, preservando os demais módulos comparados. O hash de produção passou do candidato anterior validado para o novo candidato autorizado:
+Hash do estado funcional validado atual:
 
 ```text
-HASH_ANTES  = 33225CAE4E1295F3841FED340CA77945A2E1911A2125768FC04587E0C7928A10
-HASH_DEPOIS = 30CABA1496C6314B5EA7B754EE5E789F347F5D4AF4181C582166AE5999D70659
-HASH_BACKUP = 33225CAE4E1295F3841FED340CA77945A2E1911A2125768FC04587E0C7928A10
+16275EFD2772B1B9383BAD14BD45A2F11EE0E30C4783B6ABE696D1EDCA4660B9
 ```
 
-[Leia o relatório público deste marco](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md).
+A evolução recente melhorou a ligação entre linguagem natural e capacidades já existentes da arquitetura. A OHANA passou a diferenciar e reutilizar, em contexto técnico controlado:
+
+- consulta de resultados anteriores;
+- continuação de investigação;
+- recomendação concreta de próxima ação;
+- justificativa da recomendação;
+- saída correta do contexto técnico;
+- preservação de etapa técnica, resumo de resultado e próximo passo.
+
+O comportamento validado agora distingue, por exemplo:
+
+```text
+"o que você encontrou?"
+→ recuperar achados anteriores
+
+"continue"
+→ retomar o próximo passo
+
+"o que você faria agora?"
+→ formular uma recomendação baseada no estado atual
+
+"por que?"
+→ justificar a recomendação
+
+"mudando de assunto..."
+→ sair do contexto técnico anterior
+```
+
+Nenhum novo núcleo, memória ou motor cognitivo foi criado para obter esse comportamento. A evolução reutilizou contexto, resolução, Engenharia e governança já existentes.
+
+Uma regra operacional adotada pelo projeto é:
+
+> **A OHANA pode reiniciar; ela não pode voltar menor.**
+
+Não basta o servidor responder. Promoções precisam preservar o funcionamento ponta a ponta das capacidades validadas.
+
+[Leia o status técnico atual completo](docs/STATUS_ATUAL_2026-10-01.md).
+
+[Leia também o marco anterior de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md).
 
 ---
 
@@ -56,6 +88,7 @@ OHANA
   ├─ interpretação / roteamento
   ├─ memória persistente
   ├─ continuidade contextual
+  ├─ continuidade de investigação
   ├─ raciocínio local
   ├─ projetista
   ├─ planejamento
@@ -93,6 +126,8 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 - inspeção seletiva de código usando código, AST e hashes;
 - roteamento entre conversa comum e Engenharia de Software;
 - **continuidade técnica validada em múltiplos turnos**;
+- **continuidade contextual com preservação de resultado e próximo passo**;
+- **recomendação e justificativa diferenciadas de simples continuação**;
 - **reavaliação técnica baseada em evidência**;
 - **coerência obrigatória entre evidência, candidato, testes e prontidão para promoção**;
 - saída correta da rota técnica quando o assunto deixa de ser Engenharia;
@@ -104,7 +139,7 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 
 ## Desempenho observado
 
-Um baseline local medido na arquitetura atual mostrou aproximadamente:
+Um baseline local anterior medido na arquitetura mostrou aproximadamente:
 
 | Etapa | Tempo observado |
 |---|---:|
@@ -115,19 +150,16 @@ Um baseline local medido na arquitetura atual mostrou aproximadamente:
 | Etapa de IA externa/neural nesse teste | **0 ms** |
 | Chamadas externas de IA | **0** |
 
-Esse baseline mostrou que o maior custo estava na **montagem e recuperação de contexto**, não no motor de raciocínio local.
+Em uma comparação controlada posterior, envolvendo 20 pedidos que deveriam usar capacidades locais, foi observado:
 
-```text
-MEMÓRIA GRANDE
-   ↓
-RECUPERAÇÃO SELETIVA
-   ↓
-CONTEXTO ATIVO PEQUENO
-   ↓
-RACIOCÍNIO LOCAL RÁPIDO
-```
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Fallback desnecessário | 18/20 | **0/20** |
+| Chamadas de IA | 44 | **0** |
+| Mediana TOTAL_MS | ~9194 ms | **~289 ms** |
+| Maior TOTAL_MS local depois | — | **~1945 ms** |
 
-> Esses números são um baseline observado do projeto, não um benchmark universal.
+Esses valores são medições do ambiente local do projeto, não benchmarks universais.
 
 ---
 
@@ -138,23 +170,15 @@ Validações controladas demonstraram:
 - **10/10 testes de roteamento técnico** chegando à Engenharia existente;
 - **18/18 verificações HTTP** em um ciclo de promoção controlada anterior;
 - **6/6 turnos técnicos consecutivos** preservando a investigação atual em produção;
-- **15 turnos totais** no conjunto pós-promoção descrito no relatório mais recente;
-- operação local Qwen/Ollama com **Groq indevido = 0** nos retornos com runtime;
+- **52/52 turnos** em uma validação ponta a ponta da evolução semântica em laboratório;
+- **8/8 testes** de continuidade contextual em candidato e promoção controlada;
+- **5/5 testes** de distinção entre resultado, continuação, recomendação, justificativa e saída de contexto;
+- operação local Qwen/Ollama preservada quando realmente necessária;
 - preservação de memória, retificação básica e proteção operacional;
 - regressões deliberadas ou condições incompletas bloqueando prontidão para promoção;
 - pergunta comum saindo da Engenharia e retornando à conversa neural normal;
 - pedido operacional permanecendo protegido;
 - autorização humana obrigatória para produção.
-
-Exemplo da rota técnica validada:
-
-```text
-ultima_rota = ENGENHARIA_SOFTWARE
-ultima_intencao = ANALISAR_SOFTWARE
-fonte = código / AST / hashes SHA-256
-promoção autônoma em produção = false
-autorização humana = preservada
-```
 
 ---
 
@@ -278,12 +302,13 @@ As pendências atuais permanecem separadas dos marcos já validados:
 - TESTE F de aprendizado de regra;
 - consulta de arquitetura de restaurante.
 
-Essas pendências foram registradas como preexistentes no último ciclo e não foram atribuídas à promoção da continuidade da Engenharia.
+Essas pendências são mantidas separadas das promoções já validadas e não são tratadas como regressões dessas etapas.
 
 ---
 
 ## Documentação
 
+- [Status técnico atual — 01/10/2026](docs/STATUS_ATUAL_2026-10-01.md)
 - [Arquitetura](ARCHITECTURE.md)
 - [Benchmarks e medições](BENCHMARKS.md)
 - [Hardware e execução local](HARDWARE.md)
@@ -296,7 +321,7 @@ Essas pendências foram registradas como preexistentes no último ciclo e não f
 
 ## Para leitores internacionais
 
-**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Multi-turn software-engineering continuity has been validated in production while preserving human authorization and rollback. Full documentation is primarily maintained in Brazilian Portuguese.
+**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Recent validated work improved semantic routing, contextual continuity and the ability to preserve technical investigation state, distinguish findings from continuation and recommendation, and keep human authorization intact. Full documentation is primarily maintained in Brazilian Portuguese.
 
 ---
 
