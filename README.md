@@ -12,7 +12,7 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-Em 01/10/2026, a OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
+Em 10/01/2026, a OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
 
 ```text
 ESTADO = PROMOVIDO_VALIDADO
