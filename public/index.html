@@ -32,7 +32,7 @@
         <a class="button" href="https://github.com/sponsors/bertolotofrederico-rgb" target="_blank" rel="noreferrer">Apoiar o projeto</a>
       </div>
       <div class="status-card">
-        <span class="dot"></span>
+        <span class="dot" id="status-dot"></span>
         <div>
           <strong>Status público</strong>
           <span id="status-text">Consultando disponibilidade da OHANA local...</span>
@@ -41,10 +41,7 @@
     </section>
 
     <section id="sobre" class="section wrap">
-      <div class="section-heading">
-        <span>ARQUITETURA</span>
-        <h2>O modelo neural é auxiliar. A arquitetura mantém o estado.</h2>
-      </div>
+      <div class="section-heading"><span>ARQUITETURA</span><h2>O modelo neural é auxiliar. A arquitetura mantém o estado.</h2></div>
       <div class="grid three">
         <article class="card"><h3>Memória persistente</h3><p>Contexto, fatos e aprendizados podem sobreviver entre sessões e ser reutilizados pela arquitetura.</p></article>
         <article class="card"><h3>Raciocínio local</h3><p>Parte das consultas é resolvida localmente, reduzindo dependência de modelos externos e chamadas desnecessárias.</p></article>
@@ -53,49 +50,32 @@
     </section>
 
     <section id="capacidades" class="section wrap">
-      <div class="section-heading">
-        <span>ESTADO ATUAL</span>
-        <h2>Capacidades já integradas e exercitadas</h2>
-      </div>
+      <div class="section-heading"><span>ESTADO ATUAL</span><h2>Capacidades já integradas e exercitadas</h2></div>
       <div class="capabilities">
-        <span>Memória persistente</span>
-        <span>Continuidade contextual</span>
-        <span>Raciocínio local</span>
-        <span>Projetista</span>
-        <span>Planejador</span>
-        <span>Executor controlado</span>
-        <span>Autotune</span>
-        <span>Engenharia de Software</span>
-        <span>Rollback</span>
-        <span>Autorização humana</span>
-        <span>Qwen/Ollama auxiliar</span>
+        <span>Memória persistente</span><span>Continuidade contextual</span><span>Raciocínio local</span><span>Projetista</span><span>Planejador</span><span>Executor controlado</span><span>Autotune</span><span>Engenharia de Software</span><span>Rollback</span><span>Autorização humana</span><span>Qwen/Ollama auxiliar</span>
       </div>
       <p class="note">A OHANA é um projeto experimental em desenvolvimento ativo e não é apresentada como uma AGI concluída.</p>
     </section>
 
-    <section id="demo" class="section wrap">
-      <div class="section-heading">
-        <span>OHANA</span>
-        <h2>Converse com a interface pública</h2>
-      </div>
-      <div class="demo-shell">
-        <div id="chat" class="chat" aria-live="polite">
-          <div class="message system">OHANA\nOlá. Estou operacional quando a ponte segura com o computador local estiver conectada.</div>
-        </div>
-        <form id="chat-form" class="composer">
-          <label class="sr-only" for="message">Mensagem</label>
-          <input id="message" maxlength="2000" autocomplete="off" placeholder="Digite sua mensagem..." />
-          <button type="submit">Enviar</button>
+    <section id="demo" class="section chat-section">
+      <main id="chat-principal" aria-label="Interface pública da OHANA">
+        <h1>OHANA</h1>
+        <p>Converse, consulte dados e solicite ações no mesmo lugar.</p>
+        <div id="chat-mensagens" aria-live="polite"></div>
+        <form id="chat-form">
+          <label for="chat-pedido">Seu pedido</label>
+          <textarea id="chat-pedido" maxlength="2000" placeholder="Converse com a OHANA…" aria-label="Seu pedido. Enter envia; Shift+Enter cria uma linha."></textarea>
+          <button id="chat-enviar" type="submit">Enviar</button>
         </form>
-        <p id="demo-note" class="demo-note">Consultando a conexão com a OHANA local...</p>
-      </div>
+        <div class="public-info">
+          <span class="public-badge">DEMONSTRAÇÃO PÚBLICA</span>
+          <span id="demo-note">Consultando a conexão com a OHANA local...</span>
+        </div>
+      </main>
     </section>
 
     <section class="section wrap architecture-flow">
-      <div class="section-heading">
-        <span>PUBLICAÇÃO SEGURA</span>
-        <h2>Cloudflare na borda, OHANA no computador local</h2>
-      </div>
+      <div class="section-heading"><span>PUBLICAÇÃO SEGURA</span><h2>Cloudflare na borda, OHANA no computador local</h2></div>
       <pre>Usuário na internet
         ↓
 Cloudflare Worker / Static Assets
@@ -113,13 +93,7 @@ Resposta</pre>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-inner">
-      <span>OHANA · arquitetura cognitiva experimental</span>
-      <a href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">GitHub</a>
-    </div>
-  </footer>
-
+  <footer><div class="wrap footer-inner"><span>OHANA · arquitetura cognitiva experimental</span><a href="https://github.com/bertolotofrederico-rgb/OHANA" target="_blank" rel="noreferrer">GitHub</a></div></footer>
   <script src="/app.js"></script>
 </body>
 </html>
