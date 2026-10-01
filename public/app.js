@@ -1,76 +1,90 @@
 const form=document.getElementById('chat-form');
-const input=document.getElementById('message');
-const chat=document.getElementById('chat');
+const input=document.getElementById('chat-pedido');
+const chat=document.getElementById('chat-mensagens');
 const statusText=document.getElementById('status-text');
+const statusDot=document.getElementById('status-dot');
 const demoNote=document.getElementById('demo-note');
+const button=document.getElementById('chat-enviar');
 const history=[];
+let ocupado=false;
 
-function addMessage(type,text){
+function mensagem(autor,texto,tipo){
   const el=document.createElement('div');
-  el.className='message '+type;
-  el.textContent=text;
+  el.className='chat-mensagem '+tipo;
+  const a=document.createElement('span');
+  a.className='chat-autor';
+  a.textContent=autor;
+  const corpo=document.createElement('div');
+  corpo.textContent=texto;
+  el.append(a,corpo);
   chat.appendChild(el);
   chat.scrollTop=chat.scrollHeight;
-  return el;
+  return corpo;
 }
 
 async function refreshStatus(){
   try{
     const r=await fetch('/api/status',{cache:'no-store'});
     const d=await r.json();
-    if(r.ok&&d.ohana==='online'){
-      if(statusText)statusText.textContent='OHANA local conectada e disponível para a demonstração pública.';
-      if(demoNote)demoNote.textContent='A conversa abaixo usa a OHANA real através da API pública controlada.';
-    }else{
-      if(statusText)statusText.textContent='Site online. OHANA local temporariamente offline ou ponte ainda não conectada.';
-      if(demoNote)demoNote.textContent='Quando o computador local estiver conectado, as mensagens serão processadas pela OHANA real.';
-    }
+    const online=r.ok&&d.ohana==='online';
+    if(statusDot)statusDot.classList.toggle('offline',!online);
+    if(statusText)statusText.textContent=online?'OHANA local conectada e disponível para a demonstração pública.':'Site online. OHANA local temporariamente offline.';
+    if(demoNote)demoNote.textContent=online?'A conversa usa a OHANA real através da API pública controlada.':'A OHANA local não está disponível neste momento.';
   }catch{
+    if(statusDot)statusDot.classList.add('offline');
     if(statusText)statusText.textContent='Site online. Não foi possível consultar a OHANA local agora.';
+    if(demoNote)demoNote.textContent='Não foi possível confirmar a conexão com a OHANA local.';
   }
 }
 
-form?.addEventListener('submit',async(event)=>{
-  event.preventDefault();
-  const text=input.value.trim();
-  if(!text)return;
+async function enviar(){
+  if(ocupado)return;
+  const pedido=input.value.trim();
+  if(!pedido)return;
+  ocupado=true;
   input.value='';
-  addMessage('user','Você\n'+text);
-  const pending=addMessage('system','OHANA\nPensando...');
-  const button=form.querySelector('button');
-  if(button)button.disabled=true;
+  mensagem('Você',pedido,'usuario');
+  const alvo=mensagem('OHANA','Pensando...','ohana');
+  if(button){button.disabled=true;button.textContent='Enviando...';}
 
   try{
     const r=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({pedido:text,dialogo:history.slice(-2)}),
+      body:JSON.stringify({pedido,dialogo:history.slice(-2)}),
       cache:'no-store'
     });
     const d=await r.json();
     if(d.bloqueado){
-      pending.textContent='OHANA\n'+(d.texto||'Este pedido não é permitido na interface pública.');
+      alvo.textContent=d.texto||'Este pedido não é permitido na interface pública.';
       return;
     }
     if(!r.ok||!d.ok||typeof d.texto!=='string'){
       const erro=d.erro||'OHANA indisponível';
-      const msg=erro==='PONTE_NAO_CONFIGURADA'||erro==='PONTE_INDISPONIVEL'
-        ?'A OHANA local está offline ou a ponte segura ainda não está conectada.'
-        :'Não consegui obter uma resposta da OHANA agora.';
-      pending.textContent='OHANA\n'+msg;
+      alvo.textContent=(erro==='PONTE_NAO_CONFIGURADA'||erro==='PONTE_INDISPONIVEL')?'A OHANA local está offline ou a ponte segura ainda não está conectada.':'Não consegui obter uma resposta da OHANA agora.';
       return;
     }
-    pending.textContent='OHANA\n'+d.texto;
-    history.push({usuario:text,ohana:d.texto});
+    alvo.textContent=d.texto;
+    history.push({usuario:pedido,ohana:d.texto});
     if(history.length>6)history.shift();
   }catch{
-    pending.textContent='OHANA\nA conexão pública está indisponível neste momento.';
+    alvo.textContent='A conexão pública está indisponível neste momento.';
   }finally{
-    if(button)button.disabled=false;
+    ocupado=false;
+    if(button){button.disabled=false;button.textContent='Enviar';}
     input.focus();
     refreshStatus();
   }
+}
+
+form?.addEventListener('submit',e=>{e.preventDefault();enviar();});
+input?.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){
+    e.preventDefault();
+    enviar();
+  }
 });
 
+mensagem('OHANA','Olá! O que vamos fazer?','ohana');
 refreshStatus();
 setInterval(refreshStatus,30000);
