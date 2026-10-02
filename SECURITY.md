@@ -143,7 +143,6 @@ Pendências atuais conhecidas incluem:
 - retificação com histórico completo;
 - limite de 400 tokens em determinados casos do caminho Qwen;
 - TESTE F de aprendizado;
-- consulta de arquitetura de restaurante.
 
 Esses itens foram registrados como pendências preexistentes no último ciclo, e não como regressões causadas pela promoção de continuidade.
 
