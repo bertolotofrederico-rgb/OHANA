@@ -28,11 +28,11 @@ async function refreshStatus(){
     const d=await r.json();
     const online=r.ok&&d.ohana==='online';
     if(statusDot)statusDot.classList.toggle('offline',!online);
-    if(statusText)statusText.textContent=online?'OHANA local conectada e disponível para a demonstração pública.':'Site online. OHANA local temporariamente offline.';
+    if(statusText)statusText.textContent=online?'OHANA local conectada e disponível para a demonstração pública.':'Site online. A OHANA está temporariamente offline. Para conhecer ou testar a OHANA, entre em contato: bertolotofrederico@gmail.com';
     if(demoNote)demoNote.textContent=online?'A conversa usa a OHANA real através da API pública controlada.':'A OHANA local não está disponível neste momento.';
   }catch{
     if(statusDot)statusDot.classList.add('offline');
-    if(statusText)statusText.textContent='Site online. Não foi possível consultar a OHANA local agora.';
+    if(statusText)statusText.textContent='Site online. Não foi possível conectar à OHANA agora. Para conhecer ou testar a OHANA, entre em contato: bertolotofrederico@gmail.com';
     if(demoNote)demoNote.textContent='Não foi possível confirmar a conexão com a OHANA local.';
   }
 }
