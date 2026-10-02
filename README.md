@@ -251,11 +251,14 @@ A OHANA busca capacidade por meio de raciocínio local, memória persistente, co
 
 ## Papel do modelo neural
 
+O modelo neural auxiliar utilizado atualmente pela OHANA é o **Qwen 2.5 1.5B**, executado localmente por meio do Ollama.
+
 ```text
-Qwen / futuro modelo neural
+Qwen 2.5 1.5B
 → compreensão de linguagem
 → geração de linguagem
 → assistência semântica
+→ apoio à interpretação de pedidos
 
 OHANA
 → memória
@@ -269,7 +272,7 @@ OHANA
 → autorização
 ```
 
-Uma direção futura é avaliar um modelo neural próprio da OHANA, especializado em português e focado nas tarefas linguísticas realmente necessárias à arquitetura.
+O modelo neural atua principalmente na camada linguística. O estado persistente, a memória, o raciocínio, o aprendizado, o planejamento, o uso governado de ferramentas, a engenharia e as autorizações permanecem sob responsabilidade da arquitetura OHANA.
 
 ---
 
@@ -307,6 +310,21 @@ As pendências atuais permanecem separadas dos marcos já validados:
 - TESTE F de aprendizado de regra.
 
 Essas pendências são mantidas separadas das promoções já validadas e não são tratadas como regressões dessas etapas.
+
+---
+
+## Contratação
+
+A **OHANA Enterprise** pode ser direcionada ao modelo de operação de cada empresa, com duas modalidades comerciais principais:
+
+- **OHANA Enterprise Local** — operação dentro da infraestrutura da própria empresa, indicada para ambientes que priorizam autonomia, funcionamento local e uso de dados internos no próprio ambiente.
+- **OHANA Enterprise Online** — versão hospedada como serviço, indicada para empresas que precisam de disponibilidade contínua em sites, atendimento e serviços digitais.
+
+O escopo de especialização, integrações e automações é definido de acordo com a necessidade da empresa contratante.
+
+📄 **[Baixar o Book de Vendas OHANA Enterprise (PDF)](comercial/Book_Vendas_OHANA_Enterprise.pdf)**
+
+O material apresenta o posicionamento das modalidades Local e Online, perfis de empresa, roteiro de primeiro contato e fluxo comercial de apresentação.
 
 ---
 
