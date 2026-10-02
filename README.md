@@ -322,9 +322,9 @@ A **OHANA Enterprise** pode ser direcionada ao modelo de operação de cada empr
 
 O escopo de especialização, integrações e automações é definido de acordo com a necessidade da empresa contratante.
 
-📄 **[Baixar o Book de Vendas OHANA Enterprise (PDF)](comercial/Book_Vendas_OHANA_Enterprise.pdf)**
+📄 **[Baixar a Proposta Comercial Comparativa OHANA Enterprise (PDF)](comercial/Proposta_OHANA_Enterprise.pdf)**
 
-O material apresenta o posicionamento das modalidades Local e Online, perfis de empresa, roteiro de primeiro contato e fluxo comercial de apresentação.
+A proposta apresenta as modalidades Licença Permanente e OHANA Online, com investimento, prazo, hospedagem, manutenção, suporte, condições comerciais e forma de pagamento.
 
 ---
 
