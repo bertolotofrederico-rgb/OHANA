@@ -313,18 +313,25 @@ Essas pendências são mantidas separadas das promoções já validadas e não s
 
 ---
 
-## Contratação
+## Projeto OHANA Enterprise
 
-A **OHANA Enterprise** pode ser direcionada ao modelo de operação de cada empresa, com duas modalidades comerciais principais:
+A **OHANA Enterprise** é a camada de especialização da arquitetura OHANA para ambientes organizacionais.
 
-- **OHANA Enterprise Local** — operação dentro da infraestrutura da própria empresa, indicada para ambientes que priorizam autonomia, funcionamento local e uso de dados internos no próprio ambiente.
-- **OHANA Enterprise Online** — versão hospedada como serviço, indicada para empresas que precisam de disponibilidade contínua em sites, atendimento e serviços digitais.
+Uma implantação pode combinar:
 
-O escopo de especialização, integrações e automações é definido de acordo com a necessidade da empresa contratante.
+- identidade e contexto da organização;
+- serviços e regras específicos;
+- conhecimento e documentos autorizados;
+- permissões e governança;
+- integrações com sistemas e dados;
+- planejamento e execução controlada;
+- evolução incremental da solução.
 
-📄 **[Baixar a Proposta Comercial Comparativa OHANA Enterprise (PDF)](comercial/Proposta_OHANA_Enterprise.pdf)**
+O escopo de cada implantação é definido a partir das necessidades, processos e sistemas existentes no ambiente.
 
-A proposta apresenta as modalidades Licença Permanente e OHANA Online, com investimento, prazo, hospedagem, manutenção, suporte, condições comerciais e forma de pagamento.
+📄 **[Conheça a proposta de projeto OHANA Enterprise](comercial/PROPOSTA_OHANA_ENTERPRISE.md)**
+
+O documento apresenta como uma implantação pode ser estruturada, sem valores ou condições comerciais.
 
 ---
 
