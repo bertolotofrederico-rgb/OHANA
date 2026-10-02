@@ -76,7 +76,6 @@ As seguintes pendências continuam separadas deste marco:
 - retificação com histórico completo;
 - limite de resposta do caminho atual do Qwen em determinados casos;
 - TESTE F de aprendizado;
-- consulta de arquitetura de restaurante.
 
 Esses itens não foram classificados como regressões causadas pela promoção de continuidade.
 
