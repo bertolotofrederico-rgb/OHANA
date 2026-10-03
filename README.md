@@ -17,19 +17,32 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-A OHANA encerrou o **ciclo 20** e avançou para o **ciclo 21** após validar em produção uma nova ligação de autoconhecimento e um fechamento documental governado no controlador de ciclo existente.
+A OHANA está no **ciclo 21**. O ciclo 20 permanece como marco concluído de autoconhecimento e fechamento documental governado.
+
+No ciclo 21, foi concluída e promovida uma nova ligação de circulação de conhecimento governado:
 
 ```text
-CICLO_ATUAL = 21
-ESTADO = PRONTO_PARA_NOVA_EVOLUCAO
-ULTIMO_RESULTADO = CICLO_PROMOVIDO_COM_SUCESSO
+conhecimento ATIVO
+→ recuperação governada
+→ montagem existente de regras
+→ precedência sobre relato antigo não validado
+→ calculador existente
+→ resultado calculado
+```
+
+O resultado derivado continua separado de conhecimento factual:
+
+```text
+CIRCULACAO_CONHECIMENTO_ATIVO = VALIDADA_EM_PRODUCAO
+PRECEDENCIA_GOVERNADA = VALIDADA_EM_PRODUCAO
+GENERALIZACAO_DIRETA_DE_REGRA = VALIDADA
+NAO_PERSISTENCIA_DE_DERIVADOS = VALIDADA
 
 MEMORIA = OK
 RACIOCINIO_LOCAL = OK
 ENGENHARIA = OK
 AUTOTUNE = OK
 AUTOCONHECIMENTO_LOCAL = VALIDADO
-FECHAMENTO_DOCUMENTAL_GOVERNADO = VALIDADO
 
 AUTORIZACAO_HUMANA = PRESERVADA
 AUTORIZACAO_OPERACIONAL_AUTOMATICA = FALSE
@@ -37,22 +50,7 @@ PROMOCAO_AUTONOMA = FALSE
 ROLLBACK = DISPONIVEL
 ```
 
-O marco do C20 comprovou seis consultas de autoconhecimento em produção — ciclo, estado, último resultado, objetivo, próxima ação e aprendizado anterior — respondidas via `MEMORIA_LOCAL`, sem autorização operacional.
-
-Também foi validado que o mesmo controlador de ciclo já existente pode reconhecer dois caminhos legítimos de encerramento:
-
-```text
-controlador existente
-   ├─ fechamento supervisionado
-   │    └─ plano + contrato + execução real
-   │
-   └─ fechamento documental governado
-        └─ promoção comprovada + evidência + hashes + regressão + rollback
-```
-
-O caminho documental **não inventa execução, contrato ou autorização**. Quando não houve execução supervisionada, a última execução real anterior permanece preservada.
-
-Nenhum novo núcleo, memória ou motor cognitivo foi criado para atingir esse comportamento. O trabalho continua seguindo a regra:
+A evolução reutilizou os mecanismos existentes. Não foi criado novo núcleo, nova memória, novo índice ou novo calculador.
 
 > **Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.**
 
@@ -98,6 +96,9 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 - raciocínio contextual e resolução de referências;
 - raciocínio local sem dependência obrigatória de IA externa;
 - recuperação seletiva de contexto do projeto;
+- circulação de conhecimento factual ATIVO até o calculador existente;
+- precedência governada de conhecimento vigente sobre relato antigo não validado;
+- distinção entre resultado calculado e fato persistente;
 - autoconhecimento local de ciclo, estado, objetivo, resultado e próxima ação;
 - reutilização de aprendizados governados de ciclos anteriores;
 - **Projetista** para desenho técnico;
@@ -162,6 +163,10 @@ Validações controladas demonstraram:
 - **6/6 consultas de autoconhecimento do C20** respondidas via memória local;
 - fechamento do C20 com evidência documental governada, histórico, aprendizado e rollback;
 - avanço controlado para o ciclo 21;
+- circulação de conhecimento ATIVO promovida e validada em produção;
+- precedência governada validada sem apagar histórico antigo;
+- generalização direta de regra persistida validada sem reensino;
+- derivados calculados preservados como não-fatos e sem aprendizado automático;
 - operação local Qwen/Ollama preservada quando realmente necessária;
 - regressões deliberadas ou condições incompletas bloqueando prontidão para promoção;
 - pedidos operacionais permanecendo protegidos;
@@ -269,8 +274,7 @@ As pendências atuais permanecem separadas dos marcos já validados:
 
 - retificação com histórico completo;
 - limite de 400 tokens no caminho atual do Qwen em determinados casos;
-- TESTE F de aprendizado de regra;
-- ampliar a circulação ponta a ponta entre autodiagnóstico, projeto, planejamento, ferramentas e aprendizado sem criar estruturas paralelas;
+- ampliar a circulação ponta a ponta entre autodiagnóstico, projeto, planejamento, ferramentas e aprendizado, reutilizando o padrão de ligação governada já validado;
 - ampliar baselines de desempenho e regressão do ciclo evolutivo.
 
 ---
