@@ -17,66 +17,46 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-A OHANA atingiu um novo estado funcional validado em produção após uma sequência de evoluções controladas de compreensão semântica, continuidade contextual e continuidade de investigação técnica.
+A OHANA encerrou o **ciclo 20** e avançou para o **ciclo 21** após validar em produção uma nova ligação de autoconhecimento e um fechamento documental governado no controlador de ciclo existente.
 
 ```text
-ESTADO = PROMOVIDO_VALIDADO
+CICLO_ATUAL = 21
+ESTADO = PRONTO_PARA_NOVA_EVOLUCAO
+ULTIMO_RESULTADO = CICLO_PROMOVIDO_COM_SUCESSO
+
 MEMORIA = OK
 RACIOCINIO_LOCAL = OK
 ENGENHARIA = OK
 AUTOTUNE = OK
-ENSINO = OK
-OPERACIONAL_PROTEGIDO = OK
-QWEN_QUANDO_NECESSARIO = OK
-REGRESSOES = 0 nos testes executados
+AUTOCONHECIMENTO_LOCAL = VALIDADO
+FECHAMENTO_DOCUMENTAL_GOVERNADO = VALIDADO
+
 AUTORIZACAO_HUMANA = PRESERVADA
+AUTORIZACAO_OPERACIONAL_AUTOMATICA = FALSE
 PROMOCAO_AUTONOMA = FALSE
 ROLLBACK = DISPONIVEL
 ```
 
-Hash do estado funcional validado atual:
+O marco do C20 comprovou seis consultas de autoconhecimento em produção — ciclo, estado, último resultado, objetivo, próxima ação e aprendizado anterior — respondidas via `MEMORIA_LOCAL`, sem autorização operacional.
+
+Também foi validado que o mesmo controlador de ciclo já existente pode reconhecer dois caminhos legítimos de encerramento:
 
 ```text
-16275EFD2772B1B9383BAD14BD45A2F11EE0E30C4783B6ABE696D1EDCA4660B9
+controlador existente
+   ├─ fechamento supervisionado
+   │    └─ plano + contrato + execução real
+   │
+   └─ fechamento documental governado
+        └─ promoção comprovada + evidência + hashes + regressão + rollback
 ```
 
-A evolução recente melhorou a ligação entre linguagem natural e capacidades já existentes da arquitetura. A OHANA passou a diferenciar e reutilizar, em contexto técnico controlado:
+O caminho documental **não inventa execução, contrato ou autorização**. Quando não houve execução supervisionada, a última execução real anterior permanece preservada.
 
-- consulta de resultados anteriores;
-- continuação de investigação;
-- recomendação concreta de próxima ação;
-- justificativa da recomendação;
-- saída correta do contexto técnico;
-- preservação de etapa técnica, resumo de resultado e próximo passo.
+Nenhum novo núcleo, memória ou motor cognitivo foi criado para atingir esse comportamento. O trabalho continua seguindo a regra:
 
-O comportamento validado agora distingue, por exemplo:
+> **Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.**
 
-```text
-"o que você encontrou?"
-→ recuperar achados anteriores
-
-"continue"
-→ retomar o próximo passo
-
-"o que você faria agora?"
-→ formular uma recomendação baseada no estado atual
-
-"por que?"
-→ justificar a recomendação
-
-"mudando de assunto..."
-→ sair do contexto técnico anterior
-```
-
-Nenhum novo núcleo, memória ou motor cognitivo foi criado para obter esse comportamento. A evolução reutilizou contexto, resolução, Engenharia e governança já existentes.
-
-Uma regra operacional adotada pelo projeto é:
-
-> **A OHANA pode reiniciar; ela não pode voltar menor.**
-
-Não basta o servidor responder. Promoções precisam preservar o funcionamento ponta a ponta das capacidades validadas.
-
-[Leia o status técnico atual completo](docs/STATUS_ATUAL_2026-10-01.md).
+[Leia o status técnico atual completo](docs/STATUS_ATUAL_2026-10-03.md).
 
 [Leia também o marco anterior de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md).
 
@@ -93,7 +73,7 @@ OHANA
   ├─ interpretação / roteamento
   ├─ memória persistente
   ├─ continuidade contextual
-  ├─ continuidade de investigação
+  ├─ autoconhecimento
   ├─ raciocínio local
   ├─ projetista
   ├─ planejamento
@@ -118,27 +98,28 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 - raciocínio contextual e resolução de referências;
 - raciocínio local sem dependência obrigatória de IA externa;
 - recuperação seletiva de contexto do projeto;
+- autoconhecimento local de ciclo, estado, objetivo, resultado e próxima ação;
+- reutilização de aprendizados governados de ciclos anteriores;
 - **Projetista** para desenho técnico;
 - **Planejador** para planejamento;
 - **Executor** para execução controlada;
 - **Autotune** para observação, diagnóstico e orquestração de engenharia;
 - autorização humana;
 - contratos e salvaguardas operacionais;
+- fechamento supervisionado de ciclos;
+- fechamento documental governado de evolução já promovida;
 - verificação de integridade por SHA-256;
 - candidatos isolados antes de alterações em produção;
 - validação de parser em Windows PowerShell 5.1;
-- alterações com rollback;
+- alterações com backup e rollback;
 - inspeção seletiva de código usando código, AST e hashes;
 - roteamento entre conversa comum e Engenharia de Software;
-- **continuidade técnica validada em múltiplos turnos**;
-- **continuidade contextual com preservação de resultado e próximo passo**;
-- **recomendação e justificativa diferenciadas de simples continuação**;
-- **reavaliação técnica baseada em evidência**;
-- **coerência obrigatória entre evidência, candidato, testes e prontidão para promoção**;
-- saída correta da rota técnica quando o assunto deixa de ser Engenharia;
+- continuidade técnica em múltiplos turnos;
+- continuidade contextual com preservação de resultado e próximo passo;
+- reavaliação técnica baseada em evidência;
+- coerência obrigatória entre evidência, candidato, testes e prontidão para promoção;
 - suporte neural local via Ollama/Qwen;
-- runtime HTTP de produção com autoconsulta técnica;
-- pedidos técnicos capazes de retornar evidência real de código/AST/hash, e não apenas texto gerado.
+- runtime HTTP de produção com autoconsulta técnica.
 
 ---
 
@@ -178,11 +159,12 @@ Validações controladas demonstraram:
 - **52/52 turnos** em uma validação ponta a ponta da evolução semântica em laboratório;
 - **8/8 testes** de continuidade contextual em candidato e promoção controlada;
 - **5/5 testes** de distinção entre resultado, continuação, recomendação, justificativa e saída de contexto;
+- **6/6 consultas de autoconhecimento do C20** respondidas via memória local;
+- fechamento do C20 com evidência documental governada, histórico, aprendizado e rollback;
+- avanço controlado para o ciclo 21;
 - operação local Qwen/Ollama preservada quando realmente necessária;
-- preservação de memória, retificação básica e proteção operacional;
 - regressões deliberadas ou condições incompletas bloqueando prontidão para promoção;
-- pergunta comum saindo da Engenharia e retornando à conversa neural normal;
-- pedido operacional permanecendo protegido;
+- pedidos operacionais permanecendo protegidos;
 - autorização humana obrigatória para produção.
 
 ---
@@ -204,6 +186,10 @@ problema
 → julgamento
 → pronto para promoção
 → autorização humana
+→ promoção
+→ observação
+→ aprendizado
+→ novo estado
 ```
 
 Uma regra crítica é que isto **não é permitido**:
@@ -211,18 +197,6 @@ Uma regra crítica é que isto **não é permitido**:
 ```text
 GERAR IDEIA
 → ALTERAR PRODUÇÃO
-```
-
-A regra desejada é:
-
-```text
-OBSERVAR
-→ COMPREENDER
-→ PROVAR
-→ PROJETAR
-→ TESTAR
-→ VALIDAR
-→ APRENDER
 ```
 
 A promoção para produção continua governada e exige autorização humana explícita.
@@ -244,8 +218,6 @@ Modelo neural auxiliar atual: Qwen 2.5 1.5B
 ```
 
 A GTX 750 não é apresentada como hardware adequado para treino pesado de grandes redes neurais. Ela faz parte da filosofia do projeto: inteligência arquitetural não deve depender exclusivamente de escala de GPU.
-
-A OHANA busca capacidade por meio de raciocínio local, memória persistente, contexto seletivo, planejamento estruturado, execução governada, conhecimento reutilizável e pequenos modelos neurais auxiliares.
 
 ---
 
@@ -276,16 +248,6 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 ---
 
-## O que torna o projeto interessante
-
-A OHANA não tenta competir com modelos de fronteira por número bruto de parâmetros.
-
-> **Quanta inteligência útil, persistente e governável pode surgir de uma arquitetura cognitiva modular quando modelos neurais são componentes, e não a mente inteira?**
-
-A arquitetura reúne ideias de arquiteturas cognitivas, raciocínio simbólico, memória persistente, assistentes locais, planejamento por agentes, Engenharia de Software por agentes, autoconsulta e automodificação supervisionada.
-
----
-
 ## Princípios de engenharia
 
 1. **Não regredir capacidades já validadas.**
@@ -307,9 +269,9 @@ As pendências atuais permanecem separadas dos marcos já validados:
 
 - retificação com histórico completo;
 - limite de 400 tokens no caminho atual do Qwen em determinados casos;
-- TESTE F de aprendizado de regra.
-
-Essas pendências são mantidas separadas das promoções já validadas e não são tratadas como regressões dessas etapas.
+- TESTE F de aprendizado de regra;
+- ampliar a circulação ponta a ponta entre autodiagnóstico, projeto, planejamento, ferramentas e aprendizado sem criar estruturas paralelas;
+- ampliar baselines de desempenho e regressão do ciclo evolutivo.
 
 ---
 
@@ -317,27 +279,15 @@ Essas pendências são mantidas separadas das promoções já validadas e não s
 
 A **OHANA Enterprise** é a camada de especialização da arquitetura OHANA para ambientes organizacionais.
 
-Uma implantação pode combinar:
-
-- identidade e contexto da organização;
-- serviços e regras específicos;
-- conhecimento e documentos autorizados;
-- permissões e governança;
-- integrações com sistemas e dados;
-- planejamento e execução controlada;
-- evolução incremental da solução.
-
-O escopo de cada implantação é definido a partir das necessidades, processos e sistemas existentes no ambiente.
+Uma implantação pode combinar identidade e contexto da organização, serviços e regras específicos, conhecimento e documentos autorizados, permissões e governança, integrações com sistemas e dados, planejamento e execução controlada e evolução incremental da solução.
 
 📄 **[Conheça a proposta de projeto OHANA Enterprise](comercial/PROPOSTA_OHANA_ENTERPRISE.md)**
-
-O documento apresenta como uma implantação pode ser estruturada, sem valores ou condições comerciais.
 
 ---
 
 ## Documentação
 
-- [Status técnico atual](docs/STATUS_ATUAL_2026-10-01.md)
+- [Status técnico atual — 03/10/2026](docs/STATUS_ATUAL_2026-10-03.md)
 - [Arquitetura](ARCHITECTURE.md)
 - [Benchmarks e medições](BENCHMARKS.md)
 - [Hardware e execução local](HARDWARE.md)
@@ -350,7 +300,7 @@ O documento apresenta como uma implantação pode ser estruturada, sem valores o
 
 ## Para leitores internacionais
 
-**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Recent validated work improved semantic routing, contextual continuity and the ability to preserve technical investigation state, distinguish findings from continuation and recommendation, and keep human authorization intact. Full documentation is primarily maintained in Brazilian Portuguese.
+**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Cycle 20 validated local self-knowledge and a governed documentary closing path inside the existing cycle controller, preserving human authorization, rollback and the distinction between documented promotion and real supervised execution. The project is now on cycle 21.
 
 ---
 
