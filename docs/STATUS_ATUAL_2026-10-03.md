@@ -67,6 +67,62 @@ ROLLBACK_DISPONIVEL = True
 
 Após o fechamento, a própria OHANA respondeu corretamente que está no ciclo 21, usando memória local e sem conceder autorização operacional.
 
+## Consolidação pós-C20 com Codex
+
+Após o fechamento do ciclo 20, foi executada uma revisão de consolidação com Codex em modo de inspeção, com o objetivo de verificar se havia alguma ligação incompleta no trabalho concluído no dia.
+
+A revisão confirmou:
+
+```text
+LIGACOES_HOJE_COMPLETAS = True
+ALTERACAO_NECESSARIA = False
+PRODUCAO_ALTERADA = False
+NOVO_CICLO_CRIADO = False
+NOVO_NUCLEO_CRIADO = False
+NOVO_MODULO_CRIADO = False
+ARQUITETURA_PARALELA_CRIADA = False
+AUTORIZACAO_OPERACIONAL_CONCEDIDA = False
+PRONTO_PARA_AUTORIZACAO_HUMANA = False
+```
+
+Também foram conferidos o servidor, o controlador de ciclo, os checkpoints documentais do C20, o histórico de fechamento, o estado evolutivo, o estado operacional, os aprendizados persistidos e o backup final do fechamento.
+
+A consolidação confirmou a coerência entre:
+
+```text
+controlador
+→ estado ativo do ciclo 21
+→ fechamento documental do C20
+→ histórico persistido
+→ aprendizado persistido
+→ checkpoint e hashes
+→ backup de rollback
+```
+
+O caminho documental permaneceu identificado como `DOCUMENTAL_ZERO_OPS`, sem inventar execução supervisionada. A última execução supervisionada real anterior permaneceu preservada.
+
+O runtime HTTP na porta 8092 foi verificado como saudável no momento da consolidação, e os hashes de produção do servidor e do controlador permaneceram preservados.
+
+Hashes de referência após a consolidação:
+
+```text
+SERVIDOR_SHA256 =
+08983B792C69E3765F1878979598437ABF07BACC8A162241098F7209FC9A8ED9
+
+CONTROLADOR_SHA256 =
+8E974C1904FA790C9186A30E05924E9DEE7F1E8BB70B80B2D58041B31AB82E04
+```
+
+Nenhum candidato adicional foi criado porque a revisão não encontrou uma ligação pendente comprovada no escopo do trabalho concluído.
+
+## Observação operacional separada — OHANA Enterprise pública
+
+Após a consolidação cognitiva e documental, foi iniciada uma investigação separada da conectividade da demonstração pública OHANA Enterprise.
+
+Esse diagnóstico operacional não altera o ciclo 21 nem representa nova evolução cognitiva. O objetivo é apenas restaurar a cadeia pública já existente entre runtime local, gateway, Cloudflare Tunnel e Worker.
+
+A arquitetura pública identificada utiliza componentes já existentes e deve ser restaurada sem criar nova camada paralela.
+
 ## Princípio preservado
 
 > Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.
