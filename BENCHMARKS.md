@@ -47,7 +47,7 @@ Resultados acumulados de ciclos controlados:
 
 ## Continuidade de Engenharia em múltiplos turnos — validada em produção
 
-A promoção de 30/09/2026 validou a continuidade de uma investigação técnica ao longo de seis mensagens consecutivas relacionadas.
+Uma promoção validada confirmou a continuidade de uma investigação técnica ao longo de seis mensagens consecutivas relacionadas.
 
 Fluxo exercitado:
 
