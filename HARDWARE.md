@@ -90,23 +90,6 @@ Neste hardware, o desenvolvimento tende a priorizar:
 6. raciocínio incremental e reutilização de estado;
 7. ausência de dependência obrigatória de IA externa para operação básica.
 
-## Possível modelo neural próprio da OHANA
-
-Uma direção futura é um modelo em português focado apenas nas tarefas linguísticas que a arquitetura realmente precisa, como:
-
-- classificação de intenção;
-- resolução de referência;
-- detecção de continuidade técnica;
-- detecção de ensino;
-- extração estruturada;
-- geração natural de resposta.
-
-Em vez de concentrar toda a inteligência nos pesos, esse modelo funcionaria como um **córtex de linguagem** para a arquitetura maior.
-
-Modelos na faixa de centenas de milhões até poucos bilhões de parâmetros podem ser avaliados futuramente, preferencialmente com quantização e execução CPU-first neste mesmo ambiente.
-
-Essa é uma direção de pesquisa, não uma substituição atualmente validada para o Qwen.
-
 ## Critério de sucesso de hardware
 
 A meta não é:
