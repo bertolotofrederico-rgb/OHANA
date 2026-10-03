@@ -34,7 +34,7 @@ PROMOÇÃO DOCUMENTAL VALIDADA
 
 Nenhuma execução ou contrato fictício foi criado.
 
-## Marco concluído — circulação de autoconhecimento e fechamento documental
+## Marcos concluídos — autoconhecimento, fechamento documental e circulação governada
 
 Foi comprovado que a OHANA consegue consultar localmente:
 
@@ -46,6 +46,16 @@ Foi comprovado que a OHANA consegue consultar localmente:
 - aprendizado anterior.
 
 As seis consultas do C20 foram atendidas via memória local sem autorização operacional.
+
+Conhecimento factual `ATIVO` agora também pode circular até a montagem existente de regras e alimentar o calculador já existente com precedência sobre relato histórico antigo não validado.
+
+Foi validado que:
+
+- a mesma regra governada pode ser reutilizada em entradas diferentes sem reensino;
+- candidato não autorizado não substitui conhecimento `ATIVO`;
+- versão superada não substitui a vigente;
+- resultado derivado não vira fato automaticamente;
+- a correção foi promovida sem criar novo núcleo, memória, índice ou calculador.
 
 O controlador existente foi ligado ao checkpoint documental governado e passou por:
 
@@ -133,6 +143,8 @@ O foco é encontrar os pontos onde dados válidos já produzidos por um estágio
 
 ### 2. Reutilização de evolução anterior
 
+A circulação direta de uma regra factual governada até o calculador já foi validada. O próximo objetivo é ampliar esse padrão de reutilização para outros tipos de conhecimento e etapas do ciclo evolutivo.
+
 Aumentar o uso automático e governado de aprendizados já comprovados antes de repetir diagnóstico, pesquisa ou reconstrução de contexto.
 
 Objetivo:
@@ -195,9 +207,7 @@ A evolução aqui deve melhorar confiabilidade e generalização, não remover g
 
 ### 7. Robustez da rota de aprendizado
 
-Pendência conhecida: `TESTE_F_APRENDIZADO`.
-
-Melhorar ensino explícito e regras procedurais sem enfraquecer proteções operacionais.
+A aplicação direta de regra factual governada já foi validada no caminho existente. A próxima evolução deve ampliar ensino explícito e reutilização procedimental sem enfraquecer proteções operacionais nem confundir resultado derivado com novo fato.
 
 ### 8. Retificação com histórico completo
 
