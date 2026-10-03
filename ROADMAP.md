@@ -36,7 +36,7 @@ Nenhuma execução ou contrato fictício foi criado.
 
 ## Marco concluído — circulação de autoconhecimento e fechamento documental
 
-Em 03/10/2026 foi comprovado que a OHANA consegue consultar localmente:
+Foi comprovado que a OHANA consegue consultar localmente:
 
 - ciclo atual;
 - estado atual;
