@@ -35,7 +35,7 @@ PRONTO_PARA_PROMOCAO=True
 
 significa apenas que o candidato passou pelos controles definidos. Isso não concede autoridade de execução ou promoção.
 
-A promoção validada em 30/09/2026 confirmou:
+Uma promoção validada confirmou:
 
 ```text
 AUTORIZACAO_HUMANA=PRESERVADA
@@ -93,7 +93,7 @@ Mudanças estruturais devem possuir caminho de rollback definido antes da promo�
 
 O rollback deve restaurar apenas os arquivos pretendidos e não deve encerrar processos ou serviços do sistema operacional sem relação com a OHANA.
 
-No marco de 30/09/2026, rollback permaneceu disponível e não precisou ser executado.
+Nesse marco de evolução, rollback permaneceu disponível e não precisou ser executado.
 
 ## Limites operacionais
 
