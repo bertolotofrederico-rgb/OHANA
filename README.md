@@ -56,9 +56,9 @@ Nenhum novo núcleo, memória ou motor cognitivo foi criado para atingir esse co
 
 > **Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.**
 
-[Leia o status técnico atual completo](docs/STATUS_ATUAL_2026-10-03.md).
+[Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
 
-[Leia também o marco anterior de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md).
+[Leia também o marco de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md).
 
 ---
 
@@ -287,14 +287,14 @@ Uma implantação pode combinar identidade e contexto da organização, serviço
 
 ## Documentação
 
-- [Status técnico atual — 03/10/2026](docs/STATUS_ATUAL_2026-10-03.md)
+- [Status técnico atual](docs/STATUS_ATUAL.md)
 - [Arquitetura](ARCHITECTURE.md)
 - [Benchmarks e medições](BENCHMARKS.md)
 - [Hardware e execução local](HARDWARE.md)
 - [Roadmap](ROADMAP.md)
 - [Segurança e governança](SECURITY.md)
 - [Visão geral](docs/overview.md)
-- [Marco: continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA_2026-09-30.md)
+- [Marco: continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md)
 
 ---
 
