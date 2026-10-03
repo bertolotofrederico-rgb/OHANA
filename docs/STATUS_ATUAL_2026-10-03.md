@@ -101,27 +101,28 @@ controlador
 
 O caminho documental permaneceu identificado como `DOCUMENTAL_ZERO_OPS`, sem inventar execução supervisionada. A última execução supervisionada real anterior permaneceu preservada.
 
-O runtime HTTP na porta 8092 foi verificado como saudável no momento da consolidação, e os hashes de produção do servidor e do controlador permaneceram preservados.
-
-Hashes de referência após a consolidação:
-
-```text
-SERVIDOR_SHA256 =
-08983B792C69E3765F1878979598437ABF07BACC8A162241098F7209FC9A8ED9
-
-CONTROLADOR_SHA256 =
-8E974C1904FA790C9186A30E05924E9DEE7F1E8BB70B80B2D58041B31AB82E04
-```
+O runtime de produção foi verificado como saudável no momento da consolidação, e a integridade dos componentes validados permaneceu preservada.
 
 Nenhum candidato adicional foi criado porque a revisão não encontrou uma ligação pendente comprovada no escopo do trabalho concluído.
 
-## Observação operacional separada — OHANA Enterprise pública
+## Validação operacional da demonstração pública
 
-Após a consolidação cognitiva e documental, foi iniciada uma investigação separada da conectividade da demonstração pública OHANA Enterprise.
+A demonstração pública da OHANA Enterprise também foi restaurada e validada ponta a ponta após uma intervenção operacional separada do ciclo cognitivo.
 
-Esse diagnóstico operacional não altera o ciclo 21 nem representa nova evolução cognitiva. O objetivo é apenas restaurar a cadeia pública já existente entre runtime local, gateway, Cloudflare Tunnel e Worker.
+Foram confirmados:
 
-A arquitetura pública identificada utiliza componentes já existentes e deve ser restaurada sem criar nova camada paralela.
+```text
+SITE_PUBLICO = ONLINE
+STATUS_PUBLICO = OK
+CHAT_PUBLICO = OK
+ORIGEM_DA_RESPOSTA = OHANA
+NUCLEO_COGNITIVO_ALTERADO = FALSE
+CICLO_ALTERADO = FALSE
+```
+
+Os detalhes de infraestrutura, endereços de túnel, portas internas, rotas privadas, arquivos de configuração e mecanismos de publicação são deliberadamente omitidos deste repositório público.
+
+A validação operacional não representa nova capacidade cognitiva, novo ciclo ou mudança de governança.
 
 ## Princípio preservado
 
