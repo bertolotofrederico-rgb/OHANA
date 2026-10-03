@@ -2,21 +2,55 @@
 
 ## Estado atual
 
-A OHANA encerrou o ciclo 20 e avançou para o ciclo 21 após validação e fechamento documental governado do trabalho de autoconhecimento.
+A OHANA está no ciclo 21, com o ciclo 20 encerrado e preservado como marco anterior.
 
-O marco comprovou que uma evolução já promovida em produção pode ser fechada pelo mesmo controlador de ciclo sem inventar uma execução supervisionada que não ocorreu.
+Desde esse fechamento, uma nova ligação de circulação de conhecimento governado foi diagnosticada, validada em laboratório, certificada pela rota HTTP integral, promovida e carregada no runtime produtivo.
+
+O avanço comprovado é específico:
+
+```text
+CONHECIMENTO ATIVO
+→ recuperação governada
+→ montagem existente de regras
+→ precedência sobre relato antigo não validado
+→ Resolver-CalculoChat existente
+→ resultado calculado
+```
+
+Resultados derivados permanecem distintos de fatos persistentes:
+
+```text
+RESULTADO_CALCULADO
+fato_validado = False
+aprendizado_automatico = False
+```
+
+Estado consolidado:
 
 ```text
 CICLO_ATUAL = 21
-ESTADO = PRONTO_PARA_NOVA_EVOLUCAO
-ULTIMO_RESULTADO = CICLO_PROMOVIDO_COM_SUCESSO
-AUTORIZACAO_OPERACIONAL = FALSE
+
+MEMORIA = OK
+RACIOCINIO_LOCAL = OK
+ENGENHARIA = OK
+AUTOTUNE = OK
+AUTOCONHECIMENTO_LOCAL = VALIDADO
+FECHAMENTO_DOCUMENTAL_GOVERNADO = VALIDADO
+
+CIRCULACAO_CONHECIMENTO_ATIVO = VALIDADA_EM_PRODUCAO
+PRECEDENCIA_GOVERNADA = VALIDADA_EM_PRODUCAO
+GENERALIZACAO_DIRETA_DE_REGRA = VALIDADA
+NAO_PERSISTENCIA_DE_DERIVADOS = VALIDADA
+
+AUTORIZACAO_HUMANA = PRESERVADA
+AUTORIZACAO_OPERACIONAL_AUTOMATICA = FALSE
+PROMOCAO_AUTONOMA = FALSE
 ROLLBACK = DISPONIVEL
 ```
 
-## Marco concluído — C20
+## Marco preservado — ciclo 20
 
-O ciclo 20 tratou da circulação de autoconhecimento já existente.
+O ciclo 20 comprovou a circulação de autoconhecimento já existente.
 
 Foram validadas consultas locais sobre:
 
@@ -27,13 +61,9 @@ Foram validadas consultas locais sobre:
 - próxima ação;
 - aprendizado de ciclo anterior.
 
-As seis consultas de produção responderam via `MEMORIA_LOCAL`, sem autorização operacional.
+As seis consultas responderam via `MEMORIA_LOCAL`, sem autorização operacional.
 
-A correção foi obtida por ligação de capacidades existentes. Não foi criado novo núcleo, nova memória, novo motor cognitivo ou arquitetura paralela.
-
-## Fechamento documental governado
-
-O controlador de ciclo existente foi evoluído para reconhecer duas formas legítimas de encerramento:
+O mesmo controlador de ciclo existente passou a reconhecer dois caminhos legítimos de encerramento:
 
 ```text
 CONTROLADOR DE CICLO EXISTENTE
@@ -45,90 +75,74 @@ CONTROLADOR DE CICLO EXISTENTE
              └─ evidência promovida + hashes + regressão + rollback
 ```
 
-O modo documental não cria contrato ou execução fictícios.
+O caminho documental não inventa contrato, execução ou autorização.
 
-No fechamento do C20 foi preservada a última execução supervisionada anterior, porque o ciclo 20 não teve execução contratual supervisionada.
+## Marco concluído — circulação de conhecimento governado
 
-## Evidências validadas
+Foi comprovada uma lacuna específica: conhecimento factual `ATIVO` era recuperado pela consulta governada, mas podia não chegar à montagem determinística de regras. Em conflito, um relato histórico antigo não validado podia ser utilizado pelo calculador.
 
-```text
-C20_FECHAMENTO_DOCUMENTAL_OK = True
-C20_FECHADO = True
-CICLO_ENCERRADO = 20
-NOVO_CICLO = 21
-MODO_FECHAMENTO = DOCUMENTAL_ZERO_OPS
-RESULTADO = CICLO_PROMOVIDO_COM_SUCESSO
+A correção foi feita reutilizando o caminho existente.
 
-HISTORICO_C20_OK = True
-APRENDIZADO_C20_OK = True
-AUTOCONHECIMENTO_C21_OK = True
-ROLLBACK_DISPONIVEL = True
-```
+Não foram criados:
 
-Após o fechamento, a própria OHANA respondeu corretamente que está no ciclo 21, usando memória local e sem conceder autorização operacional.
+- novo núcleo;
+- nova memória;
+- novo índice;
+- novo calculador;
+- novo mecanismo de estados;
+- novo motor de inferência.
 
-## Consolidação pós-C20 com Codex
+A ligação passou a fazer o conhecimento vigente participar da montagem de regras já existente, preservando sua proveniência e dando precedência à verdade governada sobre relatos antigos não validados.
 
-Após o fechamento do ciclo 20, foi executada uma revisão de consolidação com Codex em modo de inspeção, com o objetivo de verificar se havia alguma ligação incompleta no trabalho concluído no dia.
+## Evidências funcionais validadas
 
-A revisão confirmou:
+Em ambiente isolado, usando a rota HTTP real e o servidor integral, foi comprovado:
 
 ```text
-LIGACOES_HOJE_COMPLETAS = True
-ALTERACAO_NECESSARIA = False
-PRODUCAO_ALTERADA = False
-NOVO_CICLO_CRIADO = False
-NOVO_NUCLEO_CRIADO = False
-NOVO_MODULO_CRIADO = False
-ARQUITETURA_PARALELA_CRIADA = False
-AUTORIZACAO_OPERACIONAL_CONCEDIDA = False
-PRONTO_PARA_AUTORIZACAO_HUMANA = False
+ATIVO_HTTP = PASS
+GENERALIZACAO_HTTP = PASS
+PRECEDENCIA_HTTP = PASS
+CONVERSA_COMUM = PASS
+CONHECIMENTO_INEXISTENTE = PASS
+NAO_PERSISTENCIA = PASS
 ```
 
-Também foram conferidos o servidor, o controlador de ciclo, os checkpoints documentais do C20, o histórico de fechamento, o estado evolutivo, o estado operacional, os aprendizados persistidos e o backup final do fechamento.
+Uma mesma regra governada persistida foi reutilizada sem reensino para diferentes entradas.
 
-A consolidação confirmou a coerência entre:
+Também foi comprovado que:
 
-```text
-controlador
-→ estado ativo do ciclo 21
-→ fechamento documental do C20
-→ histórico persistido
-→ aprendizado persistido
-→ checkpoint e hashes
-→ backup de rollback
-```
+- candidato não autorizado não substitui conhecimento `ATIVO`;
+- versão `SUPERADO` não substitui versão vigente;
+- histórico antigo permanece preservado;
+- resultado calculado não vira fato automaticamente;
+- aprendizado factual não é criado pelo simples resultado de cálculo.
 
-O caminho documental permaneceu identificado como `DOCUMENTAL_ZERO_OPS`, sem inventar execução supervisionada. A última execução supervisionada real anterior permaneceu preservada.
+## Promoção e runtime
 
-O runtime de produção foi verificado como saudável no momento da consolidação, e a integridade dos componentes validados permaneceu preservada.
+O candidato certificado foi promovido de forma controlada.
 
-Nenhum candidato adicional foi criado porque a revisão não encontrou uma ligação pendente comprovada no escopo do trabalho concluído.
+O runtime produtivo carregou o mesmo hash previamente certificado em laboratório.
 
-## Validação operacional da demonstração pública
+Após a ativação foram validados:
 
-A demonstração pública da OHANA Enterprise também foi restaurada e validada ponta a ponta após uma intervenção operacional separada do ciclo cognitivo.
+- HTTP produtivo saudável;
+- conversa comum;
+- cálculo simples;
+- consulta factual legítima;
+- memória;
+- referência contextual;
+- vigia ativo;
+- rollback disponível.
 
-Foram confirmados:
+Não houve regressão crítica identificada.
 
-```text
-SITE_PUBLICO = ONLINE
-STATUS_PUBLICO = OK
-CHAT_PUBLICO = OK
-ORIGEM_DA_RESPOSTA = OHANA
-NUCLEO_COGNITIVO_ALTERADO = FALSE
-CICLO_ALTERADO = FALSE
-```
-
-Os detalhes de infraestrutura, endereços de túnel, portas internas, rotas privadas, arquivos de configuração e mecanismos de publicação são deliberadamente omitidos deste repositório público.
-
-A validação operacional não representa nova capacidade cognitiva, novo ciclo ou mudança de governança.
+Conhecimento produtivo, estados factuais e índice foram preservados. A telemetria normal de padrões de conversa permaneceu separada de aprendizado factual.
 
 ## Princípio preservado
 
 > Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.
 
-O trabalho recente continua seguindo a regra arquitetural central do projeto:
+A evolução continua seguindo:
 
 ```text
 MAPEAR
@@ -139,23 +153,36 @@ MAPEAR
 → APRENDER
 ```
 
-Antes de criar novos núcleos ou mecanismos, a OHANA deve reutilizar memória, raciocínio, planejamento, engenharia, ferramentas e governança já existentes.
+O marco recente reforça esse princípio: a capacidade de cálculo já existia e o conhecimento governado já existia. A evolução necessária foi conectar corretamente os dois.
+
+## O que este marco não afirma
+
+Este status não declara como concluídos:
+
+- inversão algébrica geral;
+- composição arbitrária de múltiplas operações;
+- equivalência semântica geral entre paráfrases;
+- automodificação irrestrita;
+- promoção autônoma;
+- AGI concluída.
+
+Esses pontos permanecem separados de capacidades já comprovadas.
 
 ## Próxima rota — ciclo 21
 
-A próxima etapa deve continuar conectando capacidades existentes.
-
-Rota de retomada planejada:
+O próximo trabalho deve continuar usando o mesmo método:
 
 ```text
-1. confirmar baseline do ciclo 21
-2. mapear a próxima interrupção real do fluxo cognitivo
+1. confirmar baseline
+2. escolher uma interrupção real
 3. verificar se a capacidade necessária já existe
 4. localizar onde a informação deixa de circular
-5. corrigir somente a ligação necessária em candidato isolado
-6. testar regressão e governança
-7. promover somente com autorização humana
-8. registrar aprendizado e continuidade
+5. criar somente a ligação necessária
+6. testar em isolamento
+7. validar regressão e governança
+8. promover somente com autorização humana
+9. observar produção
+10. registrar aprendizado e continuidade
 ```
 
-Prioridade: aumentar a circulação entre memória, autoconhecimento, autodiagnóstico, projeto, planejamento, ferramentas e aprendizado, sem criar peças soltas.
+Prioridade: ampliar reutilização de conhecimento e aprendizado já validados sem criar estruturas paralelas.
