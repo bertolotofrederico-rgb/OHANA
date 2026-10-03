@@ -285,6 +285,15 @@ Uma implantação pode combinar identidade e contexto da organização, serviço
 
 ---
 
+## Apoio e patrocínio
+
+Quer apoiar o desenvolvimento independente da OHANA ou conversar sobre patrocínio e parceria?
+
+❤️ **[Apoiar / Patrocinar a OHANA](SPONSORSHIP.md)**
+
+
+---
+
 ## Documentação
 
 - [Status técnico atual](docs/STATUS_ATUAL.md)
