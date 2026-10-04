@@ -1,263 +1,225 @@
 # OHANA — Roadmap
 
-Este roadmap reflete a direção experimental atual do projeto. Ele é propositalmente conservador: capacidades validadas são preservadas e novas capacidades devem ser conectadas aos componentes existentes sempre que possível.
-
-## Estágio atual — ciclo 21
-
-A OHANA possui atualmente um caminho integrado para:
-
-```text
-pedido
-→ linguagem
-→ contexto
-→ memória
-→ conhecimento
-→ raciocínio
-→ diagnóstico
-→ projeto
-→ planejamento
-→ ferramentas / execução governada
-→ validação
-→ aprendizado
-→ novo estado
-```
-
-A autorização humana continua obrigatória para promoção de mudanças em produção.
-
-O ciclo 20 foi encerrado com sucesso por evidência documental governada após promoção previamente validada em produção. O fechamento utilizou o controlador de ciclo existente e preservou a diferença entre:
-
-```text
-EXECUÇÃO SUPERVISIONADA REAL
-≠
-PROMOÇÃO DOCUMENTAL VALIDADA
-```
-
-Nenhuma execução ou contrato fictício foi criado.
-
-## Marcos concluídos — autoconhecimento, fechamento documental e circulação governada
-
-Foi comprovado que a OHANA consegue consultar localmente:
-
-- ciclo atual;
-- estado atual;
-- último resultado;
-- objetivo atual;
-- próxima ação;
-- aprendizado anterior.
-
-As seis consultas do C20 foram atendidas via memória local sem autorização operacional.
-
-Conhecimento factual `ATIVO` agora também pode circular até a montagem existente de regras e alimentar o calculador já existente com precedência sobre relato histórico antigo não validado.
-
-Foi validado que:
-
-- a mesma regra governada pode ser reutilizada em entradas diferentes sem reensino;
-- candidato não autorizado não substitui conhecimento `ATIVO`;
-- versão superada não substitui a vigente;
-- resultado derivado não vira fato automaticamente;
-- a correção foi promovida sem criar novo núcleo, memória, índice ou calculador.
-
-O controlador existente foi ligado ao checkpoint documental governado e passou por:
-
-```text
-candidato isolado
-→ parse
-→ validação estática
-→ validar-somente
-→ teste de hash adulterado
-→ teste de checkpoint ausente
-→ regressão do caminho supervisionado
-→ promoção controlada
-→ validação em produção
-→ fechamento documental
-→ aprendizado
-→ ciclo 21
-```
+Este roadmap reflete a direção experimental atual da OHANA. A prioridade é aumentar integração, segurança, eficiência e reutilização das capacidades existentes antes de criar novas estruturas.
 
 ## Regra arquitetural principal
 
 > Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.
 
-Antes de criar qualquer núcleo, memória, motor ou camada, a próxima evolução deve responder:
-
 ```text
-A capacidade já existe?
+capacidade necessária já existe?
         ↓
-SIM
+      sim
         ↓
 onde a circulação está quebrada?
         ↓
 ligar o que já existe
         ↓
-validar
+validar em LAB
+        ↓
+certificar
+        ↓
+promover somente com autorização humana
 ```
 
-## Rota de retomada — próxima sessão
+## Estágio atual
 
-A rota planejada para a próxima sessão é:
+Base avançada: memória persistente, conhecimento governado, raciocínio local/simbólico, C21, autodiagnóstico, autoprojeto, planejamento, execução governada, rollback, runtime e resiliência pública.
+
+Ainda em integração/planejamento: fechamento integral do C21, Wallet Core ligada ao chat, segurança financeira, Online multiusuário, Enterprise amadurecida, Lite e Network.
+
+## Prioridade 1 — C21.2 e gate correto
+
+O gate histórico foi diagnosticado como desalinhado com o contrato real de C21.2.
+
+Próximo marco:
 
 ```text
-CICLO 21
-  ↓
-1. confirmar baseline e integridade pós-C20
-  ↓
-2. escolher UMA interrupção real do fluxo cognitivo
-  ↓
-3. mapear origem → consumidor da informação
-  ↓
-4. provar se a capacidade necessária já existe
-  ↓
-5. localizar o ponto exato onde ela deixa de circular
-  ↓
-6. criar somente candidato de ligação
-  ↓
-7. testar funcional + regressão + governança
-  ↓
-8. promover somente com autorização humana
-  ↓
-9. observar produção
-  ↓
-10. registrar aprendizado e novo estado
+pergunta
+→ precondição factual
+→ recuperador real
+→ ID correto
+→ assunto/chave pertinentes
+→ valor vigente
+→ estabilidade 5/5
 ```
 
-A prioridade não é adicionar capacidades novas indiscriminadamente. É aumentar a circulação das já existentes.
+Formulação textual final pertence ao C21.5 e será testada separadamente.
 
-## Próximas prioridades
-
-### 1. Circulação ponta a ponta do autodesenvolvimento
-
-Conectar de forma mais completa:
+## Prioridade 2 — fechar Wallet Core
 
 ```text
-autoconhecimento
-→ autodiagnóstico causal
-→ projeto técnico
-→ plano
-→ ferramenta
-→ validação
-→ aprendizado
-→ reutilização
+criação no chat
+→ fluxo seguro existente
+→ certificação
+→ promoção governada
+
+depois:
+
+destino
+→ preparação
+→ confirmação
+→ assinatura
+→ transferência controlada
 ```
 
-O foco é encontrar os pontos onde dados válidos já produzidos por um estágio não chegam ao estágio seguinte.
+## Prioridade 3 — segurança financeira
 
-### 2. Reutilização de evolução anterior
+Antes de Wallet pública ou multiusuário:
 
-A circulação direta de uma regra factual governada até o calculador já foi validada. O próximo objetivo é ampliar esse padrão de reutilização para outros tipos de conhecimento e etapas do ciclo evolutivo.
+- auditar fronteiras do navegador;
+- manter private key fora de chat/modelo/log;
+- validar confirmação humana;
+- validar autorização e isolamento;
+- testar recuperação/rollback;
+- executar pentest controlado.
 
-Aumentar o uso automático e governado de aprendizados já comprovados antes de repetir diagnóstico, pesquisa ou reconstrução de contexto.
+## Segurança pública — candidato certificado
 
-Objetivo:
+SECURITY-0 a SECURITY-3 produziram candidato certificado em LAB/mock que autentica ponte, usa schema estrito, limita payload, usa contexto efêmero, restringe capacidades públicas, sanitiza erros e prepara quota antes do Core.
+
+Ele não acrescenta chamadas neurais, não cria novo módulo e **não será promovido sem autorização explícita**.
+
+Pendência: quota real do ambiente público.
+
+## Prioridade 4 — eficiência computacional e energética
+
+Eficiência é requisito arquitetural de todas as linhas.
 
 ```text
-problema parecido
-→ consultar conhecimento local válido
-→ reutilizar evidência / aprendizado
-→ investigar externamente apenas se necessário
+menos CPU
+menos GPU
+menos RAM
+menos VRAM
+menos disco
+menos rede
+menos energia
+menos latência
+mais resultado útil
 ```
 
-### 3. Autoconhecimento
+Estratégia:
 
-Depois do C20, o estado/ciclo/objetivo/resultado já circulam corretamente em consultas explícitas.
+- memória grande → recuperação pequena;
+- conhecimento local antes de pesquisa externa;
+- simbólico antes do neural;
+- 0 chamada neural quando a OHANA já cobre o caso;
+- uma chamada neural preferencialmente em perguntas abertas;
+- contexto mínimo pertinente;
+- evitar modelos/processos residentes sem necessidade;
+- medir antes/depois.
 
-Próxima evolução: ampliar o uso desse autoconhecimento como entrada dos próprios fluxos de diagnóstico e planejamento, sem criar uma nova camada de “consciência”.
+Próximos benchmarks: consumo/latência do Ollama, CPU vs GPU, keep-alive, tokens por resposta, chamadas neurais por 100 pedidos e energia estimada por resposta.
 
-### 4. Autodiagnóstico causal
+## Modelo neural especializado — somente após gate de viabilidade
 
-Aprofundar a passagem:
+O Qwen 2.5 1.5B é atualmente o córtex linguístico auxiliar.
+
+Uma especialização futura por LoRA/QLoRA pode ser avaliada para português, intents, extração de parâmetros e formulação sem transferir memória, governança ou verdade factual para o modelo.
+
+Nenhum treino será iniciado antes de provar:
 
 ```text
-sintoma
-→ evidência
-→ causa técnica
-→ hipótese verificável
-→ próximo teste
+treino externo viável
+→ adapter recuperável
+→ quantização viável
+→ retorno ao Ollama
+→ modelo final cabe no hardware
+→ benchmark A/B
+→ rollback
 ```
 
-A prioridade é reutilizar Motor de Engenharia, memória e evidências já existentes.
-
-### 5. Autoprojeto e planejamento
-
-Fortalecer a continuidade já validada:
+## Prioridade 5 — OHANA Online multiusuário
 
 ```text
-diagnóstico
-→ especificação
-→ projeto técnico
-→ plano canônico
+cadastro/login
+→ USER_ID
+→ sessão
+→ isolamento de memória
+→ wallet por usuário
+→ histórico
+→ autorização
 ```
 
-Evitar que projeto ou plano percam contexto já comprovado nas etapas anteriores.
-
-### 6. Ferramentas e modificação governada
-
-Preservar o ciclo de execução já comprovado:
+## Prioridade 6 — Enterprise
 
 ```text
-candidato
-→ teste isolado
-→ regressão
-→ julgamento
-→ autorização humana
-→ promoção
-→ rollback disponível
+OHANA Core
+→ TENANT_ID
+→ usuários/roles
+→ permissões
+→ conhecimento da empresa
+→ serviços
+→ conectores
+→ ferramentas autorizadas
+→ auditoria
 ```
 
-A evolução aqui deve melhorar confiabilidade e generalização, não remover governança.
+## Prioridade 7 — OHANA Lite
 
-### 7. Robustez da rota de aprendizado
-
-A aplicação direta de regra factual governada já foi validada no caminho existente. A próxima evolução deve ampliar ensino explícito e reutilização procedimental sem enfraquecer proteções operacionais nem confundir resultado derivado com novo fato.
-
-### 8. Retificação com histórico completo
-
-A retificação básica está funcional, mas o uso de histórico completo continua como pendência preexistente.
-
-### 9. Contexto incremental e seletivo
-
-Evoluir para:
+Meta conceitual: versão única com instalação de até 3 GB.
 
 ```text
-MEMÓRIA GRANDE
-→ RECUPERAÇÃO PEQUENA
-→ CONTEXTO RELEVANTE
+OHANA Lite
+→ runtime local
+→ modelo neural local
+→ memória/contexto local
+→ wallet
+→ mineração opcional
+→ monitor de hardware
+→ node
+→ updater
 ```
 
-Objetivos: reduzir latência, RAM/CPU e reconstruções desnecessárias.
+## Prioridade 8 — mineração e node
 
-### 10. Desempenho e modelo neural auxiliar
+Mineração será opt-in e adaptativa. A métrica não será apenas hashrate, mas produção por energia. Node e minerador permanecem logicamente separados.
 
-Manter separadas as otimizações cognitivas da arquitetura e as limitações do modelo linguístico auxiliar.
+## Prioridade 9 — OHANA Network
 
-Pendência conhecida: `QWEN_400_TOKENS`.
+Planejado: NODE_ID, heartbeat, peer discovery, relay de transações/blocos, multi-origin, failover e segurança P2P.
 
-Criar baselines reproduzíveis para latência, RAM, CPU, bytes de contexto, cold/warm start e crescimento de memória.
+## Mapa Vivo
 
-## Direção de médio prazo
+```text
+estado real
+→ estado visual
+→ renderer
+→ mapa
+```
 
-- circulação mais forte de conhecimento comprovado;
-- contratos de Engenharia mais reutilizáveis;
-- suítes de regressão isoladas mais amplas;
-- melhor indexação estrutural de projeto/código;
-- autoconsulta e mapeamento de dependências mais fortes;
-- geração governada de candidatos de patch;
-- rejeição automática de candidatos com regressão;
-- baselines antes/depois de mudanças;
-- maior reutilização de aprendizados de ciclos anteriores.
+O mapa nunca será fonte de verdade nem modificará a OHANA.
 
-## Direção de pesquisa de longo prazo
+## Sequência consolidada
 
-A OHANA investiga se uma arquitetura cognitiva modular pode melhorar ao longo do tempo mantendo modelos neurais de linguagem como componentes auxiliares, em vez de tratá-los como todo o sistema cognitivo.
-
-Áreas de pesquisa incluem conhecimento persistente e governado, raciocínio incremental, autoconsulta arquitetural, autoengenharia supervisionada, operação local leve, suporte neural especializado por domínio e continuidade em projetos e sessões longas.
+```text
+C21.2 / gates
+↓
+fechar Wallet Core
+↓
+segurança financeira
+↓
+segurança pública promovida quando autorizada
+↓
+Online multiusuário
+↓
+Enterprise amadurecida
+↓
+Lite ≤ 3 GB
+↓
+mineração + node
+↓
+Network
+↓
+ecossistema distribuído
+```
 
 ## O que não é objetivo da fase atual
 
-A OHANA não busca atualmente:
-
-- automodificação autônoma irrestrita;
+- automodificação irrestrita;
 - contornar autorização humana;
-- substituir governança por decisões geradas pelo modelo;
-- criar novos núcleos para capacidades que já existem;
-- construir caminhos paralelos quando o fluxo existente pode ser ligado;
-- modelos locais pesados incompatíveis com o hardware disponível.
+- criar novos núcleos para capacidades existentes;
+- expor Wallet ao público antes de segurança;
+- iniciar Lite/Network antes de fechar Core/Online;
+- treinar modelo neural sem caminho completo de viabilidade;
+- trocar eficiência arquitetural por força bruta.
