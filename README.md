@@ -52,6 +52,33 @@ ROLLBACK = DISPONIVEL
 
 A evolução reutilizou os mecanismos existentes. Não foi criado novo núcleo, nova memória, novo índice ou novo calculador.
 
+### Marco C21.5 — raciocínio → formulação factual
+
+O C21.5 foi **validado em laboratório no escopo factual governado e coberto**. O trabalho confirmou que a OHANA já possuía um compositor factual local capaz de preservar o conteúdo governado sem paráfrase neural; o gargalo estava na precedência do fluxo.
+
+```text
+conhecimento governado pertinente
+→ sinais existentes de estado / confiança / cobertura
+→ Compor-ConhecimentoFactualNaturalV12
+→ resposta factual local fiel
+→ 0 chamadas neurais no caso coberto
+```
+
+Resultados controlados do marco:
+
+- **6/6 casos positivos** respondidos corretamente;
+- **6/6 casos negativos** preservando o fluxo original;
+- cálculo e referência contextual preservados;
+- fallback neural preservado para casos não cobertos;
+- nenhuma interceptação indevida observada;
+- C21.1–C21.4 preservados;
+- sem novo módulo, novo formulador ou resposta hardcoded;
+- produção permaneceu intacta durante a validação.
+
+Benefícios observados no laboratório: maior fidelidade de fatos governados, redução de chamadas neurais em casos cobertos, menor carga desnecessária sobre o modelo local e separação mais clara entre formulação simbólica e fallback neural.
+
+A promoção para produção **ainda não foi executada**. O patch isolado do C21.5 está em processo de certificação para garantir que somente esse marco seja promovido, sem transportar alterações laboratoriais de fases anteriores.
+
 > **Não criar nova inteligência enquanto a inteligência já existente não circular corretamente.**
 
 [Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
@@ -97,6 +124,9 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 - raciocínio local sem dependência obrigatória de IA externa;
 - recuperação seletiva de contexto do projeto;
 - circulação de conhecimento factual ATIVO até o calculador existente;
+- formulação factual simbólica validada em laboratório para conhecimento governado coberto;
+- precedência factual controlada capaz de evitar chamada neural quando o compositor local já cobre o caso;
+- fallback neural preservado para perguntas fora do escopo factual coberto;
 - precedência governada de conhecimento vigente sobre relato antigo não validado;
 - distinção entre resultado calculado e fato persistente;
 - autoconhecimento local de ciclo, estado, objetivo, resultado e próxima ação;
@@ -163,6 +193,8 @@ Validações controladas demonstraram:
 - **6/6 consultas de autoconhecimento do C20** respondidas via memória local;
 - fechamento do C20 com evidência documental governada, histórico, aprendizado e rollback;
 - avanço controlado para o ciclo 21;
+- C21.5 validado em laboratório no escopo factual coberto, com 6/6 casos positivos e 6/6 negativos;
+- resposta factual local validada com 0 chamadas neurais nos casos cobertos e fallback preservado;
 - circulação de conhecimento ATIVO promovida e validada em produção;
 - precedência governada validada sem apagar histórico antigo;
 - generalização direta de regra persistida validada sem reensino;
@@ -272,6 +304,7 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 As pendências atuais permanecem separadas dos marcos já validados:
 
+- certificar e promover de forma controlada o patch isolado do C21.5, sem carregar diferenças laboratoriais de C21.1/C21.3;
 - retificação com histórico completo;
 - limite de 400 tokens no caminho atual do Qwen em determinados casos;
 - ampliar a circulação ponta a ponta entre autodiagnóstico, projeto, planejamento, ferramentas e aprendizado, reutilizando o padrão de ligação governada já validado;
