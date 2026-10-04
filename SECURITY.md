@@ -1,151 +1,150 @@
 # OHANA — Segurança e Governança
 
-A OHANA é desenhada em torno de evolução supervisionada, e não de automodificação autônoma irrestrita.
+A OHANA é desenhada em torno de evolução supervisionada e fronteiras explícitas entre Internet, runtime, ferramentas, dados e operações sensíveis.
 
 ## Regra central
 
-Uma ideia gerada não é autorização para modificar produção.
-
-A cadeia esperada de Engenharia é:
+Uma ideia, diagnóstico ou candidato aprovado **não é autorização para modificar produção**.
 
 ```text
 problema demonstrado
 → causa evidenciada
 → proposta mínima
 → backup
-→ candidato
-→ parser / integridade
+→ candidato LAB
 → testes funcionais
-→ testes de regressão
-→ validação
-→ julgamento de prontidão
+→ regressão
+→ segurança
+→ eficiência
+→ certificação
 → autorização humana
-→ promoção para produção
+→ promoção
+→ observação
+→ rollback disponível
 ```
 
-## Autorização humana
+`PRONTO_PARA_PROMOCAO=True` significa apenas que o candidato passou pelos controles definidos. Não concede autoridade de execução.
 
-A promoção para produção permanece explicitamente governada por autorização humana na arquitetura atual.
+## Estado atual da segurança pública
 
-Um resultado como:
+Entre SECURITY-0 e SECURITY-3 foi mapeada e certificada em LAB a fronteira pública.
+
+Achados altos iniciais:
+
+1. chat anônimo ligado ao estado compartilhado;
+2. Gateway sem autenticação efetiva da ponte e com payload excessivamente permissivo;
+3. consumo público sem quota comprovada.
+
+Não foram comprovados achados críticos.
+
+O candidato certificado em LAB reutiliza capacidades existentes para:
+
+- autenticar a ponte Worker → Gateway;
+- aceitar schema mínimo de entrada;
+- aplicar limite real de payload;
+- manter chat público efêmero;
+- impedir persistência pública em memória/arquivo compartilhado;
+- restringir capacidades públicas;
+- bloquear Executor, Admin e execução Wallet no perfil anônimo;
+- sanitizar erros;
+- preparar quota antes do Core;
+- classificar informação em pública, interna, sensível ou secreta.
+
+Resultados da certificação:
 
 ```text
-PRONTO_PARA_PROMOCAO=True
+AUTH_PONTE_CERTIFICADA=True
+TOKEN_NAO_FRONTEND=True
+TOKEN_NAO_LOGADO=True
+TOKEN_NAO_RETORNADO=True
+
+SCHEMA_CERTIFICADO=True
+PAYLOAD_CERTIFICADO=True
+CHAT_EFEMERO_CERTIFICADO=True
+ALLOWLIST_CERTIFICADA=True
+PONTE_DIRETA_PROTEGIDA=True
+
+PUBLICO_OK=True
+INTERNO_BLOQUEADO=True
+SENSIVEL_BLOQUEADO=True
+SECRETO_BLOQUEADO=True
+
+REGRESSAO_REAL=False
+NOVAS_CHAMADAS_NEURAIS=0
+OVERHEAD_SIGNIFICATIVO=False
+ACHADOS_ALTOS_CERTIFICADOS=3/3
+SECURITY_CERTIFICADO=True
 ```
 
-significa apenas que o candidato passou pelos controles definidos. Isso não concede autoridade de execução ou promoção.
+### Produção
 
-Uma promoção validada confirmou:
+O pacote SECURITY certificado **não foi promovido**. A quota real do ambiente público ainda deve ser configurada/certificada antes de abertura ampliada.
+
+## Segredos
+
+Princípios permanentes:
+
+- tudo enviado ao navegador deve ser tratado como público;
+- tudo enviado ao modelo neural deve ser tratado como não secreto;
+- logs podem ser expostos e não devem conter credenciais;
+- private keys, seeds, tokens e senhas não devem entrar no chat, prompt ou frontend;
+- material privado de Wallet deve ficar restrito ao componente de assinatura;
+- segredos da ponte devem permanecer em backend/configuração apropriada.
+
+Auditorias recentes não identificaram segredo real, token, private key, source map ou ambiente exposto nos assets públicos auditados.
+
+## Classificação de informação
 
 ```text
-AUTORIZACAO_HUMANA=PRESERVADA
-PROMOCAO_AUTONOMA=False
+PUBLICO   → pode ser exposto conforme contrato
+INTERNO   → não deve ser disponibilizado ao chat público
+SENSIVEL  → exige identidade/permissão/escopo
+SECRETO   → nunca deve transitar pelo fluxo público comum
 ```
 
-## Invariantes de coerência
+## Wallet e segurança financeira
 
-O julgamento técnico não pode contradizer a própria evidência.
+A Wallet pública permanece desabilitada.
 
-Regras validadas:
+A ponte pública mapeada não oferece rota direta para assinatura, private key ou transferência financeira.
 
 ```text
-CAUSA_COMPROVADA=False
-→ PRONTO_PARA_PROMOCAO=False
-
-CANDIDATO_PREPARADO=False
-→ PRONTO_PARA_PROMOCAO=False
-
-TESTES_OBRIGATORIOS_INCOMPLETOS=True
-→ PRONTO_PARA_PROMOCAO=False
+modelo interpreta
+→ OHANA prepara
+→ backend valida
+→ humano confirma
+→ componente seguro assina
+→ rede recebe transação
 ```
 
-No teste pós-promoção, essas regras permaneceram corretas em produção.
+Nenhuma operação financeira deve ser autorizada somente por texto gerado pelo modelo.
 
-## Desenvolvimento orientado a candidato
+## Integridade e rollback
 
-Sempre que possível, mudanças estruturais devem ser preparadas e testadas em candidato isolado ou ambiente de laboratório antes de tocar produção.
+Hashes SHA-256, backups, candidatos isolados e rollback permanecem requisitos antes de mudanças estruturais.
 
-A ausência de especificação suficiente não autoriza a criação fictícia de candidato.
+Arquivos de memória mutáveis devem ser tratados de forma diferente de código/configuração: mudança legítima de estado não pode ser confundida com corrupção de código.
 
-## Integridade
+## Isolamento de testes
 
-Hashes SHA-256 são utilizados para verificar:
-
-- identidade da fonte original;
-- integridade do backup;
-- identidade do candidato;
-- preservação de arquivos fora do escopo;
-- validação pós-mudança.
-
-Na promoção de continuidade da Engenharia:
-
-```text
-HASH_ANTES=33225CAE4E1295F3841FED340CA77945A2E1911A2125768FC04587E0C7928A10
-HASH_DEPOIS=30CABA1496C6314B5EA7B754EE5E789F347F5D4AF4181C582166AE5999D70659
-HASH_BACKUP=33225CAE4E1295F3841FED340CA77945A2E1911A2125768FC04587E0C7928A10
-```
-
-O escopo foi limitado a duas funções já existentes em `Servidor/servidor.ps1`, e módulos monitorados fora do escopo permaneceram idênticos.
-
-## Rollback
-
-Mudanças estruturais devem possuir caminho de rollback definido antes da promoção.
-
-O rollback deve restaurar apenas os arquivos pretendidos e não deve encerrar processos ou serviços do sistema operacional sem relação com a OHANA.
-
-Nesse marco de evolução, rollback permaneceu disponível e não precisou ser executado.
-
-## Limites operacionais
-
-Análise de Engenharia não deve ser confundida com autorização operacional.
-
-A presença de palavras como “execute”, “transfira” ou outros verbos de ação dentro de ensino ou análise técnica não concede, por si só, permissão para executar uma operação.
-
-A validação pós-promoção confirmou que um pedido operacional posterior à investigação técnica continuou protegido e não herdou autorização do contexto de Engenharia.
-
-## Continuidade sem aprisionamento de rota
-
-A continuidade técnica deve preservar a investigação quando o novo turno é semanticamente relacionado, mas também deve permitir saída correta para outros tipos de interação.
-
-Foi validado que:
-
-- seis turnos técnicos consecutivos permaneceram em `ENGENHARIA_SOFTWARE`;
-- uma pergunta comum posterior saiu da rota técnica;
-- ensino não foi capturado indevidamente pela Engenharia;
-- operação permaneceu protegida.
+Testes cognitivos ou de segurança que possam persistir estado devem preferir snapshot LAB, cópias de memória/conhecimento, persistência redirecionada e execução do fluxo real com produção em somente leitura.
 
 ## Limites do modelo neural
 
-Saídas de modelos neurais não são consideradas evidência técnica suficiente por si só.
+Saídas neurais não são evidência técnica suficiente. O modelo neural não recebe autoridade administrativa, financeira ou de promoção.
 
-Afirmações técnicas devem, quando aplicável, ser sustentadas por fontes como:
+## Eficiência como requisito de segurança
 
-- código atual;
-- análise AST;
-- estado de runtime;
-- hashes;
-- testes;
-- registros de memória;
-- conhecimento governado com origem/evidência.
+Na certificação SECURITY atual:
 
-## HTTP e runtime
+```text
+NOVAS_CHAMADAS_NEURAIS=0
+OVERHEAD_SIGNIFICATIVO=False
+NOVO_MODULO=False
+```
 
-Guardas HTTP existentes permaneceram preservadas no ciclo validado, incluindo rejeição de condições inválidas em rotas sensíveis.
-
-Também foi preservado o princípio de não interferir em processos do sistema operacional fora da instância comprovadamente pertencente à OHANA.
-
-## Limitações conhecidas
-
-Nem todos os módulos da OHANA possuem hoje uma suíte automática completa de regressão. Módulos sem cobertura adequada devem permanecer bloqueados para promoção automática.
-
-Pendências atuais conhecidas incluem:
-
-- retificação com histórico completo;
-- limite de 400 tokens em determinados casos do caminho Qwen;
-- TESTE F de aprendizado;
-
-Esses itens foram registrados como pendências preexistentes no último ciclo, e não como regressões causadas pela promoção de continuidade.
+Novas proteções devem continuar sendo avaliadas também por CPU, memória, rede, latência e energia.
 
 ## Divulgação responsável
 
-O repositório público atualmente foca documentação do projeto. Credenciais, segredos, dados privados, controles operacionais sensíveis e informações que enfraqueçam a segurança não devem ser publicados.
+Este repositório publica documentação arquitetural e resultados de validação, não credenciais, valores de segredos, private keys, dados privados ou detalhes operacionais que reduzam a segurança.
