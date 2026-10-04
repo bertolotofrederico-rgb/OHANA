@@ -17,40 +17,45 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-A OHANA está no **ciclo 21**. O ciclo 20 permanece como marco concluído de autoconhecimento e fechamento documental governado.
-
-No ciclo 21, foi concluída e promovida uma nova ligação de circulação de conhecimento governado:
+A OHANA permanece no **ciclo 21**. O estado recente está organizado em quatro frentes principais:
 
 ```text
-conhecimento ATIVO
-→ recuperação governada
-→ montagem existente de regras
-→ precedência sobre relato antigo não validado
-→ calculador existente
-→ resultado calculado
+COGNIÇÃO / C21
+→ C21.5 ativo em produção
+→ C21.2 funcional em casos comprovados
+→ gate histórico C21.2 diagnosticado como desalinhado
+→ novo contrato de gate definido para LAB
+
+SEGURANÇA PÚBLICA
+→ SECURITY-0/1 mapearam riscos e capacidades existentes
+→ SECURITY-2 criou candidato mínimo em LAB
+→ SECURITY-3 certificou 3/3 achados altos em LAB/mock
+→ 0 novas chamadas neurais
+→ sem overhead significativo
+→ ainda NÃO promovido
+
+WALLET / BRLC
+→ capacidades principais já existem
+→ ligação criação→chat validada em LAB/runtime temporário
+→ promoção permanente aguarda fechamento correto dos gates
+→ transferência ainda não iniciada
+
+EFICIÊNCIA
+→ requisito arquitetural permanente
+→ simbólico antes do neural
+→ memória/contexto seletivos
+→ benchmark energético do Ollama planejado
 ```
 
-O resultado derivado continua separado de conhecimento factual:
+A produção continua governada por autorização humana, backup, hashes, candidatos isolados e rollback.
 
-```text
-CIRCULACAO_CONHECIMENTO_ATIVO = VALIDADA_EM_PRODUCAO
-PRECEDENCIA_GOVERNADA = VALIDADA_EM_PRODUCAO
-GENERALIZACAO_DIRETA_DE_REGRA = VALIDADA
-NAO_PERSISTENCIA_DE_DERIVADOS = VALIDADA
+> **Princípio atual:** aumentar capacidade por integração, reutilização e seleção pertinente — não por força bruta.
 
-MEMORIA = OK
-RACIOCINIO_LOCAL = OK
-ENGENHARIA = OK
-AUTOTUNE = OK
-AUTOCONHECIMENTO_LOCAL = VALIDADO
+[Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
 
-AUTORIZACAO_HUMANA = PRESERVADA
-AUTORIZACAO_OPERACIONAL_AUTOMATICA = FALSE
-PROMOCAO_AUTONOMA = FALSE
-ROLLBACK = DISPONIVEL
-```
+[Leia também o marco de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md).
 
-A evolução reutilizou os mecanismos existentes. Não foi criado novo núcleo, nova memória, novo índice ou novo calculador.
+---
 
 ### Marco C21.5 — raciocínio → formulação factual
 
@@ -313,6 +318,7 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 8. **Persistir conhecimento externo útil com origem/evidência quando apropriado.**
 9. **Manter a arquitetura prática em hardware restrito.**
 10. **Não confundir texto gerado com evidência técnica validada.**
+11. **Tratar eficiência computacional e energética como requisito arquitetural: mais capacidade não deve significar mais consumo por padrão.**
 
 ---
 
@@ -320,11 +326,17 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 As pendências atuais permanecem separadas dos marcos já validados:
 
-- observar estabilidade pós-promoção do C21.5 antes de iniciar o próximo marco cognitivo;
-- retificação com histórico completo;
-- limite de 400 tokens no caminho atual do Qwen em determinados casos;
-- ampliar a circulação ponta a ponta entre autodiagnóstico, projeto, planejamento, ferramentas e aprendizado, reutilizando o padrão de ligação governada já validado;
-- ampliar baselines de desempenho e regressão do ciclo evolutivo.
+- implementar e validar em LAB o novo gate C21.2 baseado em recuperação real, ID, pertinência e estabilidade;
+- fechar a promoção governada da ligação criação→Wallet;
+- manter o candidato SECURITY certificado congelado até autorização explícita;
+- configurar/certificar quota real antes de abertura pública ampliada;
+- fechar segurança financeira antes de Wallet pública;
+- benchmark de eficiência do Ollama/Qwen: CPU, GPU, RAM/VRAM, keep-alive, tokens, latência e energia estimada por resposta;
+- ampliar circulação C21 ponta a ponta e regressão ampla;
+- amadurecer identidade/isolamento para Online multiusuário e Enterprise;
+- iniciar Lite e Network somente depois dos gates anteriores.
+
+A OHANA não trata “pronto para promoção” como autorização para promover.
 
 ---
 
