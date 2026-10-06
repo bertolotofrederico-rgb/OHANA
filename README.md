@@ -17,34 +17,40 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 ## Estado técnico atual
 
-A OHANA permanece no **ciclo 21**. O estado recente está organizado em quatro frentes principais:
+A OHANA permanece no **ciclo 21**, com o marco **C21.6D concluído em produção** e o trabalho seguinte iniciado no **C22 — reutilização cognitiva**.
 
 ```text
 COGNIÇÃO / C21
 → C21.5 ativo em produção
-→ C21.2 funcional em casos comprovados
-→ gate histórico C21.2 diagnosticado como desalinhado
-→ novo contrato de gate definido para LAB
+→ C21.6D certificado, energizado e validado em runtime
+→ harness de avaliação passou a usar o caminho local existente
+→ nenhuma função produtiva crítica foi alterada
+→ C21.6D concluído sem regressão comprovada
+
+REUTILIZAÇÃO COGNITIVA / C22
+→ C22.0 mapeou memória, contexto, conhecimento, raciocínio,
+  formulação, planejamento e aprendizado já existentes
+→ próximo objetivo: localizar o primeiro ponto real de perda
+  entre recuperação, raciocínio e formulação
+→ não criar nova memória, novo núcleo ou novo módulo
 
 SEGURANÇA PÚBLICA
 → SECURITY-0/1 mapearam riscos e capacidades existentes
 → SECURITY-2 criou candidato mínimo em LAB
 → SECURITY-3 certificou 3/3 achados altos em LAB/mock
-→ 0 novas chamadas neurais
-→ sem overhead significativo
 → ainda NÃO promovido
 
 WALLET / BRLC
 → capacidades principais já existem
-→ ligação criação→chat validada em LAB/runtime temporário
-→ promoção permanente aguarda fechamento correto dos gates
-→ transferência ainda não iniciada
+→ contratos de acionamento existentes preservados
+→ financeiro permaneceu fora do escopo do C21.6D
 
 EFICIÊNCIA
 → requisito arquitetural permanente
 → simbólico antes do neural
 → memória/contexto seletivos
-→ benchmark energético do Ollama planejado
+→ C21.6D observou redução de ~20,18% no tempo total do benchmark de 20 casos,
+  sem aumento no total de chamadas HTTP ao modelo
 ```
 
 A produção continua governada por autorização humana, backup, hashes, candidatos isolados e rollback.
@@ -104,6 +110,51 @@ Benefícios conquistados: maior fidelidade de fatos governados, redução de cha
 [Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
 
 [Leia também o marco de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md).
+
+---
+
+### Marco C21.6D — energização do caminho local existente
+
+O C21.6D foi concluído com a regra de **ligar o que já existe**, sem recriar núcleo, memória, raciocínio ou arquitetura.
+
+O ciclo confirmou duas alterações pontuais dentro do harness/autotune existente:
+
+```text
+expiração da avaliação: 5 → 20 minutos
+caminho não sequencial do harness: Interpretar-ChatMedido → Interpretar-ChatLocal
+```
+
+A certificação R3 confirmou exatamente duas linhas lógicas alteradas, zero alterações inesperadas, arquitetura preservada, financeiro preservado e hashes idênticos das funções produtivas `Interpretar-ChatLocal` e `Interpretar-ChatMedido`.
+
+A energização foi aplicada de forma pontual, o runtime foi recarregado pelo **vigia existente**, sem criação de novo mecanismo de recuperação. O servidor voltou com HTTP 200, hash certificado ativo, PID 4/HTTP.sys preservado e observação curta sem falhas.
+
+Validação funcional pós-energização:
+
+- cálculo local: `10+10x20 → Resultado: 210.`;
+- acolhimento conversacional: resposta adequada via caminho local existente;
+- runtime estável após os testes;
+- rollback não necessário;
+- financeiro não testado nem alterado no ciclo.
+
+O benchmark integral de 20 casos observou:
+
+| Métrica | Baseline | Candidato |
+|---|---:|---:|
+| Casos executados | 20 | 20 |
+| Aprovações | 10 | 10 |
+| Aprovações perdidas | — | 0 |
+| Chamadas HTTP ao modelo | 20 | 20 |
+| Erros HTTP de IA | 1 | 0 |
+| Indisponibilidades | 1 | 0 |
+| Tempo total | 91,47 s | 73,02 s |
+
+O ganho de tempo observado foi de aproximadamente **20,18%** naquele ambiente e execução. Não é apresentado como benchmark universal.
+
+### Início do C22 — reutilização cognitiva
+
+O primeiro mapa do C22 mostrou que a cadeia cognitiva principal já possui memória persistente, contexto, consulta de conhecimento local, raciocínio, formulação, planejamento e aprendizado. A raiz produtiva `Interpretar-ChatLocal` já alcança diretamente os componentes de consulta de conhecimento, composição factual, contexto e resolvedores locais.
+
+O próximo objetivo é localizar, com rastreamento de um conhecimento real já persistido, o **primeiro ponto concreto em que a informação deixa de circular ou deixa de influenciar a resposta**. O C22 não parte da hipótese de falta de memória; parte da hipótese de integração incompleta entre capacidades já existentes.
 
 ---
 
@@ -326,8 +377,9 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 As pendências atuais permanecem separadas dos marcos já validados:
 
-- implementar e validar em LAB o novo gate C21.2 baseado em recuperação real, ID, pertinência e estabilidade;
-- fechar a promoção governada da ligação criação→Wallet;
+- executar o C22.1/C22.2 para localizar o primeiro ponto real de perda entre recuperação, raciocínio e formulação;
+- ampliar a reutilização de conhecimento vigente sem recriar memória, núcleo ou arquitetura;
+- manter os contratos financeiros existentes preservados enquanto o escopo cognitivo é trabalhado;
 - manter o candidato SECURITY certificado congelado até autorização explícita;
 - configurar/certificar quota real antes de abertura pública ampliada;
 - fechar segurança financeira antes de Wallet pública;
