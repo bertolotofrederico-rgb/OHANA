@@ -28,25 +28,23 @@ Base avançada: memória persistente, conhecimento governado, raciocínio local/
 
 Ainda em integração/planejamento: fechamento integral do C21, Wallet Core ligada ao chat, segurança financeira, Online multiusuário, Enterprise amadurecida, Lite e Network.
 
-## Prioridade 1 — C21.2 e gate correto
+## Prioridade 1 — C22: reutilização cognitiva real
 
-O gate histórico foi diagnosticado como desalinhado com o contrato real de C21.2.
-
-Próximo marco:
+O C21.6D foi concluído em produção. O próximo gargalo é fazer o conhecimento e a memória já existentes circularem com mais consistência pela cadeia cognitiva.
 
 ```text
-pergunta
-→ precondição factual
-→ recuperador real
-→ ID correto
-→ assunto/chave pertinentes
-→ valor vigente
-→ estabilidade 5/5
+memória / conhecimento vigente
+→ recuperação pertinente
+→ raciocínio local
+→ formulação
+→ planejamento
+→ resultado
+→ aprendizado existente
 ```
 
-Formulação textual final pertence ao C21.5 e será testada separadamente.
+O C22.0 já mapeou as capacidades existentes. O próximo marco é localizar o primeiro ponto real de perda com rastreamento de um conhecimento persistido, sem criar nova memória, novo núcleo ou novo módulo.
 
-## Prioridade 2 — fechar Wallet Core
+## Prioridade 2 — preservar e fechar gates específicos do Core/Wallet
 
 ```text
 criação no chat
@@ -193,9 +191,9 @@ O mapa nunca será fonte de verdade nem modificará a OHANA.
 ## Sequência consolidada
 
 ```text
-C21.2 / gates
+C22 — reutilização cognitiva
 ↓
-fechar Wallet Core
+gates específicos do Core/Wallet
 ↓
 segurança financeira
 ↓
