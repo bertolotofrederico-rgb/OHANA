@@ -108,6 +108,37 @@ Hash promovido:
 
 Backup reconferido com o hash anterior. O escopo foi limitado a duas funções já existentes no servidor. Módulos monitorados fora do escopo permaneceram idênticos.
 
+## C21.6D — benchmark integral de eficiência e regressão
+
+O C21.6D executou uma comparação controlada de 20 casos entre baseline e candidato, seguida por calibração de instrumentação e certificação estática.
+
+| Métrica | Baseline | Candidato |
+|---|---:|---:|
+| Casos executados | 20 | 20 |
+| Aprovações | 10 | 10 |
+| Divergências | 9 | 10 |
+| Indisponibilidades | 1 | 0 |
+| Chamadas HTTP ao modelo | 20 | 20 |
+| Erros HTTP de IA | 1 | 0 |
+| Tempo HTTP de IA | 83,43 s | 65,18 s |
+| Tempo total | 91,47 s | 73,02 s |
+| Variação total observada | — | **−20,18%** |
+
+Não houve perda de aprovação do baseline. A única mudança de status foi um caso que saiu de indisponível para divergência; o domínio financeiro correspondente permaneceu fora do escopo de alteração do ciclo.
+
+Uma calibração adicional executou baseline e candidato pelo mesmo caminho `Interpretar-ChatLocal`: 5/5 ferramentas, intenções e respostas coincidiram, e o total de chamadas de IA foi 6 em ambos. Isso mostrou que a contagem anterior de IA não podia ser comparada diretamente quando os harnesses percorriam caminhos diferentes.
+
+A certificação R3 confirmou exatamente duas linhas lógicas alteradas, ambas dentro de `Invoke-AvaliacaoAutotuneChat`, com zero alterações inesperadas e funções produtivas críticas preservadas.
+
+Após energização e recarga pelo vigia existente, o runtime permaneceu com HTTP 200 e os smokes não financeiros passaram:
+
+```text
+10+10x20 → Resultado: 210.
+acolhimento → resposta conversacional adequada
+```
+
+Esses números são observações do ambiente local e não devem ser generalizados como benchmark universal.
+
 ## Integridade e segurança medidas
 
 Validações de engenharia incluem:
