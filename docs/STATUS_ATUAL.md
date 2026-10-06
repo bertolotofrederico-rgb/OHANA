@@ -1,15 +1,15 @@
 # OHANA — Status técnico atual
 
-> Atualizado em 04/10/2026. Este documento separa explicitamente o que está em produção, o que foi validado apenas em LAB e o que permanece planejado.
+> Atualizado em 06/10/2026. Este documento separa explicitamente o que está em produção, o que foi validado apenas em LAB e o que permanece planejado.
 
 ## Resumo executivo
 
-A OHANA permanece no ciclo 21, com produção preservada e desenvolvimento orientado por integração de capacidades existentes, testes isolados, rollback e autorização humana.
+A OHANA permanece no ciclo 21, com o marco C21.6D concluído e ativo em produção. O desenvolvimento seguinte começou no C22, voltado à reutilização cognitiva: localizar onde memória e conhecimento já existentes deixam de circular entre recuperação, raciocínio, formulação e planejamento.
 
 | Área | Estado |
 |---|---|
 | Autodesenvolvimento | avançado |
-| Cognição integrada / C21 | avançada, ainda não totalmente fechada |
+| Cognição integrada / C21 | C21.6D concluído; integração avançada |
 | Conhecimento governado | avançado |
 | Runtime / resiliência | avançados |
 | Segurança pública | candidato certificado em LAB; não promovido |
@@ -19,7 +19,8 @@ A OHANA permanece no ciclo 21, com produção preservada e desenvolvimento orien
 | Online multiusuário | futuro próximo |
 | Lite | projetada |
 | Network | planejada |
-| Eficiência computacional/energética | princípio estrutural |
+| Eficiência computacional/energética | princípio estrutural; C21.6D medido em benchmark comparável |
+| Reutilização cognitiva / C22 | mapeamento inicial concluído; primeiro ponto de perda ainda em investigação |
 
 A regra de desenvolvimento continua:
 
@@ -59,8 +60,9 @@ C21.2  pergunta → conhecimento pertinente        FUNCIONAL EM CASOS COMPROVADO
 C21.3  pergunta → memória pertinente              VALIDADO EM LAB
 C21.4  conhecimento + memória → raciocínio        PARCIALMENTE VALIDADO
 C21.5  raciocínio/conhecimento → formulação       VALIDADO E ATIVO EM PRODUÇÃO
-C21.6  regressão ponta a ponta                     NÃO FECHADO
+C21.6  regressão/eficiência ponta a ponta          C21.6D CONCLUÍDO EM PRODUÇÃO
 C21.7  promoção governada ampla                    FUTURO
+C22.0  mapa de reutilização cognitiva              CONCLUÍDO / SOMENTE LEITURA
 ```
 
 ### C21.5 em produção
@@ -74,6 +76,61 @@ conhecimento governado pertinente
 → resposta fiel
 → 0 chamadas neurais quando o caso está coberto
 ```
+
+### C21.6D concluído — energização do caminho local existente
+
+O C21.6D foi desenvolvido como integração de capacidades existentes, não como substituição de arquitetura.
+
+A certificação estática final confirmou:
+
+```text
+LINHAS_LOGICAS_ALTERADAS=2
+ALTERACOES_INESPERADAS=0
+TODAS_MUDANCAS_DENTRO_DO_HARNESS=True
+FUNCOES_PRODUTIVAS_CRITICAS_PRESERVADAS=True
+FINANCEIRO_PRESERVADO=True
+ARQUITETURA_PRESERVADA=True
+C21_6D_CERTIFICADO=True
+```
+
+As duas ligações certificadas foram:
+
+1. expiração da avaliação do autotune/harness de 5 para 20 minutos;
+2. caminho não sequencial do harness passando de `Interpretar-ChatMedido` para `Interpretar-ChatLocal`, reutilizando o caminho local já existente.
+
+A energização foi aplicada pontualmente em produção. O runtime foi recarregado pelo vigia existente, sem criar novo mecanismo de recuperação. Após a ativação foram confirmados hash certificado, HTTP 200, instância única do servidor, PID 4/HTTP.sys preservado e estabilidade curta sem falhas.
+
+O P5A validou funcionalmente dois casos não financeiros: cálculo local (`Resultado: 210.`) e acolhimento conversacional. O 403 visto no primeiro smoke foi diagnosticado como cliente de teste sem o `Origin` exigido pela rota; com o contrato HTTP correto, ambos os testes retornaram 200.
+
+O ciclo terminou com:
+
+```text
+C21_6D_P5_VALIDADO=True
+C21_6D_CONCLUIDO=True
+ROLLBACK_NECESSARIO=False
+FINANCEIRO_ALTERADO=False
+```
+
+### C22 iniciado — reutilização cognitiva existente
+
+O C22.0 realizou o primeiro mapa estático da circulação cognitiva. Foram identificadas capacidades já existentes de memória, contexto, conhecimento, raciocínio, formulação, planejamento e aprendizado.
+
+A raiz produtiva `Interpretar-ChatLocal` alcança diretamente, entre outros, `Consultar-ConhecimentoLocalV33`, `Compor-ConhecimentoFactualNaturalV12`, `Ler-ConversaContextoCC`, `Interpretar-ChatMedido` e resolvedores locais. O caminho medido também recupera memória e conhecimento local e os inclui na entrada/formulação.
+
+Portanto, o objetivo seguinte não é criar nova memória ou novo núcleo. É localizar o primeiro ponto de perda em uma cadeia existente:
+
+```text
+conhecimento/memória existente
+→ recuperação pertinente
+→ verdade vigente
+→ raciocínio local
+→ formulação
+→ planejamento/ação
+→ resultado
+→ aprendizado existente
+```
+
+O primeiro ponto de perda ainda não foi determinado; ele será investigado com rastreamento de um conhecimento real já persistido.
 
 ### Diagnóstico do gate C21.2
 
@@ -112,9 +169,9 @@ Aquisição                       ~93–95%
 Persistência                    ~93–95%
 Retificação                     ~92–94%
 Precedência do vigente          ~93–95%
-Recuperação pertinente          ~90–93%
+Recuperação pertinente          ~91–94%
 Uso na formulação               ~88–91%
-Circulação ponta a ponta        ~87–90%
+Circulação ponta a ponta        ~88–91%
 ```
 
 Já foram validados: generalização direta em LAB, retificação/supersessão, não persistência automática de inferências, formulação factual simbólica em produção e consulta ao conhecimento local válido antes de fonte externa quando possível.
@@ -322,13 +379,13 @@ O mapa nunca será fonte de verdade nem alterará o estado da OHANA.
 
 ## Próximos passos
 
-1. implementar e validar em LAB o novo gate C21.2;
-2. fechar a criação Wallet;
-3. manter SECURITY certificado congelado até autorização explícita;
-4. configurar/certificar quota real antes de abertura pública ampliada;
-5. benchmark de eficiência do Ollama e fluxo neural;
-6. depois avançar Wallet transferência;
-7. fechar segurança financeira;
+1. executar C22.1/C22.2 para localizar o primeiro ponto real de perda na reutilização cognitiva;
+2. aumentar o uso de conhecimento vigente na formulação sem recriar memória, núcleo ou arquitetura;
+3. manter os contratos financeiros existentes preservados durante o escopo cognitivo atual;
+4. manter SECURITY certificado congelado até autorização explícita;
+5. configurar/certificar quota real antes de abertura pública ampliada;
+6. continuar benchmark de eficiência do Ollama e fluxo neural;
+7. depois retomar os gates específicos de Wallet/segurança financeira;
 8. evoluir Online multiusuário;
 9. amadurecer Enterprise;
 10. implementar Lite;
