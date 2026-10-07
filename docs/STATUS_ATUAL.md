@@ -20,7 +20,7 @@ A OHANA permanece no ciclo 21, com o marco C21.6D concluído e ativo em produç�
 | Lite | projetada |
 | Network | planejada |
 | Eficiência computacional/energética | princípio estrutural; C21.6D medido em benchmark comparável |
-| Reutilização cognitiva / C22 | mapeamento inicial concluído; primeiro ponto de perda ainda em investigação |
+| Reutilização cognitiva / C22 | ponto de perda localizado; candidato funcional validado; 12/12 casos comportamentais aprovados no R1; certificação final bloqueada por divergência de persistência |
 
 A regra de desenvolvimento continua:
 
@@ -40,11 +40,11 @@ MAPEAR
 Estimativas internas de maturidade:
 
 ```text
-Aprender com evolução              ~93–95%
-Reutilizar evolução                ~94–96%
-Autoconhecimento                   ~88–91%
-Autodiagnóstico causal             ~89–92%
-Autoprojeto completo               ~87–90%
+Aprender com evolução              ~94–96%
+Reutilizar evolução                ~95–97%
+Autoconhecimento                   ~89–92%
+Autodiagnóstico causal             ~92–95%
+Autoprojeto completo               ~89–92%
 Modificar via ferramentas          ~92–94%
 ```
 
@@ -111,27 +111,88 @@ ROLLBACK_NECESSARIO=False
 FINANCEIRO_ALTERADO=False
 ```
 
-### C22 iniciado — reutilização cognitiva existente
+### C22 — circulação e reutilização cognitiva
 
-O C22.0 realizou o primeiro mapa estático da circulação cognitiva. Foram identificadas capacidades já existentes de memória, contexto, conhecimento, raciocínio, formulação, planejamento e aprendizado.
-
-A raiz produtiva `Interpretar-ChatLocal` alcança diretamente, entre outros, `Consultar-ConhecimentoLocalV33`, `Compor-ConhecimentoFactualNaturalV12`, `Ler-ConversaContextoCC`, `Interpretar-ChatMedido` e resolvedores locais. O caminho medido também recupera memória e conhecimento local e os inclui na entrada/formulação.
-
-Portanto, o objetivo seguinte não é criar nova memória ou novo núcleo. É localizar o primeiro ponto de perda em uma cadeia existente:
+O C22 avançou do mapeamento inicial para a localização de um ponto concreto de perda e para a validação de um candidato mínimo em LAB.
 
 ```text
-conhecimento/memória existente
-→ recuperação pertinente
-→ verdade vigente
-→ raciocínio local
-→ formulação
-→ planejamento/ação
-→ resultado
-→ aprendizado existente
+C22.0   capacidades existentes mapeadas                  CONCLUÍDO
+memória → formulação                                    COMPROVADO
+conhecimento → formulação                               COMPROVADO
+conhecimento persistente                                REUTILIZADO
+caso factual 8092                                       PONTA A PONTA
+caso factual 559AD                                      RECUPERÁVEL
+perda factual geral                                     NÃO COMPROVADA
+conflito engenharia × conhecimento                      COMPROVADO
+ponto de perda                                          LOCALIZADO
+```
+```text
+ponto localizado
+engenharia podia responder antes
+→ consulta factual posterior deixava de participar
+→ conhecimento suficiente podia ficar fora da resposta
+```
+```text
+C22.3E — contrafactual
+consulta factual antes da engenharia                    TESTADA
+paráfrase natural com cobertura 0.545                   RECUPERADA
+paráfrase curta com cobertura 0.429                     NÃO INTERCEPTADA
+limiar factual reduzido                                 NÃO
+engenharia explícita                                    PRESERVADA
+novo módulo                                             NÃO
+nova memória                                            NÃO
+novo conhecimento                                       NÃO
+reuso de capacidade existente                           SIM
+```
+```text
+C22.3F — candidato de ligação
+candidato somente LAB                                   CRIADO
+hash                                                     CONTROLADO
+parse produção                                           0 ERROS
+parse candidato                                          0 ERROS
+funções preservadas                                      SIM
+alteração fora do ponto                                  0
+reconstrução byte-exata                                  COMPROVADA
+encoding                                                 PRESERVADO
+limiar 0.5                                               PRESERVADO
+arquitetura nova                                         NÃO
+módulo novo                                              NÃO
+```
+```text
+C22.3G — execução funcional isolada
+paráfrase natural corrigida                              SIM
+alias                                                     PRESERVADO
+porta 8092                                               PRESERVADA
+paráfrase 0.429                                          NÃO INTERCEPTADA
+engenharia explícita                                     PRESERVADA
+candidato funcional                                      COMPROVADO
+produção alterada                                        NÃO
+listener criado                                          NÃO
+servidor reiniciado                                      NÃO
+financeiro alterado                                      NÃO
+```
+```text
+C22.3H-R1 — regressão ampliada com critério corrigido
+casos totais                                             12
+casos comportamentais OK                                 12
+falhas comportamentais                                   0
+mudanças de rota                                         1
+mudança desejada                                         ALVO_NATURAL
+rota baseline                                            ENGENHARIA_SOFTWARE
+rota candidato                                           CONHECIMENTO_LOCAL
+produção preservada                                      SIM
+hash produção                                            PRESERVADO
+HTTP 8092                                                200
+certificação final                                       NÃO
+motivo                                                   DIVERGÊNCIA DE PERSISTÊNCIA NO HARNESS
+promoção autorizada                                      NÃO
 ```
 
-O primeiro ponto de perda ainda não foi determinado; ele será investigado com rastreamento de um conhecimento real já persistido.
+O ganho funcional real do C22 é fazer conhecimento já persistido participar melhor da decisão e da resposta, inclusive em paráfrases naturais, sem transformar todo pedido em factual e sem recriar capacidades que a OHANA já possui.
 
+Os 12/12 casos comportamentais do R1 passaram com o critério corrigido. A única mudança de rota ocorreu no alvo esperado; os demais fluxos testados foram preservados. Entretanto, o R1 registrou divergência em arquivos de persistência durante a avaliação, portanto **o candidato ainda não está certificado para promoção**.
+
+A produção permaneceu preservada durante o teste, com o mesmo hash do servidor e HTTP 8092 operacional.
 ### Diagnóstico do gate C21.2
 
 O gate histórico usado numa tentativa de promoção da Wallet foi diagnosticado como inadequado para medir C21.2.
@@ -165,13 +226,13 @@ Nenhum gate novo foi promovido.
 ## Conhecimento governado
 
 ```text
-Aquisição                       ~93–95%
-Persistência                    ~93–95%
-Retificação                     ~92–94%
-Precedência do vigente          ~93–95%
-Recuperação pertinente          ~91–94%
-Uso na formulação               ~88–91%
-Circulação ponta a ponta        ~88–91%
+Aquisição                       ~94–96%
+Persistência                    ~94–96%
+Retificação                     ~93–95%
+Precedência do vigente          ~95–97%
+Recuperação pertinente          ~93–95%
+Uso na formulação               ~91–94%
+Circulação ponta a ponta        ~92–95%
 ```
 
 Já foram validados: generalização direta em LAB, retificação/supersessão, não persistência automática de inferências, formulação factual simbólica em produção e consulta ao conhecimento local válido antes de fonte externa quando possível.
@@ -379,17 +440,18 @@ O mapa nunca será fonte de verdade nem alterará o estado da OHANA.
 
 ## Próximos passos
 
-1. executar C22.1/C22.2 para localizar o primeiro ponto real de perda na reutilização cognitiva;
-2. aumentar o uso de conhecimento vigente na formulação sem recriar memória, núcleo ou arquitetura;
-3. manter os contratos financeiros existentes preservados durante o escopo cognitivo atual;
-4. manter SECURITY certificado congelado até autorização explícita;
-5. configurar/certificar quota real antes de abertura pública ampliada;
-6. continuar benchmark de eficiência do Ollama e fluxo neural;
-7. depois retomar os gates específicos de Wallet/segurança financeira;
-8. evoluir Online multiusuário;
-9. amadurecer Enterprise;
-10. implementar Lite;
-11. avançar Network.
+1. diagnosticar e fechar a divergência de persistência observada no C22.3H-R1;
+2. executar a certificação final pré-promoção do candidato C22 somente após a persistência estar comprovadamente preservada;
+3. ampliar o uso de conhecimento vigente na formulação sem recriar memória, núcleo ou arquitetura;
+4. manter os contratos financeiros existentes preservados durante o escopo cognitivo atual;
+5. manter SECURITY certificado congelado até autorização explícita;
+6. configurar/certificar quota real antes de abertura pública ampliada;
+7. continuar benchmark de eficiência do Ollama e fluxo neural;
+8. depois retomar os gates específicos de Wallet/segurança financeira;
+9. evoluir Online multiusuário;
+10. amadurecer Enterprise;
+11. implementar Lite;
+12. avançar Network.
 
 ## Limites de afirmação
 
