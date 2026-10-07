@@ -96,6 +96,27 @@ A produção continua governada por autorização humana, backup, hashes, candid
 
 [Leia também o marco de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md).
 
+[Leia o case técnico de proveniência, restauração seletiva e conversa natural](docs/CASE_CONVERSA_APRENDIZADO_GOVERNADO.md).
+
+### Marco atual — proveniência e restauração seletiva em produção
+
+Durante a regressão conversacional pós-C22, a OHANA precisou resolver um problema adicional de governança: testes produtivos podiam escrever em memória enquanto outras escritas legítimas aconteciam em paralelo. Restaurar o arquivo inteiro poderia apagar aprendizado válido.
+
+O ciclo comprovou e promoveu em produção uma capacidade mínima de **correlação individual + restauração seletiva**, preservando a agregação existente e os registros antigos:
+
+```text
+CORRELACAO_PROMOVIDA=True
+CORRELACAO_PRODUCAO_OK=True
+RESTAURACAO_SELETIVA_PRODUCAO_OK=True
+ESCRITA_CONCORRENTE_PRESERVADA=True
+EFEITOS_TESTE_REMOVIDOS=True
+MEMORIA_MAIS_NOVA_PRESERVADA=True
+```
+
+A melhoria ampla da conversa natural **ainda não foi promovida**. Na validação produtiva atual, 2 de 6 casos-alvo passaram e 4 permanecem em correção; o candidato conversacional foi revertido sem remover a capacidade de proveniência já validada.
+
+Esse case documenta também candidatos rejeitados e rollbacks, para separar claramente resultado comprovado de hipótese de pesquisa.
+
 ---
 
 ### Marco C21.5 — raciocínio → formulação factual
@@ -486,6 +507,7 @@ Quer apoiar o desenvolvimento independente da OHANA ou conversar sobre patrocín
 - [Segurança e governança](SECURITY.md)
 - [Visão geral](docs/overview.md)
 - [Marco: continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md)
+- [Case: conversa, proveniência e restauração seletiva](docs/CASE_CONVERSA_APRENDIZADO_GOVERNADO.md)
 
 ---
 
