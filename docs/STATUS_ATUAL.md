@@ -1,10 +1,10 @@
 # OHANA — Status técnico atual
 
-> Atualizado em 06/10/2026. Este documento separa explicitamente o que está em produção, o que foi validado apenas em LAB e o que permanece planejado.
+> Atualizado em 07/10/2026. Este documento separa explicitamente o que está em produção, o que foi validado apenas em LAB e o que permanece planejado.
 
 ## Resumo executivo
 
-A OHANA permanece no ciclo 21, com o marco C21.6D concluído e ativo em produção. O desenvolvimento seguinte começou no C22, voltado à reutilização cognitiva: localizar onde memória e conhecimento já existentes deixam de circular entre recuperação, raciocínio, formulação e planejamento.
+A OHANA concluiu em produção o marco C22 dos **cinco pontos cognitivos conectados**. O objetivo desta etapa foi provar, no runtime real, que memória, aprendizado, raciocínio reutilizável e autonomia governada conseguem circular pela arquitetura sem transformar o modelo neural em fonte única de inteligência.
 
 | Área | Estado |
 |---|---|
@@ -19,8 +19,18 @@ A OHANA permanece no ciclo 21, com o marco C21.6D concluído e ativo em produç�
 | Online multiusuário | futuro próximo |
 | Lite | projetada |
 | Network | planejada |
-| Eficiência computacional/energética | princípio estrutural; C21.6D medido em benchmark comparável |
-| Reutilização cognitiva / C22 | mapeamento inicial concluído; primeiro ponto de perda ainda em investigação |
+| Eficiência computacional/energética | princípio estrutural; medições locais e benchmark C21.6D disponíveis |
+| Reutilização cognitiva / C22 | **cinco pontos concluídos e validados em produção no escopo testado** |
+
+### Marco C22 — cinco pontos concluídos em produção
+
+1. **Ciclo cognitivo fechado**: composição e propagação de erro corrigidas em produção.
+2. **Aprendizado por consequência**: aprendizado real recuperado e consumido por decisão futura.
+3. **Relevância dinâmica de memória**: contexto altera a prioridade correta das memórias recuperadas.
+4. **Raciocínio reutilizável**: estrutura é persistida no momento do aprendizado e reutilizada sem reconstrução neural posterior.
+5. **Autonomia graduada**: observar → analisar → sugerir → preparar → executar ação reversível autorizada → bloquear ação não autorizada → registrar resultado → aprender.
+
+O marco não declara AGI concluída. A generalização produtiva do raciocínio reutilizável ainda precisa ser ampliada, e a qualidade conversacional ponta a ponta será reavaliada separadamente.
 
 A regra de desenvolvimento continua:
 
@@ -111,26 +121,53 @@ ROLLBACK_NECESSARIO=False
 FINANCEIRO_ALTERADO=False
 ```
 
-### C22 iniciado — reutilização cognitiva existente
+### C22 concluído — cinco capacidades conectadas
 
-O C22.0 realizou o primeiro mapa estático da circulação cognitiva. Foram identificadas capacidades já existentes de memória, contexto, conhecimento, raciocínio, formulação, planejamento e aprendizado.
-
-A raiz produtiva `Interpretar-ChatLocal` alcança diretamente, entre outros, `Consultar-ConhecimentoLocalV33`, `Compor-ConhecimentoFactualNaturalV12`, `Ler-ConversaContextoCC`, `Interpretar-ChatMedido` e resolvedores locais. O caminho medido também recupera memória e conhecimento local e os inclui na entrada/formulação.
-
-Portanto, o objetivo seguinte não é criar nova memória ou novo núcleo. É localizar o primeiro ponto de perda em uma cadeia existente:
+O C22 saiu do mapeamento e avançou para integração produtiva. Os cinco pontos foram concluídos no runtime real:
 
 ```text
-conhecimento/memória existente
-→ recuperação pertinente
-→ verdade vigente
-→ raciocínio local
-→ formulação
-→ planejamento/ação
-→ resultado
-→ aprendizado existente
+1. entrada/contexto
+→ raciocínio/composição
+→ resposta/ação
+→ observação
+
+2. resultado real
+→ avaliação
+→ aprendizado persistido
+→ recuperação
+→ influência na decisão futura
+
+3. contexto atual
+→ seleção/priorização de memória relevante
+
+4. experiência real
+→ estrutura reutilizável persistida
+→ recuperação
+→ verificações estruturadas
+→ estratégia candidata alterada
+
+5. observar
+→ analisar
+→ sugerir
+→ preparar
+→ executar reversível autorizado
+→ bloquear não autorizado
+→ observar resultado
+→ registrar/aprender
 ```
 
-O primeiro ponto de perda ainda não foi determinado; ele será investigado com rastreamento de um conhecimento real já persistido.
+Principais correções produtivas feitas durante o fechamento:
+- propagação de erro do calculador para resposta;
+- preservação de definições necessárias na composição;
+- correção da ordenação de relevância após deduplicação;
+- persistência opcional de `estrutura_reutilizavel`;
+- ligação de verificações estruturadas ao consumidor `testesSpec`;
+- compatibilidade SHA-256 via .NET no caminho real;
+- leitura UTF-8 explícita onde necessária;
+- correção do mecanismo de reload para selecionar corretamente o processo antigo;
+- ligação resultado → aprendizado no fluxo de autonomia graduada.
+
+A arquitetura continuou preservando autorização humana para ações críticas e não autorizadas.
 
 ### Diagnóstico do gate C21.2
 
@@ -379,17 +416,18 @@ O mapa nunca será fonte de verdade nem alterará o estado da OHANA.
 
 ## Próximos passos
 
-1. executar C22.1/C22.2 para localizar o primeiro ponto real de perda na reutilização cognitiva;
-2. aumentar o uso de conhecimento vigente na formulação sem recriar memória, núcleo ou arquitetura;
-3. manter os contratos financeiros existentes preservados durante o escopo cognitivo atual;
-4. manter SECURITY certificado congelado até autorização explícita;
-5. configurar/certificar quota real antes de abertura pública ampliada;
-6. continuar benchmark de eficiência do Ollama e fluxo neural;
-7. depois retomar os gates específicos de Wallet/segurança financeira;
-8. evoluir Online multiusuário;
-9. amadurecer Enterprise;
-10. implementar Lite;
-11. avançar Network.
+1. executar regressão conversacional ponta a ponta após o fechamento do C22;
+2. ampliar a generalização produtiva do raciocínio reutilizável em múltiplos domínios/casos;
+3. publicar benchmark comparativo reproduzível com persistência, reutilização, chamadas neurais, latência, RAM/VRAM, offline e autonomia governada;
+4. manter os contratos financeiros existentes preservados durante o próximo ciclo;
+5. manter SECURITY certificado congelado até autorização explícita;
+6. configurar/certificar quota real antes de abertura pública ampliada;
+7. continuar benchmark de eficiência do Ollama e fluxo neural;
+8. depois retomar os gates específicos de Wallet/segurança financeira;
+9. evoluir Online multiusuário;
+10. amadurecer Enterprise;
+11. implementar Lite;
+12. avançar Network.
 
 ## Limites de afirmação
 
