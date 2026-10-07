@@ -40,45 +40,57 @@ Future comparative evaluation is intended to emphasize not only answer quality, 
 
 ## Estado técnico atual
 
-A OHANA permanece no **ciclo 21**, com o marco **C21.6D concluído em produção** e o trabalho seguinte iniciado no **C22 — reutilização cognitiva**.
+Em **07/10/2026**, a OHANA concluiu em produção o marco **C22 — cinco capacidades cognitivas conectadas**, preservando o princípio de reutilizar capacidades existentes antes de criar novos subsistemas.
 
 ```text
-COGNIÇÃO / C21
-→ C21.5 ativo em produção
-→ C21.6D certificado, energizado e validado em runtime
-→ harness de avaliação passou a usar o caminho local existente
-→ nenhuma função produtiva crítica foi alterada
-→ C21.6D concluído sem regressão comprovada
+C22 / CINCO CAPACIDADES — VALIDADAS EM RUNTIME PRODUTIVO
 
-REUTILIZAÇÃO COGNITIVA / C22
-→ C22.0 mapeou memória, contexto, conhecimento, raciocínio,
-  formulação, planejamento e aprendizado já existentes
-→ próximo objetivo: localizar o primeiro ponto real de perda
-  entre recuperação, raciocínio e formulação
-→ não criar nova memória, novo núcleo ou novo módulo
+1. CICLO COGNITIVO FECHADO
+→ composição preserva definições necessárias
+→ erros do calculador chegam à resposta
+→ observação/resultado permanecem no ciclo
 
-SEGURANÇA PÚBLICA
-→ SECURITY-0/1 mapearam riscos e capacidades existentes
-→ SECURITY-2 criou candidato mínimo em LAB
-→ SECURITY-3 certificou 3/3 achados altos em LAB/mock
-→ ainda NÃO promovido
+2. APRENDIZADO POR CONSEQUÊNCIA
+→ aprendizado real persistido é recuperado
+→ aprendizado influencia decisão futura
+→ teste-base é preservado
+→ resultado retorna ao aprendizado
 
-WALLET / BRLC
-→ capacidades principais já existem
-→ contratos de acionamento existentes preservados
-→ financeiro permaneceu fora do escopo do C21.6D
+3. RELEVÂNCIA DINÂMICA DE MEMÓRIA
+→ contexto altera a prioridade das memórias recuperadas
+→ ordenação por pertinência/score preservada após deduplicação
 
-EFICIÊNCIA
-→ requisito arquitetural permanente
-→ simbólico antes do neural
-→ memória/contexto seletivos
-→ C21.6D observou redução de ~20,18% no tempo total do benchmark de 20 casos,
-  sem aumento no total de chamadas HTTP ao modelo
+4. RACIOCÍNIO REUTILIZÁVEL
+→ estrutura reutilizável é persistida junto ao aprendizado
+→ recuperação entrega verificações estruturadas ao consumidor existente
+→ estratégia candidata muda sem reconstrução neural
+→ generalização ampla em produção ainda será ampliada por benchmark
+
+5. AUTONOMIA GRADUADA
+→ observar
+→ analisar
+→ sugerir
+→ preparar/simular
+→ executar ação reversível autorizada
+→ bloquear ação não autorizada
+→ observar resultado
+→ registrar/aprender
+
+MODELO NEURAL LOCAL
+→ apoio linguístico e semântico
+→ não é o repositório principal de memória, decisão ou governança
+
+GOVERNANÇA
+→ autorização humana preservada
+→ ações críticas/não autorizadas permanecem bloqueadas
+→ backup, hashes, rollback e validação de runtime preservados
 ```
+
+O Ponto 5 foi validado com execução reversível real, resultado observado e retorno ao ciclo de aprendizado. Os cinco pontos foram concluídos no escopo testado, sem declaração de AGI concluída e sem alegação de superioridade universal sobre outros sistemas.
 
 A produção continua governada por autorização humana, backup, hashes, candidatos isolados e rollback.
 
-> **Princípio atual:** aumentar capacidade por integração, reutilização e seleção pertinente — não por força bruta.
+> **Princípio atual:** aumentar capacidade por integração, reutilização e estrutura local — não por força bruta de parâmetros.
 
 [Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
 
@@ -173,11 +185,41 @@ O benchmark integral de 20 casos observou:
 
 O ganho de tempo observado foi de aproximadamente **20,18%** naquele ambiente e execução. Não é apresentado como benchmark universal.
 
-### Início do C22 — reutilização cognitiva
+### C22 — cinco capacidades cognitivas conectadas em produção
 
-O primeiro mapa do C22 mostrou que a cadeia cognitiva principal já possui memória persistente, contexto, consulta de conhecimento local, raciocínio, formulação, planejamento e aprendizado. A raiz produtiva `Interpretar-ChatLocal` já alcança diretamente os componentes de consulta de conhecimento, composição factual, contexto e resolvedores locais.
+O C22 avançou do mapeamento para integração produtiva. O trabalho confirmou que memória, contexto, conhecimento, planejamento, execução, governança e aprendizado já existiam em grande parte; os principais ganhos vieram de **corrigir pontos de perda e conectar capacidades existentes**.
 
-O próximo objetivo é localizar, com rastreamento de um conhecimento real já persistido, o **primeiro ponto concreto em que a informação deixa de circular ou deixa de influenciar a resposta**. O C22 não parte da hipótese de falta de memória; parte da hipótese de integração incompleta entre capacidades já existentes.
+Resultados validados no runtime produtivo:
+
+- **ciclo cognitivo fechado:** definições necessárias deixaram de ser omitidas silenciosamente e erros reais do calculador passaram a chegar à resposta;
+- **aprendizado por consequência:** aprendizado persistido foi recuperado e alterou a seleção de validações/decisões futuras;
+- **relevância dinâmica de memória:** o contexto passou a preservar a prioridade correta das memórias pertinentes;
+- **raciocínio reutilizável:** a OHANA passou a persistir uma `estrutura_reutilizavel` no momento do aprendizado e a entregar verificações estruturadas diretamente ao consumidor existente, sem pedir ao modelo neural para reconstruir o raciocínio posteriormente;
+- **autonomia graduada:** observação, análise, sugestão, preparação, execução reversível autorizada, bloqueio de ação não autorizada e retorno do resultado ao aprendizado foram validados no fluxo produtivo.
+
+Durante o fechamento do Ponto 5 também foram corrigidos problemas operacionais que impediam o runtime real de seguir o caminho já existente, incluindo compatibilidade de SHA-256, leitura UTF-8 explícita e seleção correta do processo no reload.
+
+O próximo foco técnico não é criar um novo núcleo: é medir qualidade conversacional ponta a ponta, ampliar a generalização do raciocínio reutilizável e publicar benchmarks reproduzíveis que comparem persistência, chamadas neurais, latência, memória e autonomia governada.
+
+---
+
+## Posicionamento comparativo
+
+A OHANA não tenta competir por quantidade de parâmetros. O diferencial experimental está em deslocar capacidades persistentes para a arquitetura local e usar o modelo neural principalmente como componente linguístico/semântico.
+
+| Dimensão | Agente centrado em LLM (padrão comum) | OHANA |
+|---|---|---|
+| Memória entre sessões | frequentemente adicionada como camada auxiliar | persistência e recuperação fazem parte da arquitetura |
+| Aprendizado por resultado | muitas vezes depende de prompt, fine-tuning ou lógica externa | resultado pode voltar ao ciclo de aprendizado governado |
+| Reuso de raciocínio | normalmente reconstituído pelo modelo a partir de texto/contexto | estrutura reutilizável pode ser persistida e entregue ao consumidor diretamente |
+| Planejamento | frequentemente produzido pelo próprio LLM | Planejador/Projetista são componentes explícitos |
+| Execução | ferramenta acionada pelo agente | Executor separado, com autorização e contratos |
+| Governança | varia por framework | autorização humana e bloqueio de ação crítica fazem parte do fluxo |
+| Modelo neural | tende a concentrar grande parte da capacidade | usado principalmente para linguagem e assistência semântica |
+| Operação local | depende do tamanho/modelo | alvo explícito, inclusive em hardware modesto |
+| Falha do modelo | pode comprometer grande parte do agente | funções locais/simbólicas continuam disponíveis nos escopos cobertos |
+
+Essa tabela descreve **diferenças arquiteturais**, não um ranking de qualidade. Comparações públicas com projetos específicos deverão usar benchmarks reproduzíveis e métricas equivalentes.
 
 ---
 
@@ -400,14 +442,14 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 As pendências atuais permanecem separadas dos marcos já validados:
 
-- executar o C22.1/C22.2 para localizar o primeiro ponto real de perda entre recuperação, raciocínio e formulação;
-- ampliar a reutilização de conhecimento vigente sem recriar memória, núcleo ou arquitetura;
+- executar uma regressão conversacional ponta a ponta após o fechamento dos cinco pontos, comparando compreensão, contexto, memória, formulação e qualidade de resposta;
+- ampliar a **generalização produtiva** do raciocínio reutilizável com mais de um domínio/caso e benchmark reproduzível;
+- publicar uma bateria comparativa pública que meça persistência, reutilização, chamadas neurais, latência, RAM/VRAM, operação offline e autonomia governada;
 - manter os contratos financeiros existentes preservados enquanto o escopo cognitivo é trabalhado;
 - manter o candidato SECURITY certificado congelado até autorização explícita;
 - configurar/certificar quota real antes de abertura pública ampliada;
 - fechar segurança financeira antes de Wallet pública;
 - benchmark de eficiência do Ollama/Qwen: CPU, GPU, RAM/VRAM, keep-alive, tokens, latência e energia estimada por resposta;
-- ampliar circulação C21 ponta a ponta e regressão ampla;
 - amadurecer identidade/isolamento para Online multiusuário e Enterprise;
 - iniciar Lite e Network somente depois dos gates anteriores.
 
@@ -451,9 +493,9 @@ Quer apoiar o desenvolvimento independente da OHANA ou conversar sobre patrocín
 
 **English summary:** OHANA is an experimental local-first cognitive architecture for persistent, stateful AI systems. It combines persistent memory, governed learning, contextual and symbolic reasoning, planning, controlled execution, software-engineering workflows and human authorization, while using lightweight neural models mainly as language and semantic components.
 
-The project is currently in **C22 — cognitive reuse**, after validating previous production milestones involving governed factual composition, local reasoning paths, persistent knowledge circulation and controlled engineering workflows. C22 focuses on identifying where already-persisted knowledge stops influencing reasoning or final formulation, with a strict rule: **reuse and connect existing capabilities before creating new memory, cores or modules**.
+As of **2026-10-07**, the C22 development path has validated five connected capabilities in the production runtime: a closed cognitive loop, learning from consequences, dynamic memory relevance, reusable reasoning structures, and graduated autonomy with governed reversible execution. Reusable reasoning is persisted as structure at learning time instead of being reconstructed later from free-form text by the neural model.
 
-OHANA is not presented as a finished AGI and does not claim superiority over frontier models. Its research question is whether a persistent cognitive architecture can deliver useful, reusable and governed capabilities with modest hardware, fewer unnecessary neural calls and stronger continuity across sessions.
+OHANA is not presented as a finished AGI and does not claim superiority over frontier models or agent frameworks. Its research question is whether a persistent cognitive architecture can deliver useful, reusable and governed capabilities with modest hardware, fewer unnecessary neural calls and stronger continuity across sessions. The next public-evidence step is broader reproducible benchmarking, including conversational regression and generalization across multiple task domains.
 
 ---
 
