@@ -262,3 +262,83 @@ casos restantes corrigidos
 ```
 
 Até lá, o estado público correto é: **proveniência/restauração seletiva validada em produção; melhoria ampla da conversa natural ainda em andamento**.
+
+
+## Diagnóstico de generalização e pedidos longos
+
+A rodada seguinte mostrou que o problema de pedidos longos **não é truncamento físico do texto**. O conteúdo chega íntegro ao fluxo.
+
+Um patch mínimo de **um único ponto**, mantido somente no LAB, melhorou parte da generalização:
+
+- entradas longas com parágrafos/instruções passaram a produzir resposta;
+- conversa longa passou a responder;
+- pedido técnico curto continuou chegando à Engenharia;
+- o mesmo pedido técnico, quando precedido por introdução/contexto, desviou para `Medido`.
+
+O diagnóstico isolou um segundo ponto mínimo em `Interpretar-ChatLocal`:
+
+```text
+linhas 3951–3959
+linhas 4133–4157
+```
+
+O comportamento comprovado é posicional: os predicados atuais reconhecem melhor a intenção técnica quando o verbo técnico aparece no início. Quando há contexto antes da instrução, a intenção técnica pode perder precedência.
+
+Exemplo da diferença observada:
+
+```text
+pedido técnico direto, 138 caracteres
+→ Engenharia
+
+mesma intenção com introdução/contexto, 788 caracteres
+→ Medido
+```
+
+Ambas as entradas chegaram íntegras.
+
+Estado dessa rodada:
+
+```text
+NUMERO_PONTOS_ALTERADOS=1 — somente LAB
+CONTROLES_GENERALIZACAO_OK=False
+SEGUNDO_PONTO_MINIMO_COMPROVADO=True
+NOVO_PATCH_APLICADO=False
+PRODUCAO_ALTERADA=False
+CORRELACAO_PRODUCAO_PRESERVADA=True
+RESTAURACAO_SELETIVA_PRESERVADA=True
+HTTP_CORE_OK=True
+ESTADO_FINAL_LIMPO=True
+```
+
+### O que foi descartado
+
+Até aqui, não há evidência de que a regressão de pedidos longos seja causada por:
+
+- truncamento;
+- perda física do texto;
+- limite de entrada atingido;
+- corrupção do conteúdo antes da interpretação.
+
+O problema restante está na **qualificação/precedência da intenção técnica após contexto**.
+
+### O que ainda é independente
+
+A investigação também confirmou que insuficiência de informação e ambiguidade não compartilham, até agora, uma causa única comprovada com o roteamento técnico.
+
+- a capacidade de insuficiência já existe, mas não bloqueia automaticamente a formulação de certos fatos pessoais sem evidência;
+- a capacidade de ambiguidade já existe, mas depende de gatilhos metalinguísticos/estruturais que os controles atuais não acionam.
+
+Por isso, esses temas permanecem separados para evitar um patch amplo e especulativo.
+
+### Próximo gate
+
+O próximo gate é qualificar o **sinal técnico existente após contexto**, preservando:
+
+- citações;
+- negações;
+- hipóteses;
+- conversa conceitual;
+- conversa longa comum;
+- pedido técnico real após introdução.
+
+A meta continua sendo corrigir precedência/condição no fluxo existente, sem novo classificador, roteador, parser ou módulo.
