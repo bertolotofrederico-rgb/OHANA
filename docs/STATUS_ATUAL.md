@@ -45,6 +45,64 @@ MAPEAR
 → APRENDER
 ```
 
+## Marco atual — proveniência de aprendizado e regressão conversacional
+
+A regressão conversacional pós-C22 revelou um bloqueio de governança durante testes produtivos: `padroes_chat.json` podia receber escritas legítimas concorrentes, impedindo restauração segura por arquivo inteiro.
+
+O caminho foi:
+
+```text
+escrita concorrente comprovada
+→ mapeamento do escritor real
+→ identificação de ausência de correlação individual
+→ capacidade mínima testada no LAB
+→ primeira restauração seletiva rejeitada por regressão
+→ rollback
+→ correção mínima
+→ teste inverso
+→ promoção produtiva
+```
+
+Ponto de persistência mapeado:
+
+```text
+Registrar-PadraoChatPersistente
+servidor.ps1:7183
+chamada: servidor.ps1:6828
+```
+
+Resultado atualmente comprovado em produção:
+
+```text
+CORRELACAO_PROMOVIDA=True
+CORRELACAO_PRODUCAO_OK=True
+RESTAURACAO_SELETIVA_PRODUCAO_OK=True
+ESCRITA_CONCORRENTE_PRESERVADA=True
+EFEITOS_TESTE_REMOVIDOS=True
+MEMORIA_MAIS_NOVA_PRESERVADA=True
+HTTP_CORE_OK=True
+ESTADO_FINAL_LIMPO=True
+```
+
+A conversa natural permanece em correção. Na última validação produtiva:
+
+```text
+CASO_1_OK=True
+CASO_2_OK=False
+CASO_3_OK=False
+CASO_4_OK=True
+CASO_5_OK=False
+CASO_6_OK=False
+PROMOCAO_CONVERSA_PERMANENTE=False
+ROLLBACK_EXECUTADO=True
+```
+
+O rollback afetou somente o candidato conversacional. A correlação/restauração seletiva já validada permaneceu em produção.
+
+Os quatro comportamentos restantes cobrem conversa causal comum, pergunta conceitual sem roteamento técnico indevido, insuficiência de informação sem invenção e ambiguidade referencial.
+
+Detalhes do percurso, incluindo candidatos rejeitados e gates de governança: [Case técnico — conversa natural, proveniência e restauração seletiva](CASE_CONVERSA_APRENDIZADO_GOVERNADO.md).
+
 ## Autodesenvolvimento
 
 Estimativas internas de maturidade:
@@ -416,7 +474,7 @@ O mapa nunca será fonte de verdade nem alterará o estado da OHANA.
 
 ## Próximos passos
 
-1. executar regressão conversacional ponta a ponta após o fechamento do C22;
+1. concluir os quatro casos restantes da regressão conversacional, preservando a correlação/restauração seletiva já validada em produção;
 2. ampliar a generalização produtiva do raciocínio reutilizável em múltiplos domínios/casos;
 3. publicar benchmark comparativo reproduzível com persistência, reutilização, chamadas neurais, latência, RAM/VRAM, offline e autonomia governada;
 4. manter os contratos financeiros existentes preservados durante o próximo ciclo;
