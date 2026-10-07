@@ -13,6 +13,29 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 
 > **Status:** desenvolvimento experimental ativo. A OHANA não é apresentada aqui como uma AGI concluída.
 
+
+## International research positioning
+
+**OHANA is an experimental local-first cognitive architecture for persistent, stateful AI systems.** Its research direction combines persistent memory, governed learning, reusable reasoning, planning, controlled execution, agent governance and lightweight local neural models.
+
+Relevant research and engineering terms:
+
+`persistent memory` · `stateful agents` · `cognitive architecture` · `local-first AI` · `symbolic reasoning` · `continual learning` · `agent governance` · `human-in-the-loop` · `reusable reasoning` · `resource-efficient AI`
+
+OHANA is not presented as a finished AGI and does not claim superiority over frontier models. The project investigates a narrower technical question:
+
+> **How much persistent, reusable and governed cognitive capability can be produced by architecture before requiring larger neural models?**
+
+The current development path focuses on five connected capabilities, preferably by integrating mechanisms that already exist instead of creating duplicate subsystems:
+
+1. **Closed cognitive loop** — understand → retrieve → reason → formulate → act/respond → observe → learn.
+2. **Learning from consequences** — distinguish success, failure, partial success and insufficient evidence.
+3. **Dynamic memory relevance** — prioritize knowledge using context, validity, evidence and usefulness.
+4. **Reusable reasoning** — preserve transferable solution structures instead of storing only final answers.
+5. **Graduated autonomy** — progress from reasoning and suggestion to simulation, preparation and governed execution.
+
+Future comparative evaluation is intended to emphasize not only answer quality, but also persistence across sessions, reuse of learned knowledge, external-model calls, latency, RAM/VRAM use, offline capability and the amount of functionality preserved when the neural model is unavailable.
+
 ---
 
 ## Estado técnico atual
