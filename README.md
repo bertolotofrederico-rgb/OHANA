@@ -115,6 +115,8 @@ MEMORIA_MAIS_NOVA_PRESERVADA=True
 
 A melhoria ampla da conversa natural **ainda não foi promovida**. Na validação produtiva atual, 2 de 6 casos-alvo passaram e 4 permanecem em correção; o candidato conversacional foi revertido sem remover a capacidade de proveniência já validada.
 
+A investigação de generalização também descartou truncamento como causa principal dos pedidos longos: o texto chegou íntegro. O ponto restante comprovado está na qualificação da intenção técnica quando a instrução aparece depois de contexto/introdução. Esse ajuste segue apenas em LAB; a produção permanece inalterada.
+
 Esse case documenta também candidatos rejeitados e rollbacks, para separar claramente resultado comprovado de hipótese de pesquisa.
 
 ---
