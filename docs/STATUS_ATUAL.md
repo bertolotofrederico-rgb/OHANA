@@ -101,6 +101,25 @@ O rollback afetou somente o candidato conversacional. A correlação/restauraç�
 
 Os quatro comportamentos restantes cobrem conversa causal comum, pergunta conceitual sem roteamento técnico indevido, insuficiência de informação sem invenção e ambiguidade referencial.
 
+### Generalização de pedidos longos — diagnóstico atual
+
+A rodada de generalização descartou truncamento como causa principal: entradas longas chegaram íntegras. Um patch de um único ponto, mantido apenas no LAB, fez entradas longas com parágrafos/instruções voltarem a responder, mas não fechou todos os controles.
+
+O segundo ponto mínimo comprovado está em `Interpretar-ChatLocal` (linhas 3951–3959 e 4133–4157): a intenção técnica depende excessivamente da posição do verbo técnico. Um pedido técnico direto chegou à Engenharia, enquanto a mesma intenção após introdução/contexto desviou para `Medido`.
+
+```text
+CONTROLES_GENERALIZACAO_OK=False
+SEGUNDO_PONTO_MINIMO_COMPROVADO=True
+NOVO_PATCH_APLICADO=False
+PRODUCAO_ALTERADA=False
+CORRELACAO_PRODUCAO_PRESERVADA=True
+RESTAURACAO_SELETIVA_PRESERVADA=True
+HTTP_CORE_OK=True
+ESTADO_FINAL_LIMPO=True
+```
+
+Insuficiência de informação e ambiguidade permanecem como causas separadas até nova evidência; não será aplicado patch comum sem causalidade comprovada.
+
 Detalhes do percurso, incluindo candidatos rejeitados e gates de governança: [Case técnico — conversa natural, proveniência e restauração seletiva](CASE_CONVERSA_APRENDIZADO_GOVERNADO.md).
 
 ## Autodesenvolvimento
