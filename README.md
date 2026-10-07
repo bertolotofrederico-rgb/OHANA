@@ -28,10 +28,13 @@ COGNIÇÃO / C21
 → C21.6D concluído sem regressão comprovada
 
 REUTILIZAÇÃO COGNITIVA / C22
-→ C22.0 mapeou memória, contexto, conhecimento, raciocínio,
-  formulação, planejamento e aprendizado já existentes
-→ próximo objetivo: localizar o primeiro ponto real de perda
-  entre recuperação, raciocínio e formulação
+→ cadeia existente de memória, conhecimento, raciocínio e formulação mapeada
+→ candidato de precedência factual validado funcionalmente em LAB
+→ regressão ampliada com critério corrigido: 12/12 casos comportamentais aprovados
+→ única mudança de rota observada no alvo natural: ENGENHARIA_SOFTWARE → CONHECIMENTO_LOCAL
+→ demais fluxos testados preservaram o comportamento esperado
+→ produção permaneceu intacta durante os testes
+→ certificação/promoção ainda bloqueada até fechar a divergência de persistência observada no harness
 → não criar nova memória, novo núcleo ou novo módulo
 
 SEGURANÇA PÚBLICA
@@ -150,11 +153,38 @@ O benchmark integral de 20 casos observou:
 
 O ganho de tempo observado foi de aproximadamente **20,18%** naquele ambiente e execução. Não é apresentado como benchmark universal.
 
-### Início do C22 — reutilização cognitiva
+### C22 — reutilização cognitiva e ganhos reais observados
 
-O primeiro mapa do C22 mostrou que a cadeia cognitiva principal já possui memória persistente, contexto, consulta de conhecimento local, raciocínio, formulação, planejamento e aprendizado. A raiz produtiva `Interpretar-ChatLocal` já alcança diretamente os componentes de consulta de conhecimento, composição factual, contexto e resolvedores locais.
+O C22 confirmou que o principal ganho não depende de criar uma nova memória ou um novo núcleo. O avanço vem de **fazer conhecimento já existente circular melhor até a decisão e a resposta**.
 
-O próximo objetivo é localizar, com rastreamento de um conhecimento real já persistido, o **primeiro ponto concreto em que a informação deixa de circular ou deixa de influenciar a resposta**. O C22 não parte da hipótese de falta de memória; parte da hipótese de integração incompleta entre capacidades já existentes.
+Na regressão ampliada mais recente, o candidato apresentou **12/12 casos comportamentais aprovados** com o critério corrigido. A mudança desejada ocorreu somente no alvo natural: uma pergunta que antes era desviada para `ENGENHARIA_SOFTWARE` passou a usar `CONHECIMENTO_LOCAL`. Os demais fluxos testados mantiveram o comportamento esperado.
+
+Ganhos reais observados em LAB:
+
+- melhor reutilização de conhecimento persistido em perguntas formuladas de maneira natural;
+- maior reconhecimento de paráfrases sem exigir frase idêntica à informação armazenada;
+- precedência factual mais precisa, usando conhecimento local quando ele é realmente pertinente;
+- preservação de rotas de Engenharia de Software quando o pedido é explicitamente técnico;
+- preservação do fallback/modelo local em conversa geral, definições e casos fora do escopo factual;
+- redução do risco de uma melhoria factual interceptar fluxos que já funcionavam;
+- melhor separação entre **conhecimento**, **engenharia**, **conversa** e **modelo neural auxiliar**;
+- evolução por integração das capacidades existentes, sem criação de novo núcleo, nova memória ou nova arquitetura;
+- testes executados sem alteração do servidor de produção; o hash produtivo permaneceu preservado e o HTTP 8092 permaneceu operacional.
+
+O fluxo que o C22 está amadurecendo pode ser resumido assim:
+
+```text
+conhecimento já existente
+→ recuperação pertinente
+→ classificação / precedência
+→ escolha da rota correta
+→ formulação
+→ resposta usando o conhecimento local
+```
+
+Isso aproxima a OHANA de um ciclo mais completo de **aprender → guardar → recuperar → relacionar → usar**, em vez de apenas armazenar informação.
+
+> **Limite atual:** os ganhos funcionais acima foram observados no LAB. A certificação para promoção continua bloqueada porque o último R1 detectou divergência em arquivos de persistência durante a avaliação. A produção não foi promovida nem alterada por esse teste.
 
 ---
 
@@ -377,7 +407,8 @@ O modelo neural atua principalmente na camada linguística. O estado persistente
 
 As pendências atuais permanecem separadas dos marcos já validados:
 
-- executar o C22.1/C22.2 para localizar o primeiro ponto real de perda entre recuperação, raciocínio e formulação;
+- fechar a divergência de persistência observada no C22.3H-R1 antes de qualquer promoção;
+- certificar a reutilização cognitiva do C22 contra persistência, regressão e integridade finais;
 - ampliar a reutilização de conhecimento vigente sem recriar memória, núcleo ou arquitetura;
 - manter os contratos financeiros existentes preservados enquanto o escopo cognitivo é trabalhado;
 - manter o candidato SECURITY certificado congelado até autorização explícita;
