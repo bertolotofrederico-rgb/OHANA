@@ -449,7 +449,11 @@ Quer apoiar o desenvolvimento independente da OHANA ou conversar sobre patrocín
 
 ## Para leitores internacionais
 
-**English summary:** OHANA is an experimental modular cognitive architecture focused on persistent local intelligence, governed learning and supervised self-engineering. Cycle 20 validated local self-knowledge and a governed documentary closing path inside the existing cycle controller, preserving human authorization, rollback and the distinction between documented promotion and real supervised execution. The project is now on cycle 21.
+**English summary:** OHANA is an experimental local-first cognitive architecture for persistent, stateful AI systems. It combines persistent memory, governed learning, contextual and symbolic reasoning, planning, controlled execution, software-engineering workflows and human authorization, while using lightweight neural models mainly as language and semantic components.
+
+The project is currently in **C22 — cognitive reuse**, after validating previous production milestones involving governed factual composition, local reasoning paths, persistent knowledge circulation and controlled engineering workflows. C22 focuses on identifying where already-persisted knowledge stops influencing reasoning or final formulation, with a strict rule: **reuse and connect existing capabilities before creating new memory, cores or modules**.
+
+OHANA is not presented as a finished AGI and does not claim superiority over frontier models. Its research question is whether a persistent cognitive architecture can deliver useful, reusable and governed capabilities with modest hardware, fewer unnecessary neural calls and stronger continuity across sessions.
 
 ---
 
