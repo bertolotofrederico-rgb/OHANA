@@ -155,38 +155,70 @@ O ganho de tempo observado foi de aproximadamente **20,18%** naquele ambiente e 
 
 ### C22 — reutilização cognitiva e ganhos reais observados
 
-O C22 confirmou que o principal ganho não depende de criar uma nova memória ou um novo núcleo. O avanço vem de **fazer conhecimento já existente circular melhor até a decisão e a resposta**.
-
-Na regressão ampliada mais recente, o candidato apresentou **12/12 casos comportamentais aprovados** com o critério corrigido. A mudança desejada ocorreu somente no alvo natural: uma pergunta que antes era desviada para `ENGENHARIA_SOFTWARE` passou a usar `CONHECIMENTO_LOCAL`. Os demais fluxos testados mantiveram o comportamento esperado.
-
-Ganhos reais observados em LAB:
-
-- melhor reutilização de conhecimento persistido em perguntas formuladas de maneira natural;
-- maior reconhecimento de paráfrases sem exigir frase idêntica à informação armazenada;
-- precedência factual mais precisa, usando conhecimento local quando ele é realmente pertinente;
-- preservação de rotas de Engenharia de Software quando o pedido é explicitamente técnico;
-- preservação do fallback/modelo local em conversa geral, definições e casos fora do escopo factual;
-- redução do risco de uma melhoria factual interceptar fluxos que já funcionavam;
-- melhor separação entre **conhecimento**, **engenharia**, **conversa** e **modelo neural auxiliar**;
-- evolução por integração das capacidades existentes, sem criação de novo núcleo, nova memória ou nova arquitetura;
-- testes executados sem alteração do servidor de produção; o hash produtivo permaneceu preservado e o HTTP 8092 permaneceu operacional.
-
-O fluxo que o C22 está amadurecendo pode ser resumido assim:
+O C22 confirmou que o ganho principal vem de **ligar melhor memória, conhecimento, classificação, precedência e formulação já existentes**, sem criar novo núcleo, nova memória ou nova arquitetura.
 
 ```text
-conhecimento já existente
+C22.0  mapeamento das capacidades existentes             CONCLUÍDO
+C22.3E contrafactual de precedência factual              VALIDADO EM LAB
+C22.3F candidato mínimo de ligação                       CRIADO EM LAB
+C22.3G execução funcional isolada                        COMPROVADA
+C22.3H regressão ampliada inicial                         10/12 pelo critério antigo
+C22.3H-R1 critério baseline↔candidato corrigido          12/12 comportamentos aprovados
+ALVO_NATURAL                                             ENGENHARIA_SOFTWARE → CONHECIMENTO_LOCAL
+demais fluxos                                            PRESERVADOS NO RECORTE TESTADO
+hash de produção                                         PRESERVADO
+HTTP 8092                                                200 / OPERACIONAL
+promoção                                                 NÃO AUTORIZADA
+certificação final                                       BLOQUEADA POR DIVERGÊNCIA DE PERSISTÊNCIA
+```
+```text
+ganho real 1
+conhecimento já persistido
 → recuperação pertinente
-→ classificação / precedência
-→ escolha da rota correta
-→ formulação
-→ resposta usando o conhecimento local
+→ classificação correta
+→ CONHECIMENTO_LOCAL
+→ resposta factual reutilizando o que a OHANA já sabe
+```
+```text
+ganho real 2
+paráfrase natural
+→ pode recuperar conhecimento já existente
+→ sem exigir frase idêntica
+→ sem reduzir o limiar factual validado
+```
+```text
+ganho real 3
+pedido técnico explícito
+→ continua em ENGENHARIA_SOFTWARE
+→ fluxo técnico preservado
+```
+```text
+ganho real 4
+conversa geral / definição / casos não factuais
+→ continuam usando o fluxo local apropriado
+→ factual não intercepta tudo
+```
+```text
+ganho real 5
+evolução arquitetural
+→ reutiliza componentes existentes
+→ não cria nova memória
+→ não cria novo módulo
+→ não cria novo núcleo
+```
+```text
+ciclo cognitivo amadurecido pelo C22
+aprender
+→ guardar
+→ recuperar
+→ relacionar
+→ selecionar rota
+→ usar o conhecimento
 ```
 
-Isso aproxima a OHANA de um ciclo mais completo de **aprender → guardar → recuperar → relacionar → usar**, em vez de apenas armazenar informação.
+Na regressão corrigida, os **12/12 casos comportamentais** passaram. A única mudança de rota observada foi a desejada no `ALVO_NATURAL`; os demais casos mantiveram o comportamento esperado. A produção permaneceu intacta durante o teste.
 
-> **Limite atual:** os ganhos funcionais acima foram observados no LAB. A certificação para promoção continua bloqueada porque o último R1 detectou divergência em arquivos de persistência durante a avaliação. A produção não foi promovida nem alterada por esse teste.
-
----
+> **Limite atual:** o R1 detectou divergência em arquivos de persistência durante a avaliação. Por isso, os ganhos funcionais estão comprovados em LAB, mas o candidato ainda não está certificado nem autorizado para promoção.
 
 ## Por que a OHANA existe
 
@@ -251,7 +283,10 @@ As seguintes capacidades já foram implementadas, exercitadas ou integradas na a
 - reavaliação técnica baseada em evidência;
 - coerência obrigatória entre evidência, candidato, testes e prontidão para promoção;
 - suporte neural local via Ollama/Qwen;
-- runtime HTTP de produção com autoconsulta técnica.
+- runtime HTTP de produção com autoconsulta técnica;
+- reutilização factual por paráfrase natural validada em LAB no recorte C22;
+- precedência entre conhecimento local e Engenharia de Software validada em regressão ampliada;
+- 12/12 casos comportamentais aprovados no C22.3H-R1 com critério corrigido.
 
 ---
 
