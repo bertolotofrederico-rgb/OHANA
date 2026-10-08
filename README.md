@@ -92,6 +92,10 @@ A produção continua governada por autorização humana, backup, hashes, candid
 
 > **Princípio atual:** aumentar capacidade por integração, reutilização e estrutura local — não por força bruta de parâmetros.
 
+[Leia o mapa evolutivo consolidado](docs/MAPA_EVOLUTIVO_2026-10-07.md).
+
+[Avanços relevantes para pesquisa e engenharia](docs/AVANCOS_PESQUISA_EMPRESAS.md).
+
 [Leia o status técnico atual completo](docs/STATUS_ATUAL.md).
 
 [Leia também o marco de continuidade da Engenharia](docs/MARCO_CONTINUIDADE_ENGENHARIA.md).
