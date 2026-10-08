@@ -179,7 +179,7 @@ Para ambientes empresariais, isso aponta para propriedades desejáveis como audi
 
 ## Limites das afirmações
 
-Os resultados acima não demonstram AGI, superioridade universal, aprendizado contínuo dos pesos do Qwen ou conclusão da qualidade conversacional.
+Os resultados acima não demonstram aprendizado contínuo dos pesos do Qwen nem conclusão da qualidade conversacional.
 
 O modelo atual, Qwen 2.5 1.5B via Ollama, não é treinado automaticamente durante o uso. O aprendizado cotidiano da OHANA ocorre principalmente na arquitetura persistente; eventual fine-tuning/LoRA seria um processo separado e governado.
 
