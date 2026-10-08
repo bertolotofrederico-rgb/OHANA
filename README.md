@@ -11,7 +11,7 @@ OHANA é uma arquitetura modular de IA construída em torno de memória persiste
 
 O projeto propositalmente **não trata um grande modelo de linguagem como toda a inteligência**. Modelos neurais são componentes auxiliares para compreensão e geração de linguagem. Memória, raciocínio, planejamento, governança, execução e engenharia pertencem à própria arquitetura OHANA.
 
-> **Status:** desenvolvimento experimental ativo. A OHANA não é apresentada aqui como uma AGI concluída.
+> **Status:** desenvolvimento experimental ativo, com capacidades em diferentes estágios de validação e promoção.
 
 
 ## International research positioning
@@ -22,7 +22,7 @@ Relevant research and engineering terms:
 
 `persistent memory` · `stateful agents` · `cognitive architecture` · `local-first AI` · `symbolic reasoning` · `continual learning` · `agent governance` · `human-in-the-loop` · `reusable reasoning` · `resource-efficient AI`
 
-OHANA is not presented as a finished AGI and does not claim superiority over frontier models. The project investigates a narrower technical question:
+OHANA is an experimental architecture under active development. The project investigates a focused technical question:
 
 > **How much persistent, reusable and governed cognitive capability can be produced by architecture before requiring larger neural models?**
 
@@ -86,7 +86,7 @@ GOVERNANÇA
 → backup, hashes, rollback e validação de runtime preservados
 ```
 
-O Ponto 5 foi validado com execução reversível real, resultado observado e retorno ao ciclo de aprendizado. Os cinco pontos foram concluídos no escopo testado, sem declaração de AGI concluída e sem alegação de superioridade universal sobre outros sistemas.
+O Ponto 5 foi validado com execução reversível real, resultado observado e retorno ao ciclo de aprendizado. Os cinco pontos foram concluídos no escopo testado, com os limites e evidências de cada capacidade documentados separadamente.
 
 A produção continua governada por autorização humana, backup, hashes, candidatos isolados e rollback.
 
@@ -230,23 +230,21 @@ O próximo foco técnico não é criar um novo núcleo: é medir qualidade conve
 
 ---
 
-## Posicionamento comparativo
+## Características arquiteturais
 
-A OHANA não tenta competir por quantidade de parâmetros. O diferencial experimental está em deslocar capacidades persistentes para a arquitetura local e usar o modelo neural principalmente como componente linguístico/semântico.
+A OHANA foi desenhada para distribuir responsabilidades entre componentes persistentes e locais, usando o modelo neural principalmente como componente linguístico e semântico.
 
-| Dimensão | Agente centrado em LLM (padrão comum) | OHANA |
-|---|---|---|
-| Memória entre sessões | frequentemente adicionada como camada auxiliar | persistência e recuperação fazem parte da arquitetura |
-| Aprendizado por resultado | muitas vezes depende de prompt, fine-tuning ou lógica externa | resultado pode voltar ao ciclo de aprendizado governado |
-| Reuso de raciocínio | normalmente reconstituído pelo modelo a partir de texto/contexto | estrutura reutilizável pode ser persistida e entregue ao consumidor diretamente |
-| Planejamento | frequentemente produzido pelo próprio LLM | Planejador/Projetista são componentes explícitos |
-| Execução | ferramenta acionada pelo agente | Executor separado, com autorização e contratos |
-| Governança | varia por framework | autorização humana e bloqueio de ação crítica fazem parte do fluxo |
-| Modelo neural | tende a concentrar grande parte da capacidade | usado principalmente para linguagem e assistência semântica |
-| Operação local | depende do tamanho/modelo | alvo explícito, inclusive em hardware modesto |
-| Falha do modelo | pode comprometer grande parte do agente | funções locais/simbólicas continuam disponíveis nos escopos cobertos |
+- **Memória entre sessões:** persistência e recuperação fazem parte da arquitetura.
+- **Aprendizado por resultado:** o resultado pode retornar ao ciclo de aprendizado governado.
+- **Reuso de raciocínio:** estruturas reutilizáveis podem ser persistidas e entregues diretamente aos consumidores existentes.
+- **Planejamento:** Planejador e Projetista são componentes explícitos.
+- **Execução:** o Executor é separado e opera sob autorização e contratos.
+- **Governança:** autorização humana e bloqueio de ações críticas fazem parte do fluxo.
+- **Modelo neural:** usado principalmente para linguagem e assistência semântica.
+- **Operação local:** é um objetivo explícito, inclusive em hardware modesto.
+- **Continuidade local:** funções locais e simbólicas permanecem disponíveis nos escopos cobertos.
 
-Essa tabela descreve **diferenças arquiteturais**, não um ranking de qualidade. Comparações públicas com projetos específicos deverão usar benchmarks reproduzíveis e métricas equivalentes.
+A avaliação pública do projeto deve se apoiar em evidências, benchmarks reproduzíveis e métricas equivalentes.
 
 ---
 
@@ -523,7 +521,7 @@ Quer apoiar o desenvolvimento independente da OHANA ou conversar sobre patrocín
 
 As of **2026-10-07**, the C22 development path has validated five connected capabilities in the production runtime: a closed cognitive loop, learning from consequences, dynamic memory relevance, reusable reasoning structures, and graduated autonomy with governed reversible execution. Reusable reasoning is persisted as structure at learning time instead of being reconstructed later from free-form text by the neural model.
 
-OHANA is not presented as a finished AGI and does not claim superiority over frontier models or agent frameworks. Its research question is whether a persistent cognitive architecture can deliver useful, reusable and governed capabilities with modest hardware, fewer unnecessary neural calls and stronger continuity across sessions. The next public-evidence step is broader reproducible benchmarking, including conversational regression and generalization across multiple task domains.
+OHANA is an experimental persistent cognitive architecture under active development. Its research question is whether architecture can deliver useful, reusable and governed capabilities with modest hardware, fewer unnecessary neural calls and stronger continuity across sessions. The next public-evidence step is broader reproducible benchmarking, including conversational regression and generalization across multiple task domains.
 
 ---
 
