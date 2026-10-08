@@ -61,7 +61,7 @@ Um marco recente conectou pedidos técnicos conversacionais à rota existente de
 
 Hoje, a OHANA é melhor descrita como uma **arquitetura cognitiva modular experimental e sistema local de IA governada**.
 
-Ela não deve ser apresentada como uma AGI concluída. O projeto explora ideias relevantes para inteligência persistente, modularidade cognitiva, agentes de Engenharia de Software e autoaperfeiçoamento supervisionado.
+O projeto explora ideias relevantes para inteligência persistente, modularidade cognitiva, agentes de Engenharia de Software e autoaperfeiçoamento supervisionado, com resultados separados por estágio de validação.
 
 ## Princípio de desenvolvimento
 
