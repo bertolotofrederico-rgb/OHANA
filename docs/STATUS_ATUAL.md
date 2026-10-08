@@ -30,7 +30,7 @@ A OHANA concluiu em produção o marco C22 dos **cinco pontos cognitivos conecta
 4. **Raciocínio reutilizável**: estrutura é persistida no momento do aprendizado e reutilizada sem reconstrução neural posterior.
 5. **Autonomia graduada**: observar → analisar → sugerir → preparar → executar ação reversível autorizada → bloquear ação não autorizada → registrar resultado → aprender.
 
-O marco não declara AGI concluída. A generalização produtiva do raciocínio reutilizável ainda precisa ser ampliada, e a qualidade conversacional ponta a ponta será reavaliada separadamente.
+A generalização produtiva do raciocínio reutilizável ainda precisa ser ampliada, e a qualidade conversacional ponta a ponta será reavaliada separadamente.
 
 A regra de desenvolvimento continua:
 
@@ -508,4 +508,4 @@ O mapa nunca será fonte de verdade nem alterará o estado da OHANA.
 
 ## Limites de afirmação
 
-Este status não declara AGI concluída, automodificação irrestrita, promoção autônoma, Wallet pública pronta, segurança pública promovida, multiusuário concluído, Lite implementada, Network implementada ou modelo neural próprio treinado.
+Este status registra somente capacidades com evidência no escopo indicado. Permanecem não concluídos: automodificação irrestrita, promoção autônoma, Wallet pública pronta, segurança pública promovida, multiusuário concluído, Lite implementada, Network implementada e modelo neural próprio treinado.
