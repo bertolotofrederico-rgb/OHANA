@@ -14,25 +14,19 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 > **Status:** desenvolvimento experimental ativo, com capacidades em diferentes estágios de validação e promoção.
 
 
-## Nosso escritório virtual
+## Escritório virtual — negócios e oportunidades
 
-O **escritório virtual da OHANA** é nosso espaço de convivência e trabalho no SoWork. A visitação é uma oportunidade de conhecer o ambiente — **não é uma demonstração comercial nem acesso ao sistema interno da OHANA**.
+O escritório virtual da OHANA no SoWork é um espaço de **relacionamento profissional**, reservado a reuniões de negócios, apresentação institucional, apoio ao projeto, negociações, contratos, parcerias e identificação de oportunidades.
 
-### Visitação ao escritório
+**Não há convite público de visitação ou acesso livre ao escritório.** A entrada é organizada mediante contato e autorização prévia, conforme o propósito da reunião e as permissões do ambiente.
 
-🏢 **[Solicitar entrada no escritório virtual pelo SoWork](https://app.sowork.com/s/9rY0sIzw5UIGzlLqF2Zk/join/8HOzmmYAVdmUKNK6HNUD/z4iUDAIyfMB2676DltvD?user=neMGFMYM5ihUbytF7Hca5vN3C0H2&ts=1791519088287)**
+### Contato para negócios
 
-Visitantes poderão conhecer o espaço conforme as permissões e a disponibilidade definidas no SoWork. O avatar da OHANA poderá ser visto quando estiver presente e a integração estiver ativa.
+- **Contratações e propostas empresariais:** [OHANA Enterprise](comercial/PROPOSTA_OHANA_ENTERPRISE.md).
+- **Apoio, patrocínio e parcerias:** [Como apoiar o projeto](SPONSORSHIP.md).
+- **Oportunidades, colaboração e reuniões comerciais:** bertolotofrederico@gmail.com.
 
-> **Atenção:** ainda é necessário confirmar se este convite concede exclusivamente acesso de visitante, sem ingresso como membro da equipe. As permissões do link são determinadas pelo SoWork. Não compartilhe acessos administrativos.
-
-### Negócios e parcerias
-
-Para **propostas comerciais, parcerias, contratações e conversas institucionais**, utilize os canais específicos do projeto. A visitação ao escritório não substitui o contato comercial.
-
-- 📄 [Conheça a proposta OHANA Enterprise](comercial/PROPOSTA_OHANA_ENTERPRISE.md)
-- 🤝 [Apoio, patrocínio e parcerias](SPONSORSHIP.md)
-- ✉️ **Contato:** bertolotofrederico@gmail.com
+O escritório é um ambiente de trabalho e relacionamento, não uma demonstração pública nem acesso ao núcleo da OHANA.
 
 ---
 
