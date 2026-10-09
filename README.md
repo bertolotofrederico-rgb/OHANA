@@ -14,6 +14,26 @@ O projeto propositalmente **não trata um grande modelo de linguagem como toda a
 > **Status:** desenvolvimento experimental ativo, com capacidades em diferentes estágios de validação e promoção.
 
 
+## Visite o escritório virtual da OHANA
+
+**Conheça a OHANA no ambiente virtual SoWork.** A integração experimental conecta a arquitetura cognitiva da OHANA a um NPC no escritório, permitindo interações em um canal autorizado e reações visuais durante a conversa.
+
+🏢 **[Acessar o escritório virtual da OHANA no SoWork](https://app.sowork.com/s/9rY0sIzw5UIGzlLqF2Zk/join/8HOzmmYAVdmUKNK6HNUD/z4iUDAIyfMB2676DltvD?user=neMGFMYM5ihUbytF7Hca5vN3C0H2&ts=1791519088287)**
+
+> **Sobre o acesso:** link de entrada fornecido pelo responsável pelo projeto. O tipo de convite, as permissões efetivas e eventual necessidade de aprovação são definidos pelo SoWork e pela configuração do escritório. A visita não concede, por si só, permissões administrativas. A disponibilidade da OHANA depende de sua instância local e do adaptador estarem ativos. Não é uma demonstração com disponibilidade garantida.
+
+### Integração OHANA ↔ SoWork — marco de outubro de 2026
+
+- **Integração operacional:** mensagem recebida em canal autorizado do SoWork, encaminhada à OHANA local e resposta apresentada pelo NPC; ciclo real completo validado.
+- **Operação contínua supervisionada:** adaptador ativo na sessão validada, com prevenção de duplicidade, leitura de novas mensagens e diagnóstico de falhas; sem inicialização automática.
+- **Expressividade visual:** animação de pensamento `reactThink` e reações após fala confirmada, com alternância entre `nodEmojiMeeting`, `happyEmojiMeeting`, `clapEmojiMeeting` e `likeEmojiMeeting`. A primeira reação real da alternância foi confirmada.
+- **Preservação arquitetural:** núcleo, memória, aprendizado, raciocínio e mecanismo de fala não foram modificados para essa integração; backups, verificações de integridade e rollback utilizados.
+- **Limitação atual:** a interface MCP disponível para o NPC não comprovou caminhada livre, descoberta de mesas/zonas ou capacidade de sentar em mesas independentes. Mobilidade autônoma permanece em investigação e não deve ser anunciada como implementada.
+
+A integração opera como experiência de presença digital; **não implica autonomia espacial irrestrita nem acesso dos visitantes a funções administrativas da OHANA**.
+
+---
+
 ## International research positioning
 
 **OHANA is an experimental local-first cognitive architecture for persistent, stateful AI systems.** Its research direction combines persistent memory, governed learning, reusable reasoning, planning, controlled execution, agent governance and lightweight local neural models.
