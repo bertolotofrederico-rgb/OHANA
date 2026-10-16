@@ -5,6 +5,20 @@
 [![Experimentar OHANA](https://img.shields.io/badge/Experimentar_OHANA-Acessar_interface-2ea44f?style=for-the-badge)](https://ohana.bertolotofrederico.workers.dev/#demo)
 [![GitHub Sponsors](https://img.shields.io/badge/Apoiar_o_projeto-GitHub_Sponsors-ea4aaa?style=for-the-badge)](https://github.com/sponsors/bertolotofrederico-rgb)
 
+## Navegação rápida
+
+- [Conheça o projeto e sua arquitetura](#por-que-a-ohana-existe)
+- [Estado técnico e marcos documentados](#estado-técnico-atual)
+- [Capacidades validadas](#capacidades-atualmente-validadas)
+- [Benchmarks e medições](#desempenho-observado)
+- [Governança e princípios de engenharia](#princípios-de-engenharia)
+- [Pendências conhecidas](#pendências-conhecidas)
+- [Livro OHANA LAB](#livro-ohana-lab--quando-uma-ia-aprende-a-evoluir)
+- [Enterprise e parcerias](#projeto-ohana-enterprise)
+- [Documentação técnica](#documentação)
+
+> Os registros históricos e documentos de trabalho permanecem disponíveis; este índice apenas facilita a navegação.
+
 ## Livro OHANA LAB — Quando uma IA Aprende a Evoluir
 
 **Uma jornada real entre programação, memória, inteligência artificial e os desafios de construir um sistema local.**
