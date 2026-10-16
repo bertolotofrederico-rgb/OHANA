@@ -5,6 +5,23 @@
 [![Experimentar OHANA](https://img.shields.io/badge/Experimentar_OHANA-Acessar_interface-2ea44f?style=for-the-badge)](https://ohana.bertolotofrederico.workers.dev/#demo)
 [![GitHub Sponsors](https://img.shields.io/badge/Apoiar_o_projeto-GitHub_Sponsors-ea4aaa?style=for-the-badge)](https://github.com/sponsors/bertolotofrederico-rgb)
 
+## Livro OHANA LAB — Quando uma IA Aprende a Evoluir
+
+**Uma jornada real entre programação, memória, inteligência artificial e os desafios de construir um sistema local.**
+
+O *OHANA LAB* apresenta, em linguagem acessível, os desafios e aprendizados documentados durante o desenvolvimento da OHANA. Ao longo de dez capítulos, a história do projeto se conecta a fundamentos de programação, memória persistente, integração de componentes, testes e melhoria responsável — sem confundir propostas com resultados comprovados.
+
+**Frederico Bertoloto Pozzebon** · Edição digital 1.1 · E-book em PDF · 69 páginas
+
+| Conheça gratuitamente | Adquira o livro completo |
+| --- | --- |
+| **[Ler e baixar a amostra gratuita (PDF, 17 páginas)](OHANA_LAB_AMOSTRA_GRATUITA_DEFINITIVA.pdf)** | **[Comprar na Kiwify — R$ 49,00](https://pay.kiwify.com.br/F7Oq5rG)** |
+| Capa, introdução e primeiro capítulo completo. | Versão integral, entregue pela área de membros da Kiwify após aprovação do pagamento. |
+
+> **Nota:** a amostra é aberta e gratuita. O arquivo completo não é distribuído neste repositório. Esta obra relata uma trajetória técnica real com os limites de comprovação explicitados ao longo do texto.
+
+---
+
 > **Demonstração pública:** a interface permite conversar com uma instância pública limitada da OHANA. Recursos administrativos, arquivos privados, Executor, Governança, carteira e operações sensíveis permanecem bloqueados.
 
 OHANA é uma arquitetura modular de IA construída em torno de memória persistente, raciocínio local/simbólico, planejamento, execução controlada, aprendizado governado e fluxos de Engenharia de Software.
