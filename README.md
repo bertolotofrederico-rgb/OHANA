@@ -13,10 +13,10 @@ O *OHANA LAB* apresenta, em linguagem acessível, os desafios e aprendizados doc
 
 **Frederico Bertoloto Pozzebon** · Edição digital 1.1 · E-book em PDF · 69 páginas
 
-| Conheça gratuitamente | Adquira a versão integral |
+| Conheça gratuitamente | Adquira a versão na íntegra |
 | --- | --- |
 | **[Ler e baixar a amostra gratuita (PDF, 17 páginas)](OHANA_LAB_AMOSTRA_GRATUITA_DEFINITIVA.pdf)** | **[Comprar na Kiwify — R$ 49,00](https://pay.kiwify.com.br/F7Oq5rG)** |
-| Capa, introdução e primeiro capítulo completo. | Versão integral, entregue pela área de membros da Kiwify após aprovação do pagamento. |
+| Capa, introdução e primeiro capítulo completo. | Versão na íntegra, disponibilizada na área de membros da Kiwify após a aprovação do pagamento. |
 
 > **Nota:** a amostra é aberta e gratuita. O arquivo completo não é distribuído neste repositório. Esta obra relata uma trajetória técnica real com os limites de comprovação explicitados ao longo do texto.
 
