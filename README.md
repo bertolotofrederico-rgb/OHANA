@@ -2,7 +2,7 @@
 
 **Arquitetura cognitiva experimental para inteligência local persistente, aprendizado governado e autoengenharia supervisionada.**
 
-[![Experimentar OHANA](https://img.shields.io/badge/Experimentar_OHANA-Acessar_interface-2ea44f?style=for-the-badge)](https://ohanaia.com.br/#demo)
+[![Experimentar OHANA](https://img.shields.io/badge/Experimentar_OHANA-Acessar_interface-2ea44f?style=for-the-badge)](https://ohanaia.com.br/)
 [![GitHub Sponsors](https://img.shields.io/badge/Apoiar_o_projeto-GitHub_Sponsors-ea4aaa?style=for-the-badge)](https://github.com/sponsors/bertolotofrederico-rgb)
 
 ## Navegação rápida
